@@ -1,0 +1,16 @@
+*.pyc
+*.egg-info/
+__pycache__
+.cache/
+.idea/
+venv*
+.tox
+build/
+dist
+*.json
+QUESTIONS.md
+TODO.md
+kafka_example.py
+ch_example.py
+iam.py
+.python-version

@@ -1,0 +1,11 @@
+-e .
+black
+flake8
+isort
+pylint
+pytest
+python-semantic-release
+tox
+tox-gh-actions
+grpcio-tools
+wheel
