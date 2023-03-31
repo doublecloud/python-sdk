@@ -2,8 +2,6 @@
 
 [pypi-image]: https://img.shields.io/pypi/v/doublecloud
 [pypi-url]: https://pypi.org/project/doublecloud/
-[build-image]: https://github.com/doublecloud/python-sdk/actions/workflows/run-tests.yml/badge.svg
-[build-url]: https://github.com/doublecloud/python-sdk/actions/workflows/run-tests.yml
 [license-image]: https://img.shields.io/github/license/doublecloud/python-sdk.svg
 [license-url]: https://github.com/doublecloud/python-sdk/blob/main/LICENSE
 
@@ -45,16 +43,17 @@ Check `examples` directory for more examples.
 ## Contributing
 ### Dependencies
 Use `make venv` command to install library, its production and development dependencies.
+Use `make submodule` to fetch proto specifications.
+Use `make generate` to generate wrappers for gRPC services.
 
 ### Formatting
-Use `make format` to autoformat code with black tool. 
+Use `make format` to autoformat code with various set of tools.
 
 ### Tests
 - `make test` to run tests for current python version
 - `make lint` to run only linters for current python version
 - `make tox-current` to run all checks (tests + code style checks + linters + format check) for current python version
 - `make tox` to run all checks for all supported (installed in your system) python versions
-- `make test-all-versions` to run all checks for all supported python versions in docker container
 
 
 ### Maintaining

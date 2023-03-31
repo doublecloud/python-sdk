@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := help
-.PHONY: tox tox-current test lint format test-all-versions help
+.PHONY: tox tox-current test lint submodule generate release format help
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-BUF_VERSION="1.15.1"
+BUF_VERSION="1.16.0"
 BIN="venv/bin"
 
 venv: ## install deps (library & development)
@@ -33,11 +33,6 @@ lint: ## run linters, formatters for current python versions
 format:
 	$(BIN)/python3 -m isort doublecloud setup.py changelog.py examples
 	$(BIN)/python3 -m black doublecloud setup.py changelog.py examples
-
-test-all-versions: ## run test for multiple python versions using docker
-	# python 3.10 not provided in image so we skip it
-	@echo "skip"
-	# docker run --rm -v $(REPO_ROOT):/src fkrull/multi-python tox -c /src -e py36,py37,py38,py39
 
 submodule:  ## retrieve public protospecs
 	git submodule update --init --recursive --remote
