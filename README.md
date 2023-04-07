@@ -7,21 +7,28 @@
 
 # DoubleCloud SDK for Python
 
-Wanna automate your doublecloud infrastructure with python?
+Wanna automate your DoubleCloud infrastructure with Python?
 Let's start.
 
-Installation:
+## Installation
 
-    pip install doublecloud
+Run the following in your terminal:
+
+```sh
+pip install doublecloud
+```
 
 ## Getting started
 
-There are a couple of options for authorization your requests - Service Account Keys and externally created IAM tokens.
+There are a couple of options for authorizing your requests:
+
+* Service Account Keys
+* Externally created IAM tokens.
 
 ### Service Account Keys
 
 ```python
-# you can store and read it from JSON file 
+# you can store and read it from a JSON file 
 sa_key = {
     "id": "...",
     "service_account_id": "...",
@@ -37,28 +44,29 @@ sdk = doublecloud.SDK(service_account_key=sa_key)
 sdk = doublecloud.SDK(iam_token="t1.9eu...")
 ```
 
-Check `examples` directory for more examples.
+Check the `examples` directory for more examples.
 
+## How to contribute
 
-## Contributing
 ### Dependencies
-Use `make venv` command to install library, its production and development dependencies.
+
+Use `make venv` command to install the library, its production and development dependencies.
 Use `make submodule` to fetch proto specifications.
 Use `make generate` to generate wrappers for gRPC services.
 
 ### Formatting
+
 Use `make format` to autoformat code with various set of tools.
 
 ### Tests
-- `make test` to run tests for current python version
-- `make lint` to run only linters for current python version
-- `make tox-current` to run all checks (tests + code style checks + linters + format check) for current python version
-- `make tox` to run all checks for all supported (installed in your system) python versions
 
+* `make test` to run tests for current python version
+* `make lint` to run only linters for current python version
+* `make tox-current` to run all checks (tests + code style checks + linters + format check) for current python version
+* `make tox` to run all checks for all supported (installed in your system) python versions
 
 ### Maintaining
-If pull request consists of several meaningful commits, that should be preserved, 
-then use "Rebase and merge" option. Otherwise use "Squash and merge". 
 
-New release (changelog, tag and pypi upload) will be automatically created 
-on each push to main via Github Actions workflow.
+If a pull request consists of several meaningful commits that should be preserved, use the **Rebase and merge** option. Otherwise, use **Squash and merge**.
+
+New release (changelog, tag and pypi upload) will be automatically created on each push to main via Github Actions workflow.
