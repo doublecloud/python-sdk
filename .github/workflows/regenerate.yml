@@ -14,9 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GH_TOKEN }}
         submodules: 'true'
-
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -33,6 +31,6 @@ jobs:
         
         git config --global user.name 'Double.Cloud Bot'
         git config --global user.email 'bot@double.cloud'
-        git add apis doublecloud
+        git add api doublecloud
         git commit -m 'regenerate proto' || echo "No changes in .proto files found"
         git push
