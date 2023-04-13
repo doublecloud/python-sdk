@@ -33,5 +33,6 @@ setup(
     tests_require=["pytest"],
     setup_requires=["wheel"],
     packages=packages,
+    package_data={"doublecloud": ["*.pyi", "**/*.pyi"]},
     zip_safe=False,
 )
