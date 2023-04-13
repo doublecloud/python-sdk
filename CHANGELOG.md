@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2023-04-13)
+### Feature
+* Build: add pyi files into python package ([`bbfd5c4`](https://github.com/doublecloud/python-sdk/commit/bbfd5c4d01d227f40fb6906c1f0b99cc316ca2f0))
+
 ## v0.3.0 (2023-04-13)
 ### Feature
 * Feat: add pyi files for working with type hinting 🦆 ([`3923355`](https://github.com/doublecloud/python-sdk/commit/392335512f9d285b16fb738eea21512c1cf45d8a))
