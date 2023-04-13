@@ -59,6 +59,9 @@ def main():
         )
         cluster_id = operation_result.operation.resource_id
 
+        logging.info("\n\nWonderful! 🚀 Check out created cluster\n" f"https://app.double.cloud/kafka/{cluster_id}\n")
+
+        input("Press F to respect and delete all created resources ...")
     finally:
         if cluster_id:
             logging.info(f"Deleting cluster {cluster_id}")

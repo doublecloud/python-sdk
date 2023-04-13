@@ -57,6 +57,11 @@ def main():
             operation,
         )
         cluster_id = operation_result.operation.resource_id
+        logging.info(
+            "\n\nWonderful! 🚀 Check out created cluster\n" f"https://app.double.cloud/clickhouse/{cluster_id}\n"
+        )
+
+        input("Press F to respect and delete all created resources ...")
 
     finally:
         if cluster_id:

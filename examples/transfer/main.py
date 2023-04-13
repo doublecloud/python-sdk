@@ -120,6 +120,12 @@ def main():
         transfer_id = operation_result.operation.resource_id
         logging.info(f"Created transfer: {transfer_id}")
 
+        logging.info(
+            "\n\nWonderful! 🚀 Check out created transfer\n" f"https://app.double.cloud/data-transfer/{transfer_id}\n"
+        )
+
+        input("Press F to respect and delete all created resources ...")
+
     finally:
         if transfer_id:
             logging.info(f"Deleting transfer {transfer_id}")

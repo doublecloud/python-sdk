@@ -47,6 +47,11 @@ def main():
             operation,
         )
         network_id = operation_result.operation.resource_id
+        logging.info(
+            "\n\nWonderful! 🚀 Check out created network\n" f"https://app.double.cloud/vpc/network/{network_id}\n"
+        )
+
+        input("Press F to respect and delete all created resources ...")
 
     finally:
         if network_id:
