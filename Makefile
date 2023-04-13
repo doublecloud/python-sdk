@@ -25,8 +25,8 @@ test: ## run tests ONLY for current python version
 	$(BIN)/python3 -m pytest
 
 lint: ## run linters, formatters for current python versions
-	$(BIN)/python3 -m flake8 doublecloud examples tests
-	$(BIN)/python3 -m pylint doublecloud examples tests
+	$(BIN)/python3 -m flake8 doublecloud examples tests setup.py changelog.py
+	$(BIN)/python3 -m pylint doublecloud examples tests setup.py changelog.py
 	$(BIN)/python3 -m isort --check-only doublecloud setup.py changelog.py
 	$(BIN)/python3 -m black --check doublecloud setup.py changelog.py
 
