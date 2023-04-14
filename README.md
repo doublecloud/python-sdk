@@ -38,6 +38,8 @@ sa_key = {
 sdk = doublecloud.SDK(service_account_key=sa_key)
 ```
 
+For more information on how to create a **service account** and **authorized keys**, see the [DoubleCloud documentation](https://double.cloud/docs/en/administration/step-by-step/create-service-account).
+
 ### IAM tokens
 
 ```python
@@ -45,6 +47,8 @@ sdk = doublecloud.SDK(iam_token="t1.9eu...")
 ```
 
 Check the `examples` directory for more examples.
+
+For step-by-step instructions and examples of how to get an **IAM token** for your service account, see the [DoubleCloud documentation](https://double.cloud/docs/en/public-api/get-iam-token)
 
 ## How to contribute
 
