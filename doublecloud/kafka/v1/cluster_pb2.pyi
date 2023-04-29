@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Cluster(_message.Message):
-    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "encryption", "network_id", "private_connection_info", "maintenance_window", "planned_operation", "kafka_config"]
+    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "encryption", "network_id", "private_connection_info", "maintenance_window", "planned_operation", "kafka_config", "metrics_exporter_connection_info", "schema_registry_config"]
     ID_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -29,6 +29,8 @@ class Cluster(_message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     PLANNED_OPERATION_FIELD_NUMBER: _ClassVar[int]
     KAFKA_CONFIG_FIELD_NUMBER: _ClassVar[int]
+    METRICS_EXPORTER_CONNECTION_INFO_FIELD_NUMBER: _ClassVar[int]
+    SCHEMA_REGISTRY_CONFIG_FIELD_NUMBER: _ClassVar[int]
     id: str
     project_id: str
     cloud_type: str
@@ -47,7 +49,9 @@ class Cluster(_message.Message):
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     planned_operation: _maintenance_pb2.MaintenanceOperation
     kafka_config: _config_pb2.KafkaConfig
-    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., planned_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ...) -> None: ...
+    metrics_exporter_connection_info: MetricsExporterConnectionInfo
+    schema_registry_config: _config_pb2.SchemaRegistryConfig
+    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., planned_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ..., metrics_exporter_connection_info: _Optional[_Union[MetricsExporterConnectionInfo, _Mapping]] = ..., schema_registry_config: _Optional[_Union[_config_pb2.SchemaRegistryConfig, _Mapping]] = ...) -> None: ...
 
 class ClusterResources(_message.Message):
     __slots__ = ["kafka"]
@@ -85,6 +89,14 @@ class PrivateConnectionInfo(_message.Message):
     user: str
     password: str
     def __init__(self, connection_string: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+
+class MetricsExporterConnectionInfo(_message.Message):
+    __slots__ = ["user", "password"]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    user: str
+    password: str
+    def __init__(self, user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class Host(_message.Message):
     __slots__ = ["name", "cluster_id", "status"]

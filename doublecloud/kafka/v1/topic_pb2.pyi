@@ -7,20 +7,22 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Topic(_message.Message):
-    __slots__ = ["name", "cluster_id", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3"]
+    __slots__ = ["name", "cluster_id", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3", "is_ha"]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     PARTITIONS_FIELD_NUMBER: _ClassVar[int]
     REPLICATION_FACTOR_FIELD_NUMBER: _ClassVar[int]
     TOPIC_CONFIG_2_8_FIELD_NUMBER: _ClassVar[int]
     TOPIC_CONFIG_3_FIELD_NUMBER: _ClassVar[int]
+    IS_HA_FIELD_NUMBER: _ClassVar[int]
     name: str
     cluster_id: str
     partitions: _wrappers_pb2.Int64Value
     replication_factor: _wrappers_pb2.Int64Value
     topic_config_2_8: TopicConfig28
     topic_config_3: TopicConfig3
-    def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., partitions: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., topic_config_2_8: _Optional[_Union[TopicConfig28, _Mapping]] = ..., topic_config_3: _Optional[_Union[TopicConfig3, _Mapping]] = ...) -> None: ...
+    is_ha: bool
+    def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., partitions: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., topic_config_2_8: _Optional[_Union[TopicConfig28, _Mapping]] = ..., topic_config_3: _Optional[_Union[TopicConfig3, _Mapping]] = ..., is_ha: bool = ...) -> None: ...
 
 class TopicSpec(_message.Message):
     __slots__ = ["name", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3"]

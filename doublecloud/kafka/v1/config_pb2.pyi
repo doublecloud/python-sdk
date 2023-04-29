@@ -12,3 +12,9 @@ class KafkaConfig(_message.Message):
     message_max_bytes: _wrappers_pb2.Int64Value
     replica_fetch_max_bytes: _wrappers_pb2.Int64Value
     def __init__(self, message_max_bytes: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replica_fetch_max_bytes: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
+
+class SchemaRegistryConfig(_message.Message):
+    __slots__ = ["enabled"]
+    ENABLED_FIELD_NUMBER: _ClassVar[int]
+    enabled: bool
+    def __init__(self, enabled: bool = ...) -> None: ...
