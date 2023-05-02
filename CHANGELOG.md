@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2023-05-02)
+### Feature
+* Build: regenerate proto ([`e9a494b`](https://github.com/doublecloud/python-sdk/commit/e9a494b8b59865d9444f40626fa85955d55bde9f))
+* Make minor layout changes to improve readability. ([`d3abc79`](https://github.com/doublecloud/python-sdk/commit/d3abc797502410e3b6db58ed8a8e22500b652a0f))
+* Add links to relevant documentation articles ([`08cb895`](https://github.com/doublecloud/python-sdk/commit/08cb895b750ed0188db524c74784581e8752c38b))
+
 ## v0.4.0 (2023-04-13)
 ### Feature
 * Build: add pyi files into python package ([`bbfd5c4`](https://github.com/doublecloud/python-sdk/commit/bbfd5c4d01d227f40fb6906c1f0b99cc316ca2f0))
