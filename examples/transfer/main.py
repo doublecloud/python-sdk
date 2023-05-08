@@ -19,15 +19,16 @@ from doublecloud.transfer.v1.endpoint_service_pb2 import (
 from doublecloud.transfer.v1.endpoint_service_pb2_grpc import EndpointServiceStub
 from doublecloud.transfer.v1.transfer_pb2 import TransferType
 from doublecloud.transfer.v1.transfer_service_pb2 import (
+    ActivateTransferRequest,
     CreateTransferRequest,
+    DeactivateTransferRequest,
     DeleteTransferRequest,
 )
 from doublecloud.transfer.v1.transfer_service_pb2_grpc import TransferServiceStub
 
 
-def create_s3_src_endpoint(sdk, project_id, name):
-    svc = sdk.client(EndpointServiceStub)
-    operation = svc.Create(
+def create_s3_src_endpoint(svc, project_id: str, name: str):
+    return svc.Create(
         CreateEndpointRequest(
             project_id=project_id,
             name=f"s3-src-{name}",
@@ -42,18 +43,14 @@ def create_s3_src_endpoint(sdk, project_id, name):
             ),
         )
     )
-    return operation
 
 
-def delete_endpoint(sdk, endpoint_id):
-    svc = sdk.client(EndpointServiceStub)
-    operation = svc.Delete(DeleteEndpointRequest(endpoint_id=endpoint_id))
-    return operation
+def delete_endpoint(svc, endpoint_id: str):
+    return svc.Delete(DeleteEndpointRequest(endpoint_id=endpoint_id))
 
 
-def create_ch_dst_endpoint(sdk, project_id, name):
-    svc = sdk.client(EndpointServiceStub)
-    operation = svc.Create(
+def create_ch_dst_endpoint(svc, project_id: str, name: str):
+    return svc.Create(
         CreateEndpointRequest(
             project_id=project_id,
             name=f"ch-dst-{name}",
@@ -71,23 +68,26 @@ def create_ch_dst_endpoint(sdk, project_id, name):
             ),
         )
     )
-    return operation
 
 
-def create_transfer(sdk, project_id, name, src_id, dst_id):
-    svc = sdk.client(TransferServiceStub)
-    operation = svc.Create(
+def create_transfer(svc, project_id: str, name: str, src_id: str, dst_id: str):
+    return svc.Create(
         CreateTransferRequest(
             source_id=src_id, target_id=dst_id, name=name, project_id=project_id, type=TransferType.SNAPSHOT_ONLY
         )
     )
-    return operation
 
 
-def delete_transfer(sdk, transfer_id):
-    svc = sdk.client(TransferServiceStub)
-    operation = svc.Delete(DeleteTransferRequest(transfer_id=transfer_id))
-    return operation
+def activate_transfer(svc, transfer_id: str):
+    return svc.Activate(ActivateTransferRequest(transfer_id=transfer_id))
+
+
+def deactivate_transfer(svc, transfer_id: str):
+    return svc.Deactivate(DeactivateTransferRequest(transfer_id=transfer_id))
+
+
+def delete_transfer(svc, transfer_id: str):
+    return svc.Delete(DeleteTransferRequest(transfer_id=transfer_id))
 
 
 def main():
@@ -100,24 +100,31 @@ def main():
             sdk = doublecloud.SDK(service_account_key=json.load(infile))
 
     s3_src_endpoint, ch_dst_endpoint, transfer_id = None, None, None
+    endpoint_service, transfer_service = sdk.client(EndpointServiceStub), sdk.client(TransferServiceStub)
+
     try:
         # Create source endpoint for gathering data
-        operation = create_s3_src_endpoint(sdk, arguments.project_id, arguments.name)
+        operation = create_s3_src_endpoint(endpoint_service, arguments.project_id, arguments.name)
         operation_result = sdk.wait_operation_and_get_result(operation)
         s3_src_endpoint = operation_result.operation.resource_id
         logging.info(f"Created s3 src endpoint: {s3_src_endpoint}")
 
         # Create dst endpoint for pushing data
-        operation = create_ch_dst_endpoint(sdk, arguments.project_id, arguments.name)
+        operation = create_ch_dst_endpoint(endpoint_service, arguments.project_id, arguments.name)
         operation_result = sdk.wait_operation_and_get_result(operation)
         ch_dst_endpoint = operation_result.operation.resource_id
         logging.info(f"Created ch dst endpoint: {ch_dst_endpoint}")
 
         # Link endpoints into single transfer
         logging.info("Linking endpoints into transfer")
-        operation = create_transfer(sdk, arguments.project_id, arguments.name, s3_src_endpoint, ch_dst_endpoint)
+        operation = create_transfer(
+            transfer_service, arguments.project_id, arguments.name, s3_src_endpoint, ch_dst_endpoint
+        )
         operation_result = sdk.wait_operation_and_get_result(operation)
         transfer_id = operation_result.operation.resource_id
+
+        # Activate created transfer
+        activate_transfer(transfer_service, transfer_id)
         logging.info(f"Created transfer: {transfer_id}")
 
         logging.info(
@@ -128,21 +135,23 @@ def main():
 
     finally:
         if transfer_id:
+            deactivate_transfer(transfer_service, transfer_id)
+
             logging.info(f"Deleting transfer {transfer_id}")
-            operation = delete_transfer(sdk, transfer_id)
+            operation = delete_transfer(transfer_service, transfer_id)
             sdk.wait_operation_and_get_result(
                 operation,
             )
 
         if s3_src_endpoint:
             logging.info(f"Deleting s3 endpoint {s3_src_endpoint}")
-            operation = delete_endpoint(sdk, s3_src_endpoint)
+            operation = delete_endpoint(endpoint_service, s3_src_endpoint)
             sdk.wait_operation_and_get_result(
                 operation,
             )
         if ch_dst_endpoint:
             logging.info(f"Deleting ch endpoint {ch_dst_endpoint}")
-            operation = delete_endpoint(sdk, ch_dst_endpoint)
+            operation = delete_endpoint(endpoint_service, ch_dst_endpoint)
             sdk.wait_operation_and_get_result(
                 operation,
             )
