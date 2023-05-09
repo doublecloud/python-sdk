@@ -111,13 +111,15 @@ class PrivateConnectionInfo(_message.Message):
     def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
 
 class Host(_message.Message):
-    __slots__ = ["name", "cluster_id", "shard_name", "private_name"]
+    __slots__ = ["name", "cluster_id", "shard_name", "private_name", "status"]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     SHARD_NAME_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_NAME_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     name: str
     cluster_id: str
     shard_name: str
     private_name: str
-    def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., shard_name: _Optional[str] = ..., private_name: _Optional[str] = ...) -> None: ...
+    status: _cluster_pb2.HostStatus
+    def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., shard_name: _Optional[str] = ..., private_name: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.HostStatus, str]] = ...) -> None: ...

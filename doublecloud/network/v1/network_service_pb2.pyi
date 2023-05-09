@@ -1,6 +1,7 @@
 from doublecloud.network.v1 import network_pb2 as _network_pb2
 from doublecloud.v1 import operation_pb2 as _operation_pb2
 from doublecloud.v1 import paging_pb2 as _paging_pb2
+from google.protobuf import wrappers_pb2 as _wrappers_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -15,12 +16,25 @@ class GetNetworkRequest(_message.Message):
     def __init__(self, network_id: _Optional[str] = ...) -> None: ...
 
 class ListNetworksRequest(_message.Message):
-    __slots__ = ["project_id", "paging"]
+    __slots__ = ["project_id", "paging", "filter"]
+    class Filter(_message.Message):
+        __slots__ = ["cloud_type", "region_id", "status", "is_external"]
+        CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
+        REGION_ID_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        IS_EXTERNAL_FIELD_NUMBER: _ClassVar[int]
+        cloud_type: _wrappers_pb2.StringValue
+        region_id: _wrappers_pb2.StringValue
+        status: _network_pb2.Network.NetworkStatus
+        is_external: _wrappers_pb2.BoolValue
+        def __init__(self, cloud_type: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., region_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., status: _Optional[_Union[_network_pb2.Network.NetworkStatus, str]] = ..., is_external: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     PAGING_FIELD_NUMBER: _ClassVar[int]
+    FILTER_FIELD_NUMBER: _ClassVar[int]
     project_id: str
     paging: _paging_pb2.Paging
-    def __init__(self, project_id: _Optional[str] = ..., paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
+    filter: ListNetworksRequest.Filter
+    def __init__(self, project_id: _Optional[str] = ..., paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ..., filter: _Optional[_Union[ListNetworksRequest.Filter, _Mapping]] = ...) -> None: ...
 
 class ListNetworksResponse(_message.Message):
     __slots__ = ["networks", "next_page"]

@@ -60,7 +60,7 @@ class ClickhouseConfig(_message.Message):
         allow_remote_fs_zero_copy_replication: _wrappers_pb2.BoolValue
         def __init__(self, replicated_deduplication_window: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replicated_deduplication_window_seconds: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_replicated_merges_in_queue: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., number_of_free_entries_in_pool_to_lower_max_size_of_merge: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_min_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_max_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_bytes_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_rows_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., ttl_only_drop_parts: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., merge_with_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., merge_with_recompression_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., allow_remote_fs_zero_copy_replication: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
     class Kafka(_message.Message):
-        __slots__ = ["security_protocol", "sasl_mechanism", "sasl_username", "sasl_password"]
+        __slots__ = ["security_protocol", "sasl_mechanism", "sasl_username", "sasl_password", "enable_ssl_certificate_verification"]
         class SecurityProtocol(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
             SECURITY_PROTOCOL_INVALID: _ClassVar[ClickhouseConfig.Kafka.SecurityProtocol]
@@ -89,11 +89,13 @@ class ClickhouseConfig(_message.Message):
         SASL_MECHANISM_FIELD_NUMBER: _ClassVar[int]
         SASL_USERNAME_FIELD_NUMBER: _ClassVar[int]
         SASL_PASSWORD_FIELD_NUMBER: _ClassVar[int]
+        ENABLE_SSL_CERTIFICATE_VERIFICATION_FIELD_NUMBER: _ClassVar[int]
         security_protocol: ClickhouseConfig.Kafka.SecurityProtocol
         sasl_mechanism: ClickhouseConfig.Kafka.SaslMechanism
         sasl_username: _wrappers_pb2.StringValue
         sasl_password: _wrappers_pb2.StringValue
-        def __init__(self, security_protocol: _Optional[_Union[ClickhouseConfig.Kafka.SecurityProtocol, str]] = ..., sasl_mechanism: _Optional[_Union[ClickhouseConfig.Kafka.SaslMechanism, str]] = ..., sasl_username: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_password: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
+        enable_ssl_certificate_verification: _wrappers_pb2.BoolValue
+        def __init__(self, security_protocol: _Optional[_Union[ClickhouseConfig.Kafka.SecurityProtocol, str]] = ..., sasl_mechanism: _Optional[_Union[ClickhouseConfig.Kafka.SaslMechanism, str]] = ..., sasl_username: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_password: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., enable_ssl_certificate_verification: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
     class Rabbitmq(_message.Message):
         __slots__ = ["username", "password", "vhost"]
         USERNAME_FIELD_NUMBER: _ClassVar[int]
