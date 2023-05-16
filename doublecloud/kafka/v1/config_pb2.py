@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!doublecloud/kafka/v1/config.proto\x12\x14\x64oublecloud.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\xaa\x01\n\x0bKafkaConfig\x12G\n\x11message_max_bytes\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0fmessageMaxBytes\x12R\n\x17replica_fetch_max_bytes\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x14replicaFetchMaxBytes\"0\n\x14SchemaRegistryConfig\x12\x18\n\x07\x65nabled\x18\x01 \x01(\x08R\x07\x65nabledB7Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!doublecloud/kafka/v1/config.proto\x12\x14\x64oublecloud.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\xaa\x01\n\x0bKafkaConfig\x12G\n\x11message_max_bytes\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0fmessageMaxBytes\x12R\n\x17replica_fetch_max_bytes\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x14replicaFetchMaxBytes\"0\n\x14SchemaRegistryConfig\x12\x18\n\x07\x65nabled\x18\x01 \x01(\x08R\x07\x65nabledB?Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,7 +22,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.kafka.v1.config
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafka'
+  DESCRIPTOR._serialized_options = b'Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafka'
   _globals['_KAFKACONFIG']._serialized_start=92
   _globals['_KAFKACONFIG']._serialized_end=262
   _globals['_SCHEMAREGISTRYCONFIG']._serialized_start=264

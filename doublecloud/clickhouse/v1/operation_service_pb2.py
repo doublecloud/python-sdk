@@ -15,7 +15,7 @@ from doublecloud.v1 import operation_pb2 as doublecloud_dot_v1_dot_operation__pb
 from doublecloud.v1 import paging_pb2 as doublecloud_dot_v1_dot_paging__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1doublecloud/clickhouse/v1/operation_service.proto\x12\x19\x64oublecloud.clickhouse.v1\x1a\x1e\x64oublecloud/v1/operation.proto\x1a\x1b\x64oublecloud/v1/paging.proto\"8\n\x13GetOperationRequest\x12!\n\x0coperation_id\x18\x01 \x01(\tR\x0boperationId\"f\n\x15ListOperationsRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\x12.\n\x06paging\x18\x02 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x8a\x01\n\x16ListOperationsResponse\x12\x39\n\noperations\x18\x01 \x03(\x0b\x32\x19.doublecloud.v1.OperationR\noperations\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2\xd1\x01\n\x10OperationService\x12P\n\x03Get\x12..doublecloud.clickhouse.v1.GetOperationRequest\x1a\x19.doublecloud.v1.Operation\x12k\n\x04List\x12\x30.doublecloud.clickhouse.v1.ListOperationsRequest\x1a\x31.doublecloud.clickhouse.v1.ListOperationsResponseBAZ?github.com/doublecloud/api/doublecloud/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1doublecloud/clickhouse/v1/operation_service.proto\x12\x19\x64oublecloud.clickhouse.v1\x1a\x1e\x64oublecloud/v1/operation.proto\x1a\x1b\x64oublecloud/v1/paging.proto\"8\n\x13GetOperationRequest\x12!\n\x0coperation_id\x18\x01 \x01(\tR\x0boperationId\"f\n\x15ListOperationsRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\x12.\n\x06paging\x18\x02 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x8a\x01\n\x16ListOperationsResponse\x12\x39\n\noperations\x18\x01 \x03(\x0b\x32\x19.doublecloud.v1.OperationR\noperations\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2\xd1\x01\n\x10OperationService\x12P\n\x03Get\x12..doublecloud.clickhouse.v1.GetOperationRequest\x1a\x19.doublecloud.v1.Operation\x12k\n\x04List\x12\x30.doublecloud.clickhouse.v1.ListOperationsRequest\x1a\x31.doublecloud.clickhouse.v1.ListOperationsResponseBIZGgithub.com/doublecloud/go-genproto/doublecloud/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.clickhouse.v1.o
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z?github.com/doublecloud/api/doublecloud/clickhouse/v1;clickhouse'
+  DESCRIPTOR._serialized_options = b'ZGgithub.com/doublecloud/go-genproto/doublecloud/clickhouse/v1;clickhouse'
   _globals['_GETOPERATIONREQUEST']._serialized_start=141
   _globals['_GETOPERATIONREQUEST']._serialized_end=197
   _globals['_LISTOPERATIONSREQUEST']._serialized_start=199

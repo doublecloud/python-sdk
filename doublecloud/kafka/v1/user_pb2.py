@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x64oublecloud/kafka/v1/user.proto\x12\x14\x64oublecloud.kafka.v1\"}\n\x04User\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1d\n\ncluster_id\x18\x02 \x01(\tR\tclusterId\x12\x42\n\x0bpermissions\x18\x03 \x03(\x0b\x32 .doublecloud.kafka.v1.PermissionR\x0bpermissions\"~\n\x08UserSpec\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n\x08password\x18\x02 \x01(\tR\x08password\x12\x42\n\x0bpermissions\x18\x03 \x03(\x0b\x32 .doublecloud.kafka.v1.PermissionR\x0bpermissions\"\xde\x01\n\nPermission\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12?\n\x04role\x18\x02 \x01(\x0e\x32+.doublecloud.kafka.v1.Permission.AccessRoleR\x04role\"p\n\nAccessRole\x12\x17\n\x13\x41\x43\x43\x45SS_ROLE_INVALID\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x42\x37Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x64oublecloud/kafka/v1/user.proto\x12\x14\x64oublecloud.kafka.v1\"}\n\x04User\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1d\n\ncluster_id\x18\x02 \x01(\tR\tclusterId\x12\x42\n\x0bpermissions\x18\x03 \x03(\x0b\x32 .doublecloud.kafka.v1.PermissionR\x0bpermissions\"~\n\x08UserSpec\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n\x08password\x18\x02 \x01(\tR\x08password\x12\x42\n\x0bpermissions\x18\x03 \x03(\x0b\x32 .doublecloud.kafka.v1.PermissionR\x0bpermissions\"\xde\x01\n\nPermission\x12\x1d\n\ntopic_name\x18\x01 \x01(\tR\ttopicName\x12?\n\x04role\x18\x02 \x01(\x0e\x32+.doublecloud.kafka.v1.Permission.AccessRoleR\x04role\"p\n\nAccessRole\x12\x17\n\x13\x41\x43\x43\x45SS_ROLE_INVALID\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x42?Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,7 +21,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.kafka.v1.user_p
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafka'
+  DESCRIPTOR._serialized_options = b'Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafka'
   _globals['_USER']._serialized_start=57
   _globals['_USER']._serialized_end=182
   _globals['_USERSPEC']._serialized_start=184

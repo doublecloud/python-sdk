@@ -15,7 +15,7 @@ from doublecloud.v1 import paging_pb2 as doublecloud_dot_v1_dot_paging__pb2
 from doublecloud.kafka.v1 import version_pb2 as doublecloud_dot_kafka_dot_v1_dot_version__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*doublecloud/kafka/v1/version_service.proto\x12\x14\x64oublecloud.kafka.v1\x1a\x1b\x64oublecloud/v1/paging.proto\x1a\"doublecloud/kafka/v1/version.proto\"E\n\x13ListVersionsRequest\x12.\n\x06paging\x18\x01 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x88\x01\n\x14ListVersionsResponse\x12\x39\n\x08versions\x18\x01 \x03(\x0b\x32\x1d.doublecloud.kafka.v1.VersionR\x08versions\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2o\n\x0eVersionService\x12]\n\x04List\x12).doublecloud.kafka.v1.ListVersionsRequest\x1a*.doublecloud.kafka.v1.ListVersionsResponseB7Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*doublecloud/kafka/v1/version_service.proto\x12\x14\x64oublecloud.kafka.v1\x1a\x1b\x64oublecloud/v1/paging.proto\x1a\"doublecloud/kafka/v1/version.proto\"E\n\x13ListVersionsRequest\x12.\n\x06paging\x18\x01 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x88\x01\n\x14ListVersionsResponse\x12\x39\n\x08versions\x18\x01 \x03(\x0b\x32\x1d.doublecloud.kafka.v1.VersionR\x08versions\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2o\n\x0eVersionService\x12]\n\x04List\x12).doublecloud.kafka.v1.ListVersionsRequest\x1a*.doublecloud.kafka.v1.ListVersionsResponseB?Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.kafka.v1.versio
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z5github.com/doublecloud/api/doublecloud/kafka/v1;kafka'
+  DESCRIPTOR._serialized_options = b'Z=github.com/doublecloud/go-genproto/doublecloud/kafka/v1;kafka'
   _globals['_LISTVERSIONSREQUEST']._serialized_start=133
   _globals['_LISTVERSIONSREQUEST']._serialized_end=202
   _globals['_LISTVERSIONSRESPONSE']._serialized_start=205

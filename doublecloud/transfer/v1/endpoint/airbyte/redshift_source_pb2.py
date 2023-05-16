@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>doublecloud/transfer/v1/endpoint/airbyte/redshift_source.proto\x12(doublecloud.transfer.v1.endpoint.airbyte\"\xa6\x01\n\x0eRedshiftSource\x12\x12\n\x04host\x18\x01 \x01(\tR\x04host\x12\x12\n\x04port\x18\x02 \x01(\x03R\x04port\x12\x1a\n\x08\x64\x61tabase\x18\x03 \x01(\tR\x08\x64\x61tabase\x12\x18\n\x07schemas\x18\x04 \x03(\tR\x07schemas\x12\x1a\n\x08username\x18\x05 \x01(\tR\x08username\x12\x1a\n\x08password\x18\x06 \x01(\tR\x08passwordBVZTgithub.com/doublecloud/api/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyteb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>doublecloud/transfer/v1/endpoint/airbyte/redshift_source.proto\x12(doublecloud.transfer.v1.endpoint.airbyte\"\xa6\x01\n\x0eRedshiftSource\x12\x12\n\x04host\x18\x01 \x01(\tR\x04host\x12\x12\n\x04port\x18\x02 \x01(\x03R\x04port\x12\x1a\n\x08\x64\x61tabase\x18\x03 \x01(\tR\x08\x64\x61tabase\x12\x18\n\x07schemas\x18\x04 \x03(\tR\x07schemas\x12\x1a\n\x08username\x18\x05 \x01(\tR\x08username\x12\x1a\n\x08password\x18\x06 \x01(\tR\x08passwordB^Z\\github.com/doublecloud/go-genproto/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyteb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,7 +21,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.transfer.v1.end
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZTgithub.com/doublecloud/api/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyte'
+  DESCRIPTOR._serialized_options = b'Z\\github.com/doublecloud/go-genproto/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyte'
   _globals['_REDSHIFTSOURCE']._serialized_start=109
   _globals['_REDSHIFTSOURCE']._serialized_end=275
 # @@protoc_insertion_point(module_scope)

@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x64oublecloud/v1/paging.proto\x12\x0e\x64oublecloud.v1\"D\n\x06Paging\x12\x1b\n\tpage_size\x18\x01 \x01(\x03R\x08pageSize\x12\x1d\n\npage_token\x18\x02 \x01(\tR\tpageToken\" \n\x08NextPage\x12\x14\n\x05token\x18\x01 \x01(\tR\x05tokenB7Z5github.com/doublecloud/api/doublecloud/v1;doublecloudb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x64oublecloud/v1/paging.proto\x12\x0e\x64oublecloud.v1\"D\n\x06Paging\x12\x1b\n\tpage_size\x18\x01 \x01(\x03R\x08pageSize\x12\x1d\n\npage_token\x18\x02 \x01(\tR\tpageToken\" \n\x08NextPage\x12\x14\n\x05token\x18\x01 \x01(\tR\x05tokenB?Z=github.com/doublecloud/go-genproto/doublecloud/v1;doublecloudb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,7 +21,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.v1.paging_pb2',
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z5github.com/doublecloud/api/doublecloud/v1;doublecloud'
+  DESCRIPTOR._serialized_options = b'Z=github.com/doublecloud/go-genproto/doublecloud/v1;doublecloud'
   _globals['_PAGING']._serialized_start=47
   _globals['_PAGING']._serialized_end=115
   _globals['_NEXTPAGE']._serialized_start=117

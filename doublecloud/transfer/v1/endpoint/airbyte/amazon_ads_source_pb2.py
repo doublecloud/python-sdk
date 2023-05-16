@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n@doublecloud/transfer/v1/endpoint/airbyte/amazon_ads_source.proto\x12(doublecloud.transfer.v1.endpoint.airbyte\"\xe1\x01\n\x0f\x41mazonAdsSource\x12\x1b\n\tclient_id\x18\x01 \x01(\tR\x08\x63lientId\x12#\n\rclient_secret\x18\x02 \x01(\tR\x0c\x63lientSecret\x12\x14\n\x05scope\x18\x03 \x01(\tR\x05scope\x12#\n\rrefresh_token\x18\x04 \x01(\tR\x0crefreshToken\x12\x1d\n\nstart_date\x18\x05 \x01(\tR\tstartDate\x12\x16\n\x06region\x18\x06 \x01(\tR\x06region\x12\x1a\n\x08profiles\x18\x07 \x03(\x01R\x08profilesBVZTgithub.com/doublecloud/api/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyteb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n@doublecloud/transfer/v1/endpoint/airbyte/amazon_ads_source.proto\x12(doublecloud.transfer.v1.endpoint.airbyte\"\xe1\x01\n\x0f\x41mazonAdsSource\x12\x1b\n\tclient_id\x18\x01 \x01(\tR\x08\x63lientId\x12#\n\rclient_secret\x18\x02 \x01(\tR\x0c\x63lientSecret\x12\x14\n\x05scope\x18\x03 \x01(\tR\x05scope\x12#\n\rrefresh_token\x18\x04 \x01(\tR\x0crefreshToken\x12\x1d\n\nstart_date\x18\x05 \x01(\tR\tstartDate\x12\x16\n\x06region\x18\x06 \x01(\tR\x06region\x12\x1a\n\x08profiles\x18\x07 \x03(\x01R\x08profilesB^Z\\github.com/doublecloud/go-genproto/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyteb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,7 +21,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.transfer.v1.end
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZTgithub.com/doublecloud/api/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyte'
+  DESCRIPTOR._serialized_options = b'Z\\github.com/doublecloud/go-genproto/doublecloud/transfer/v1/endpoint/airbyte;endpoint_airbyte'
   _globals['_AMAZONADSSOURCE']._serialized_start=111
   _globals['_AMAZONADSSOURCE']._serialized_end=336
 # @@protoc_insertion_point(module_scope)

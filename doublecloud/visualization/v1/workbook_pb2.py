@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+doublecloud/visualization/v1/workbook.proto\x12\x1c\x64oublecloud.visualization.v1\x1a\x1cgoogle/protobuf/struct.proto\"%\n\x0bPlainSecret\x12\x16\n\x06secret\x18\x01 \x01(\tR\x06secret\"b\n\x06Secret\x12N\n\x0cplain_secret\x18\x01 \x01(\x0b\x32).doublecloud.visualization.v1.PlainSecretH\x00R\x0bplainSecretB\x08\n\x06secret\":\n\x08Workbook\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfig\"9\n\x07\x44\x61taset\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfig\"<\n\nConnection\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfigBGZEgithub.com/doublecloud/api/doublecloud/visualization/v1;visualizationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+doublecloud/visualization/v1/workbook.proto\x12\x1c\x64oublecloud.visualization.v1\x1a\x1cgoogle/protobuf/struct.proto\"%\n\x0bPlainSecret\x12\x16\n\x06secret\x18\x01 \x01(\tR\x06secret\"b\n\x06Secret\x12N\n\x0cplain_secret\x18\x01 \x01(\x0b\x32).doublecloud.visualization.v1.PlainSecretH\x00R\x0bplainSecretB\x08\n\x06secret\":\n\x08Workbook\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfig\"9\n\x07\x44\x61taset\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfig\"<\n\nConnection\x12.\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x16.google.protobuf.ValueR\x06\x63onfigBOZMgithub.com/doublecloud/go-genproto/doublecloud/visualization/v1;visualizationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,7 +22,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.visualization.v
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZEgithub.com/doublecloud/api/doublecloud/visualization/v1;visualization'
+  DESCRIPTOR._serialized_options = b'ZMgithub.com/doublecloud/go-genproto/doublecloud/visualization/v1;visualization'
   _globals['_PLAINSECRET']._serialized_start=107
   _globals['_PLAINSECRET']._serialized_end=144
   _globals['_SECRET']._serialized_start=146

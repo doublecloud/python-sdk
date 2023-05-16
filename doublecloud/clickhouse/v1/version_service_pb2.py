@@ -15,7 +15,7 @@ from doublecloud.v1 import paging_pb2 as doublecloud_dot_v1_dot_paging__pb2
 from doublecloud.clickhouse.v1 import version_pb2 as doublecloud_dot_clickhouse_dot_v1_dot_version__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/doublecloud/clickhouse/v1/version_service.proto\x12\x19\x64oublecloud.clickhouse.v1\x1a\x1b\x64oublecloud/v1/paging.proto\x1a\'doublecloud/clickhouse/v1/version.proto\"E\n\x13ListVersionsRequest\x12.\n\x06paging\x18\x01 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x8d\x01\n\x14ListVersionsResponse\x12>\n\x08versions\x18\x01 \x03(\x0b\x32\".doublecloud.clickhouse.v1.VersionR\x08versions\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2y\n\x0eVersionService\x12g\n\x04List\x12..doublecloud.clickhouse.v1.ListVersionsRequest\x1a/.doublecloud.clickhouse.v1.ListVersionsResponseBAZ?github.com/doublecloud/api/doublecloud/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/doublecloud/clickhouse/v1/version_service.proto\x12\x19\x64oublecloud.clickhouse.v1\x1a\x1b\x64oublecloud/v1/paging.proto\x1a\'doublecloud/clickhouse/v1/version.proto\"E\n\x13ListVersionsRequest\x12.\n\x06paging\x18\x01 \x01(\x0b\x32\x16.doublecloud.v1.PagingR\x06paging\"\x8d\x01\n\x14ListVersionsResponse\x12>\n\x08versions\x18\x01 \x03(\x0b\x32\".doublecloud.clickhouse.v1.VersionR\x08versions\x12\x35\n\tnext_page\x18\x02 \x01(\x0b\x32\x18.doublecloud.v1.NextPageR\x08nextPage2y\n\x0eVersionService\x12g\n\x04List\x12..doublecloud.clickhouse.v1.ListVersionsRequest\x1a/.doublecloud.clickhouse.v1.ListVersionsResponseBIZGgithub.com/doublecloud/go-genproto/doublecloud/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.clickhouse.v1.v
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z?github.com/doublecloud/api/doublecloud/clickhouse/v1;clickhouse'
+  DESCRIPTOR._serialized_options = b'ZGgithub.com/doublecloud/go-genproto/doublecloud/clickhouse/v1;clickhouse'
   _globals['_LISTVERSIONSREQUEST']._serialized_start=148
   _globals['_LISTVERSIONSREQUEST']._serialized_end=217
   _globals['_LISTVERSIONSRESPONSE']._serialized_start=220
