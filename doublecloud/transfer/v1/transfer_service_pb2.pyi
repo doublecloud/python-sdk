@@ -93,3 +93,52 @@ class ActivateTransferRequest(_message.Message):
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
+
+class GetMetricsRequest(_message.Message):
+    __slots__ = ["transfer_id"]
+    TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
+    transfer_id: str
+    def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
+
+class TransferMetrics(_message.Message):
+    __slots__ = ["metrics"]
+    class Metric(_message.Message):
+        __slots__ = ["help", "type", "value"]
+        HELP_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        help: str
+        type: str
+        value: str
+        def __init__(self, help: _Optional[str] = ..., type: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    METRICS_FIELD_NUMBER: _ClassVar[int]
+    metrics: _containers.RepeatedCompositeFieldContainer[TransferMetrics.Metric]
+    def __init__(self, metrics: _Optional[_Iterable[_Union[TransferMetrics.Metric, _Mapping]]] = ...) -> None: ...
+
+class MetricExporterConnectionInfoRequest(_message.Message):
+    __slots__ = ["transfer_id"]
+    TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
+    transfer_id: str
+    def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
+
+class MetricExporterConnectionInfoMetadata(_message.Message):
+    __slots__ = ["connection_string", "user", "password"]
+    CONNECTION_STRING_FIELD_NUMBER: _ClassVar[int]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    connection_string: str
+    user: str
+    password: str
+    def __init__(self, connection_string: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+
+class DeleteExporterConnectionInfoRequest(_message.Message):
+    __slots__ = ["transfer_id"]
+    TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
+    transfer_id: str
+    def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
+
+class DeleteExporterConnectionInfoMetadata(_message.Message):
+    __slots__ = ["transfer_id"]
+    TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
+    transfer_id: str
+    def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...

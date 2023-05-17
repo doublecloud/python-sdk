@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Cluster(_message.Message):
-    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation"]
+    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation", "metrics_exporter_connection_info"]
     ID_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -29,6 +29,7 @@ class Cluster(_message.Message):
     CLICKHOUSE_CONFIG_FIELD_NUMBER: _ClassVar[int]
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     MAINTENANCE_OPERATION_FIELD_NUMBER: _ClassVar[int]
+    METRICS_EXPORTER_CONNECTION_INFO_FIELD_NUMBER: _ClassVar[int]
     id: str
     project_id: str
     cloud_type: str
@@ -47,7 +48,8 @@ class Cluster(_message.Message):
     clickhouse_config: _config_pb2.ClickhouseConfig
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     maintenance_operation: _maintenance_pb2.MaintenanceOperation
-    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., maintenance_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ...) -> None: ...
+    metrics_exporter_connection_info: MetricsExporterConnectionInfo
+    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., maintenance_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., metrics_exporter_connection_info: _Optional[_Union[MetricsExporterConnectionInfo, _Mapping]] = ...) -> None: ...
 
 class ClusterResources(_message.Message):
     __slots__ = ["clickhouse"]
@@ -109,6 +111,14 @@ class PrivateConnectionInfo(_message.Message):
     jdbc_uri: str
     odbc_uri: str
     def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
+
+class MetricsExporterConnectionInfo(_message.Message):
+    __slots__ = ["user", "password"]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    user: str
+    password: str
+    def __init__(self, user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class Host(_message.Message):
     __slots__ = ["name", "cluster_id", "shard_name", "private_name", "status"]

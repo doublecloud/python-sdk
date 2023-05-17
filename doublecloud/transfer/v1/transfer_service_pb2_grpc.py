@@ -51,6 +51,21 @@ class TransferServiceStub(object):
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ActivateTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
                 )
+        self.GetMetrics = channel.unary_unary(
+                '/doublecloud.transfer.v1.TransferService/GetMetrics',
+                request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetMetricsRequest.SerializeToString,
+                response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.TransferMetrics.FromString,
+                )
+        self.GetMetricExporterConnectionInfo = channel.unary_unary(
+                '/doublecloud.transfer.v1.TransferService/GetMetricExporterConnectionInfo',
+                request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoRequest.SerializeToString,
+                response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoMetadata.FromString,
+                )
+        self.DeleteMetricExporterConnectionInfo = channel.unary_unary(
+                '/doublecloud.transfer.v1.TransferService/DeleteMetricExporterConnectionInfo',
+                request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteExporterConnectionInfoRequest.SerializeToString,
+                response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class TransferServiceServicer(object):
@@ -98,6 +113,25 @@ class TransferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetMetrics(self, request, context):
+        """Allows scraping of metrics by a prometheus scraper
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMetricExporterConnectionInfo(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteMetricExporterConnectionInfo(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TransferServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -134,6 +168,21 @@ def add_TransferServiceServicer_to_server(servicer, server):
             'Activate': grpc.unary_unary_rpc_method_handler(
                     servicer.Activate,
                     request_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ActivateTransferRequest.FromString,
+                    response_serializer=doublecloud_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetMetrics': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMetrics,
+                    request_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetMetricsRequest.FromString,
+                    response_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.TransferMetrics.SerializeToString,
+            ),
+            'GetMetricExporterConnectionInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMetricExporterConnectionInfo,
+                    request_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoRequest.FromString,
+                    response_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoMetadata.SerializeToString,
+            ),
+            'DeleteMetricExporterConnectionInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteMetricExporterConnectionInfo,
+                    request_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteExporterConnectionInfoRequest.FromString,
                     response_serializer=doublecloud_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -261,6 +310,57 @@ class TransferService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Activate',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ActivateTransferRequest.SerializeToString,
+            doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMetrics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/GetMetrics',
+            doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetMetricsRequest.SerializeToString,
+            doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.TransferMetrics.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMetricExporterConnectionInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/GetMetricExporterConnectionInfo',
+            doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoRequest.SerializeToString,
+            doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoMetadata.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteMetricExporterConnectionInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/DeleteMetricExporterConnectionInfo',
+            doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteExporterConnectionInfoRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
