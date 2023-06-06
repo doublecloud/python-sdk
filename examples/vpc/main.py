@@ -3,32 +3,11 @@ import argparse
 import json
 import logging
 
+# pylint: disable=E0401
+from create import create_network
+from delete import delete_network
+
 import doublecloud
-from doublecloud.network.v1.network_service_pb2 import (
-    CreateNetworkRequest,
-    DeleteNetworkRequest,
-)
-from doublecloud.network.v1.network_service_pb2_grpc import NetworkServiceStub
-
-
-def create_network(sdk, project_id, region_id, name, ipv4_cidr_block):
-    network_service = sdk.client(NetworkServiceStub)
-    operation = network_service.Create(
-        CreateNetworkRequest(
-            project_id=project_id,
-            cloud_type="aws",
-            region_id=region_id,
-            name=name,
-            ipv4_cidr_block=ipv4_cidr_block,
-        )
-    )
-    logging.info("Creating initiated")
-    return operation
-
-
-def delete_network(sdk, network_id):
-    network_service = sdk.client(NetworkServiceStub)
-    return network_service.Delete(DeleteNetworkRequest(network_id=network_id))
 
 
 def main():
@@ -55,7 +34,7 @@ def main():
 
     finally:
         if network_id:
-            logging.info("Deleting network {network_id}")
+            logging.info(f"Deleting network {network_id}")
             operation = delete_network(sdk, network_id)
             sdk.wait_operation_and_get_result(
                 operation,
