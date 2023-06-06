@@ -3,84 +3,17 @@ import argparse
 import json
 import logging
 
+# pylint: disable=E0401
+from advise_dataset_fields import advise_dataset_fields
+from create import create_workbook
+from create_connection import create_workbook_connection
+from delete import delete_workbook
+from delete_connection import delete_connection
 from google.protobuf.json_format import MessageToDict
-from google.protobuf.wrappers_pb2 import BoolValue
+from modify import modify_workbook
 
 import doublecloud
-from doublecloud.v1.operation_pb2 import Operation
-from doublecloud.visualization.v1.workbook_pb2 import (
-    Connection,
-    Dataset,
-    PlainSecret,
-    Secret,
-    Workbook,
-)
-from doublecloud.visualization.v1.workbook_service_pb2 import (
-    AdviseDatasetFieldsRequest,
-    CreateWorkbookConnectionRequest,
-    CreateWorkbookRequest,
-    DeleteWorkbookConnectionRequest,
-    DeleteWorkbookRequest,
-    UpdateWorkbookRequest,
-)
 from doublecloud.visualization.v1.workbook_service_pb2_grpc import WorkbookServiceStub
-
-
-def create_workbook(svc, project_id: str, name: str) -> Operation:
-    """
-    Function creates an empty workbook
-    We will fill it with other functions
-    """
-    return svc.Create(CreateWorkbookRequest(project_id=project_id, workbook_title=name))
-
-
-def create_workbook_connection(svc, workbook_id: str, connection_name: str) -> Operation:
-    """
-    A special sample database, that available from all projects
-    You can create this connection by your own and
-    try all of Double.Cloud Visualisation features
-
-    Please, do not work with secrets like that for your environments.
-    It's just an example. Ask your system administrator for your secrets provider.
-    """
-    connection = Connection()
-    connection.config.struct_value.update(
-        {
-            "kind": "clickhouse",
-            "cache_ttl_sec": 600,
-            "host": "rw.chcpbbeap8lpuv24hhh4.at.double.cloud",
-            "port": 8443,
-            "username": "examples_user",
-            "secure": True,
-            "raw_sql_level": "off",
-        }
-    )
-
-    operation = svc.CreateConnection(
-        CreateWorkbookConnectionRequest(
-            workbook_id=workbook_id,
-            connection_name=connection_name,
-            connection=connection,
-            secret=Secret(plain_secret=PlainSecret(secret="yahj@ah5foth")),
-        )
-    )
-    return operation
-
-
-def modify_workbook(svc, workbook_id: str, workbook_config: dict) -> Operation:
-    """
-    Function rewrites rewrites workbook with declarative description,
-    which usually given from `describe_workbook` method.
-    """
-    wb = Workbook()
-    wb.config.struct_value.update(workbook_config)
-    return svc.Update(
-        UpdateWorkbookRequest(
-            workbook_id=workbook_id,
-            workbook=wb,
-            force_rewrite=BoolValue(value=True),
-        )
-    )
 
 
 def get_workbook_config_with_single_dataset(
@@ -328,43 +261,6 @@ def get_single_tab_dashboard(dashboard_name: str, elements: list[dict]) -> list:
             "name": dashboard_name,
         }
     ]
-
-
-def advise_dataset_fields(svc, workbook_id: str, sources: list, connection_name: str):
-    """
-    Function helps to define automatically all fields, their names/IDs and types
-    based on underlying datasource (table, view, SQL query, etc.).
-    ID of fields will be equals to column names.
-    You can use define them manually or use this handler to simplifying for popular cases
-    """
-    dataset = Dataset()
-    dataset.config.struct_value.update(
-        {
-            "fields": [],
-            "avatars": None,
-            "sources": sources,
-        }
-    )
-
-    return svc.AdviseDatasetFields(
-        AdviseDatasetFieldsRequest(
-            workbook_id=workbook_id,
-            connection_name=connection_name,
-            partial_dataset=dataset,
-        )
-    )
-
-
-def delete_workbook(svc, workbook_id):
-    operation = svc.Delete(DeleteWorkbookRequest(workbook_id=workbook_id))
-    return operation
-
-
-def delete_connection(svc, workbook_id, connection_name):
-    operation = svc.DeleteConnection(
-        DeleteWorkbookConnectionRequest(workbook_id=workbook_id, connection_name=connection_name)
-    )
-    return operation
 
 
 def main():  # pylint: disable=too-many-locals,too-many-statements

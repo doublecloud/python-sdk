@@ -3,91 +3,16 @@ import argparse
 import json
 import logging
 
+# pylint: disable=E0401
+from activate import activate_transfer
+from create import create_transfer
+from deactivate import deactivate_transfer
+from delete import delete_transfer
+from endpoints import create_ch_dst_endpoint, create_s3_src_endpoint, delete_endpoint
+
 import doublecloud
-from doublecloud.transfer.v1.endpoint.airbyte.s3_source_pb2 import S3Source
-from doublecloud.transfer.v1.endpoint.clickhouse_pb2 import (
-    ClickhouseConnection,
-    ClickhouseConnectionOptions,
-    ClickhouseTarget,
-)
-from doublecloud.transfer.v1.endpoint.common_pb2 import Secret
-from doublecloud.transfer.v1.endpoint_pb2 import EndpointSettings
-from doublecloud.transfer.v1.endpoint_service_pb2 import (
-    CreateEndpointRequest,
-    DeleteEndpointRequest,
-)
 from doublecloud.transfer.v1.endpoint_service_pb2_grpc import EndpointServiceStub
-from doublecloud.transfer.v1.transfer_pb2 import TransferType
-from doublecloud.transfer.v1.transfer_service_pb2 import (
-    ActivateTransferRequest,
-    CreateTransferRequest,
-    DeactivateTransferRequest,
-    DeleteTransferRequest,
-)
 from doublecloud.transfer.v1.transfer_service_pb2_grpc import TransferServiceStub
-
-
-def create_s3_src_endpoint(svc, project_id: str, name: str):
-    return svc.Create(
-        CreateEndpointRequest(
-            project_id=project_id,
-            name=f"s3-src-{name}",
-            settings=EndpointSettings(
-                s3_source=S3Source(
-                    dataset="test",
-                    path_pattern="test",
-                    schema="test",
-                    format=S3Source.Format(csv=S3Source.Csv()),
-                    provider=S3Source.Provider(bucket="test"),
-                )
-            ),
-        )
-    )
-
-
-def delete_endpoint(svc, endpoint_id: str):
-    return svc.Delete(DeleteEndpointRequest(endpoint_id=endpoint_id))
-
-
-def create_ch_dst_endpoint(svc, project_id: str, name: str):
-    return svc.Create(
-        CreateEndpointRequest(
-            project_id=project_id,
-            name=f"ch-dst-{name}",
-            settings=EndpointSettings(
-                clickhouse_target=ClickhouseTarget(
-                    connection=ClickhouseConnection(
-                        connection_options=ClickhouseConnectionOptions(
-                            mdb_cluster_id="xoxo",
-                            database="default",
-                            user="user",
-                            password=Secret(raw="98s*%^P!3Bw38"),
-                        )
-                    )
-                )
-            ),
-        )
-    )
-
-
-def create_transfer(svc, project_id: str, name: str, src_id: str, dst_id: str):
-    return svc.Create(
-        CreateTransferRequest(
-            source_id=src_id, target_id=dst_id, name=name, project_id=project_id, type=TransferType.SNAPSHOT_ONLY
-        )
-    )
-
-
-def activate_transfer(svc, transfer_id: str):
-    return svc.Activate(ActivateTransferRequest(transfer_id=transfer_id))
-
-
-def deactivate_transfer(svc, transfer_id: str):
-    return svc.Deactivate(DeactivateTransferRequest(transfer_id=transfer_id))
-
-
-def delete_transfer(svc, transfer_id: str):
-    return svc.Delete(DeleteTransferRequest(transfer_id=transfer_id))
 
 
 def main():
