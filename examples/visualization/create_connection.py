@@ -7,11 +7,12 @@ from doublecloud.visualization.v1.workbook_service_pb2 import (
 
 def create_workbook_connection(svc, workbook_id: str, connection_name: str) -> Operation:
     """
-    A special sample database, that available from all projects
-    You can create this connection by your own and
-    try all of Double.Cloud Visualisation features
+    A special sample database available from all projects.
+    You can easily create this connection and try all the 
+    DoubleCloud Visualisation features.
 
-    Please, do not work with secrets like that for your environments.
+    Please DO NOT work with secrets this way in your production environments.
+
     It's just an example. Ask your system administrator for your secrets provider.
     """
     connection = Connection()

@@ -48,7 +48,7 @@ def parse_args():
     auth.add_argument(
         "--sa-json-path",
         help="Path to the service account key JSON file.\nThis file can be created using UI:\n"
-        "Members -> Service Accounts -> Create and then create authorized keys",
+        "Members -> Service Accounts -> Create and then create API keys",
     )
     auth.add_argument("--token", help="IAM token")
     parser.add_argument("--project-id", help="Your project id", required=True)

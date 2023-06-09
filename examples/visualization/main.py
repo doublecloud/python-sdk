@@ -25,8 +25,8 @@ def get_workbook_config_with_single_dataset(
     dashboards: list = None,
 ) -> dict:
     """
-    Function returns a declarative structure of a sample workbook with single dataset.
-    Structure used for changing workbook config through API
+    Function returns a declarative structure of a sample workbook with a single dataset.
+    Use this structure to change workbook config through API.
     """
     return {
         "datasets": [
@@ -46,10 +46,12 @@ def get_workbook_config_with_single_dataset(
 
 def get_clickhouse_table_dataset_sources(*, connection_name: str, db_name: str, table_name: str) -> list:
     """
-    Function returns a dataset source as DB table or view.
-    You can use another datasource types:
+    Function returns a dataset source as a DB table or view.
+
+    You can use other data source types:
     https://double.cloud/docs/en/public-api/api-reference/visualization/configs/DataSourceSpec
-    And another connection types:
+    
+    And other connection types:
     https://double.cloud/docs/en/public-api/api-reference/visualization/configs/Connection
     """
     return [
@@ -64,22 +66,22 @@ def get_clickhouse_table_dataset_sources(*, connection_name: str, db_name: str, 
 
 def a_column_chart(name: str, *, dataset_name: str) -> dict:
     """
-    This is an example of column chart
+    This is an example of a column chart
     See https://double.cloud/docs/en/data-visualization/quickstart#create-a-column-chart
     """
     return {
         "chart": {
             "ad_hoc_fields": [
                 {
-                    # Here we adding field with applied aggregation to chart
-                    # This is equal to adding field to dataset. But only when used with this chart.
+                    # Here we're adding a field with applied aggregation to chart
+                    # This is equal to adding a field to a dataset, but only when used with this chart.
                     "field": {
                         "description": None,
                         "id": "time_spent_sum",
                         "cast": "float",
-                        # Example of calculated field
+                        # Example of a calculated field
                         # https://double.cloud/docs/en/data-visualization/concepts/calculated-fields
-                        # Note that in API fields should be referenced by ID, not title
+                        # Note that in API, fields should be referenced by ID, not title
                         "calc_spec": {
                             "kind": "id_formula",
                             "formula": "SUM([Time_Spent])",
@@ -124,8 +126,8 @@ def a_donut_chart(name: str, *, dataset_name: str) -> dict:
     return {
         "chart": {
             "ad_hoc_fields": [
-                # Here we adding field with applied aggregation to chart
-                # This is equal to adding field to dataset. But only when used with this chart.
+                # Here we're adding a field with applied aggregation to chart
+                # This is equal to adding a field to a dataset, but only when used with this chart.
                 {
                     "field": {
                         "description": None,
@@ -275,7 +277,7 @@ def main():  # pylint: disable=too-many-locals,too-many-statements
     workbook_id = None
     connection_created = False
 
-    # Entries references each other by it's names
+    # Entries reference each other by name
     # So we define it here
     connection_name = "conn_ch_1"
     dataset_name = "ds_hits_sample"
@@ -311,7 +313,7 @@ def main():  # pylint: disable=too-many-locals,too-many-statements
         operation = modify_workbook(svc, workbook_id, workbook_spec)
         sdk.wait_operation_and_get_result(operation)
 
-        # Get advised fields for our datasource, instead of manually write all of them
+        # Get advised fields for our datasource, instead of manually writing all of them
         advised_ds_config = MessageToDict(
             advise_dataset_fields(svc, workbook_id, sources, connection_name).dataset.config
         )
@@ -424,7 +426,7 @@ def parse_args():
     auth.add_argument(
         "--sa-json-path",
         help="Path to the service account key JSON file.\nThis file can be created using UI:\n"
-        "Members -> Service Accounts -> Create and then create authorized keys",
+        "Members -> Service Accounts -> Create and then create API keys",
     )
     auth.add_argument("--token", help="IAM token")
     parser.add_argument("--project-id", help="Your project id", required=True)
