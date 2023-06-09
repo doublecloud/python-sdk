@@ -7,8 +7,8 @@ from doublecloud.visualization.v1.workbook_service_pb2 import UpdateWorkbookRequ
 
 def modify_workbook(svc, workbook_id: str, workbook_config: dict) -> Operation:
     """
-    Function rewrites rewrites workbook with declarative description,
-    which usually given from `describe_workbook` method.
+    Function rewrites workbook with declarative description,
+    which is usually given from `describe_workbook` method.
     """
     wb = Workbook()
     wb.config.struct_value.update(workbook_config)

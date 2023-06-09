@@ -25,8 +25,8 @@ def get_workbook_config_with_single_dataset(
     dashboards: list = None,
 ) -> dict:
     """
-    Function returns a declarative structure of a sample workbook with single dataset.
-    Structure used for changing workbook config through API
+    Function returns a declarative structure of a sample workbook with a single dataset.
+    Structure used for changing workbook config through API.
     """
     return {
         "datasets": [
@@ -64,7 +64,7 @@ def get_clickhouse_table_dataset_sources(*, connection_name: str, db_name: str, 
 
 def a_column_chart(name: str, *, dataset_name: str) -> dict:
     """
-    This is an example of column chart
+    This is an example of a column chart
     See https://double.cloud/docs/en/data-visualization/quickstart#create-a-column-chart
     """
     return {
