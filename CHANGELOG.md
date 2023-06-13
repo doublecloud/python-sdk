@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.0 (2023-06-13)
+
+### Feature
+
+* Docs: rearrange examples to dedicated files ([`9adbd85`](https://github.com/doublecloud/python-sdk/commit/9adbd856b37f0ae2f5595fab3b9de43475cb95ae))
+* Further wording improvements ([`6b0ff0b`](https://github.com/doublecloud/python-sdk/commit/6b0ff0b34b321327965d0c48dc76acaf3593cf60))
+* Further wording improvements ([`4f3d68b`](https://github.com/doublecloud/python-sdk/commit/4f3d68beb03757b0b575d51e6713301b0553476c))
+* Commit fixes ([`3144604`](https://github.com/doublecloud/python-sdk/commit/31446043431302fceaa44ab62263ac0eaa1f356a))
+* Docs: rearrange examples to dedicated files ([`1f46be3`](https://github.com/doublecloud/python-sdk/commit/1f46be3177c934248187c6b10510cbca0faee48f))
+* Build: regenerate proto ([`31b47db`](https://github.com/doublecloud/python-sdk/commit/31b47db17f326a670e31ee6e1878f1be722fa77b))
+* Build: regenerate proto ([`18a792b`](https://github.com/doublecloud/python-sdk/commit/18a792b6294acf3fd0e280cc0104463ceb1297ee))
+* Build: regenerate proto ([`931ef0a`](https://github.com/doublecloud/python-sdk/commit/931ef0a750dc7edc5e34b8aad0b111d2c05c56d8))
+* Build: regenerate proto ([`8a60693`](https://github.com/doublecloud/python-sdk/commit/8a606935ab2498b9774702637e074e45e18c9400))
+* Build: regenerate proto ([`ed1a49e`](https://github.com/doublecloud/python-sdk/commit/ed1a49e1d25fd84da7307f5fa915767d03dbedeb))
+* Docs: add activate example to data transfer ([`8981dfb`](https://github.com/doublecloud/python-sdk/commit/8981dfb47aac4a34e8882830c7d99d54cb585a61))
+
 ## v0.5.0 (2023-05-02)
 ### Feature
 * Build: regenerate proto ([`e9a494b`](https://github.com/doublecloud/python-sdk/commit/e9a494b8b59865d9444f40626fa85955d55bde9f))
