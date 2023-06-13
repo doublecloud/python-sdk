@@ -50,7 +50,7 @@ def get_clickhouse_table_dataset_sources(*, connection_name: str, db_name: str, 
 
     You can use other data source types:
     https://double.cloud/docs/en/public-api/api-reference/visualization/configs/DataSourceSpec
-    
+
     And other connection types:
     https://double.cloud/docs/en/public-api/api-reference/visualization/configs/Connection
     """

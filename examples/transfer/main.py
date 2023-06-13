@@ -6,9 +6,11 @@ import logging
 # pylint: disable=E0401
 from activate import activate_transfer
 from create import create_transfer
+from create_clickhouse_target_endpoint import create_ch_dst_endpoint
+from create_s3_source_endpoint import create_s3_src_endpoint
 from deactivate import deactivate_transfer
 from delete import delete_transfer
-from endpoints import create_ch_dst_endpoint, create_s3_src_endpoint, delete_endpoint
+from delete_endpoint import delete_endpoint
 
 import doublecloud
 from doublecloud.transfer.v1.endpoint_service_pb2_grpc import EndpointServiceStub
