@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Network(_message.Message):
-    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "ipv4_cidr_block", "ipv6_cidr_block", "status", "status_reason", "aws", "is_external"]
+    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "ipv4_cidr_block", "ipv6_cidr_block", "status", "status_reason", "aws", "gcp", "is_external"]
     class NetworkStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         NETWORK_STATUS_INVALID: _ClassVar[Network.NetworkStatus]
@@ -34,6 +34,7 @@ class Network(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     STATUS_REASON_FIELD_NUMBER: _ClassVar[int]
     AWS_FIELD_NUMBER: _ClassVar[int]
+    GCP_FIELD_NUMBER: _ClassVar[int]
     IS_EXTERNAL_FIELD_NUMBER: _ClassVar[int]
     id: str
     project_id: str
@@ -47,8 +48,9 @@ class Network(_message.Message):
     status: Network.NetworkStatus
     status_reason: str
     aws: AwsExternalResources
+    gcp: GcpExternalResources
     is_external: bool
-    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., status: _Optional[_Union[Network.NetworkStatus, str]] = ..., status_reason: _Optional[str] = ..., aws: _Optional[_Union[AwsExternalResources, _Mapping]] = ..., is_external: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., status: _Optional[_Union[Network.NetworkStatus, str]] = ..., status_reason: _Optional[str] = ..., aws: _Optional[_Union[AwsExternalResources, _Mapping]] = ..., gcp: _Optional[_Union[GcpExternalResources, _Mapping]] = ..., is_external: bool = ...) -> None: ...
 
 class AwsExternalResources(_message.Message):
     __slots__ = ["vpc_id", "subnets", "security_group_id", "account_id", "iam_role_arn", "stack_id", "cf_template_version"]
@@ -74,3 +76,9 @@ class AwsExternalResources(_message.Message):
     stack_id: _wrappers_pb2.StringValue
     cf_template_version: _wrappers_pb2.StringValue
     def __init__(self, vpc_id: _Optional[str] = ..., subnets: _Optional[_Iterable[_Union[AwsExternalResources.Subnet, _Mapping]]] = ..., security_group_id: _Optional[str] = ..., account_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., iam_role_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., stack_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., cf_template_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
+
+class GcpExternalResources(_message.Message):
+    __slots__ = ["subnetwork_link"]
+    SUBNETWORK_LINK_FIELD_NUMBER: _ClassVar[int]
+    subnetwork_link: str
+    def __init__(self, subnetwork_link: _Optional[str] = ...) -> None: ...

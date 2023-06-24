@@ -1,5 +1,6 @@
 from doublecloud.transfer.v1.endpoint import common_pb2 as _common_pb2
 from doublecloud.transfer.v1.endpoint import parsers_pb2 as _parsers_pb2
+from doublecloud.transfer.v1.endpoint import serializers_pb2 as _serializers_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -64,14 +65,16 @@ class KafkaSource(_message.Message):
     def __init__(self, connection: _Optional[_Union[KafkaConnectionOptions, _Mapping]] = ..., auth: _Optional[_Union[KafkaAuth, _Mapping]] = ..., topic_name: _Optional[str] = ..., parser: _Optional[_Union[_parsers_pb2.Parser, _Mapping]] = ...) -> None: ...
 
 class KafkaTarget(_message.Message):
-    __slots__ = ["connection", "auth", "topic_settings"]
+    __slots__ = ["connection", "auth", "topic_settings", "serializer"]
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     AUTH_FIELD_NUMBER: _ClassVar[int]
     TOPIC_SETTINGS_FIELD_NUMBER: _ClassVar[int]
+    SERIALIZER_FIELD_NUMBER: _ClassVar[int]
     connection: KafkaConnectionOptions
     auth: KafkaAuth
     topic_settings: KafkaTargetTopicSettings
-    def __init__(self, connection: _Optional[_Union[KafkaConnectionOptions, _Mapping]] = ..., auth: _Optional[_Union[KafkaAuth, _Mapping]] = ..., topic_settings: _Optional[_Union[KafkaTargetTopicSettings, _Mapping]] = ...) -> None: ...
+    serializer: _serializers_pb2.Serializer
+    def __init__(self, connection: _Optional[_Union[KafkaConnectionOptions, _Mapping]] = ..., auth: _Optional[_Union[KafkaAuth, _Mapping]] = ..., topic_settings: _Optional[_Union[KafkaTargetTopicSettings, _Mapping]] = ..., serializer: _Optional[_Union[_serializers_pb2.Serializer, _Mapping]] = ...) -> None: ...
 
 class KafkaTargetTopicSettings(_message.Message):
     __slots__ = ["topic", "topic_prefix"]

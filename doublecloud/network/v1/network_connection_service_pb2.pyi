@@ -31,14 +31,16 @@ class ListNetworkConnectionsResponse(_message.Message):
     def __init__(self, network_connections: _Optional[_Iterable[_Union[_network_connection_pb2.NetworkConnection, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateNetworkConnectionRequest(_message.Message):
-    __slots__ = ["network_id", "aws", "description"]
+    __slots__ = ["network_id", "aws", "google", "description"]
     NETWORK_ID_FIELD_NUMBER: _ClassVar[int]
     AWS_FIELD_NUMBER: _ClassVar[int]
+    GOOGLE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     network_id: str
     aws: CreateAWSNetworkConnectionRequest
+    google: CreateGoogleNetworkConnectionRequest
     description: str
-    def __init__(self, network_id: _Optional[str] = ..., aws: _Optional[_Union[CreateAWSNetworkConnectionRequest, _Mapping]] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, network_id: _Optional[str] = ..., aws: _Optional[_Union[CreateAWSNetworkConnectionRequest, _Mapping]] = ..., google: _Optional[_Union[CreateGoogleNetworkConnectionRequest, _Mapping]] = ..., description: _Optional[str] = ...) -> None: ...
 
 class CreateAWSNetworkConnectionRequest(_message.Message):
     __slots__ = ["peering"]
@@ -59,6 +61,14 @@ class CreateAWSNetworkConnectionPeeringRequest(_message.Message):
     ipv4_cidr_block: str
     ipv6_cidr_block: str
     def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[str] = ..., region_id: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ...) -> None: ...
+
+class CreateGoogleNetworkConnectionRequest(_message.Message):
+    __slots__ = ["name", "peer_network_url"]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PEER_NETWORK_URL_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    peer_network_url: str
+    def __init__(self, name: _Optional[str] = ..., peer_network_url: _Optional[str] = ...) -> None: ...
 
 class DeleteNetworkConnectionRequest(_message.Message):
     __slots__ = ["network_connection_id"]

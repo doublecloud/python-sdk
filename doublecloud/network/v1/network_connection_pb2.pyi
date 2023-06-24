@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class NetworkConnection(_message.Message):
-    __slots__ = ["id", "network_id", "aws", "create_time", "description", "status", "status_reason"]
+    __slots__ = ["id", "network_id", "aws", "google", "create_time", "description", "status", "status_reason"]
     class NetworkConnectionStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         NETWORK_CONNECTION_STATUS_INVALID: _ClassVar[NetworkConnection.NetworkConnectionStatus]
@@ -25,6 +25,7 @@ class NetworkConnection(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     NETWORK_ID_FIELD_NUMBER: _ClassVar[int]
     AWS_FIELD_NUMBER: _ClassVar[int]
+    GOOGLE_FIELD_NUMBER: _ClassVar[int]
     CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -32,11 +33,12 @@ class NetworkConnection(_message.Message):
     id: str
     network_id: str
     aws: AWSNetworkConnectionInfo
+    google: GoogleNetworkConnectionInfo
     create_time: _timestamp_pb2.Timestamp
     description: str
     status: NetworkConnection.NetworkConnectionStatus
     status_reason: str
-    def __init__(self, id: _Optional[str] = ..., network_id: _Optional[str] = ..., aws: _Optional[_Union[AWSNetworkConnectionInfo, _Mapping]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., description: _Optional[str] = ..., status: _Optional[_Union[NetworkConnection.NetworkConnectionStatus, str]] = ..., status_reason: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., network_id: _Optional[str] = ..., aws: _Optional[_Union[AWSNetworkConnectionInfo, _Mapping]] = ..., google: _Optional[_Union[GoogleNetworkConnectionInfo, _Mapping]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., description: _Optional[str] = ..., status: _Optional[_Union[NetworkConnection.NetworkConnectionStatus, str]] = ..., status_reason: _Optional[str] = ...) -> None: ...
 
 class AWSNetworkConnectionInfo(_message.Message):
     __slots__ = ["peering"]
@@ -63,3 +65,13 @@ class AWSNetworkConnectionPeeringInfo(_message.Message):
     managed_ipv4_cidr_block: str
     managed_ipv6_cidr_block: str
     def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[str] = ..., region_id: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., peering_connection_id: _Optional[str] = ..., managed_ipv4_cidr_block: _Optional[str] = ..., managed_ipv6_cidr_block: _Optional[str] = ...) -> None: ...
+
+class GoogleNetworkConnectionInfo(_message.Message):
+    __slots__ = ["name", "peer_network_url", "managed_network_url"]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PEER_NETWORK_URL_FIELD_NUMBER: _ClassVar[int]
+    MANAGED_NETWORK_URL_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    peer_network_url: str
+    managed_network_url: str
+    def __init__(self, name: _Optional[str] = ..., peer_network_url: _Optional[str] = ..., managed_network_url: _Optional[str] = ...) -> None: ...

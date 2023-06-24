@@ -15,7 +15,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$doublecloud/network/v1/network.proto\x12\x16\x64oublecloud.network.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xb9\x05\n\x07Network\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1d\n\ncloud_type\x18\x03 \x01(\tR\tcloudType\x12\x1b\n\tregion_id\x18\x04 \x01(\tR\x08regionId\x12;\n\x0b\x63reate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\ncreateTime\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12&\n\x0fipv4_cidr_block\x18\x08 \x01(\tR\ripv4CidrBlock\x12&\n\x0fipv6_cidr_block\x18\t \x01(\tR\ripv6CidrBlock\x12\x45\n\x06status\x18\n \x01(\x0e\x32-.doublecloud.network.v1.Network.NetworkStatusR\x06status\x12#\n\rstatus_reason\x18\x0b \x01(\tR\x0cstatusReason\x12@\n\x03\x61ws\x18\x0c \x01(\x0b\x32,.doublecloud.network.v1.AwsExternalResourcesH\x00R\x03\x61ws\x12\x1f\n\x0bis_external\x18\r \x01(\x08R\nisExternal\"\x9a\x01\n\rNetworkStatus\x12\x1a\n\x16NETWORK_STATUS_INVALID\x10\x00\x12\x1b\n\x17NETWORK_STATUS_CREATING\x10\x01\x12\x19\n\x15NETWORK_STATUS_ACTIVE\x10\x02\x12\x1b\n\x17NETWORK_STATUS_DELETING\x10\x03\x12\x18\n\x14NETWORK_STATUS_ERROR\x10\x04\x42\x14\n\x12\x65xternal_resources\"\xdf\x03\n\x14\x41wsExternalResources\x12\x15\n\x06vpc_id\x18\x01 \x01(\tR\x05vpcId\x12M\n\x07subnets\x18\x02 \x03(\x0b\x32\x33.doublecloud.network.v1.AwsExternalResources.SubnetR\x07subnets\x12*\n\x11security_group_id\x18\x03 \x01(\tR\x0fsecurityGroupId\x12;\n\naccount_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\taccountId\x12>\n\x0ciam_role_arn\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\niamRoleArn\x12\x37\n\x08stack_id\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\x07stackId\x12L\n\x13\x63\x66_template_version\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\x11\x63\x66TemplateVersion\x1a\x31\n\x06Subnet\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07zone_id\x18\x02 \x01(\tR\x06zoneIdBCZAgithub.com/doublecloud/go-genproto/doublecloud/network/v1;networkb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$doublecloud/network/v1/network.proto\x12\x16\x64oublecloud.network.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xfb\x05\n\x07Network\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1d\n\ncloud_type\x18\x03 \x01(\tR\tcloudType\x12\x1b\n\tregion_id\x18\x04 \x01(\tR\x08regionId\x12;\n\x0b\x63reate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\ncreateTime\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12&\n\x0fipv4_cidr_block\x18\x08 \x01(\tR\ripv4CidrBlock\x12&\n\x0fipv6_cidr_block\x18\t \x01(\tR\ripv6CidrBlock\x12\x45\n\x06status\x18\n \x01(\x0e\x32-.doublecloud.network.v1.Network.NetworkStatusR\x06status\x12#\n\rstatus_reason\x18\x0b \x01(\tR\x0cstatusReason\x12@\n\x03\x61ws\x18\x0c \x01(\x0b\x32,.doublecloud.network.v1.AwsExternalResourcesH\x00R\x03\x61ws\x12@\n\x03gcp\x18\x0e \x01(\x0b\x32,.doublecloud.network.v1.GcpExternalResourcesH\x00R\x03gcp\x12\x1f\n\x0bis_external\x18\r \x01(\x08R\nisExternal\"\x9a\x01\n\rNetworkStatus\x12\x1a\n\x16NETWORK_STATUS_INVALID\x10\x00\x12\x1b\n\x17NETWORK_STATUS_CREATING\x10\x01\x12\x19\n\x15NETWORK_STATUS_ACTIVE\x10\x02\x12\x1b\n\x17NETWORK_STATUS_DELETING\x10\x03\x12\x18\n\x14NETWORK_STATUS_ERROR\x10\x04\x42\x14\n\x12\x65xternal_resources\"\xdf\x03\n\x14\x41wsExternalResources\x12\x15\n\x06vpc_id\x18\x01 \x01(\tR\x05vpcId\x12M\n\x07subnets\x18\x02 \x03(\x0b\x32\x33.doublecloud.network.v1.AwsExternalResources.SubnetR\x07subnets\x12*\n\x11security_group_id\x18\x03 \x01(\tR\x0fsecurityGroupId\x12;\n\naccount_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\taccountId\x12>\n\x0ciam_role_arn\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\niamRoleArn\x12\x37\n\x08stack_id\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\x07stackId\x12L\n\x13\x63\x66_template_version\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValueR\x11\x63\x66TemplateVersion\x1a\x31\n\x06Subnet\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07zone_id\x18\x02 \x01(\tR\x06zoneId\"?\n\x14GcpExternalResources\x12\'\n\x0fsubnetwork_link\x18\x01 \x01(\tR\x0esubnetworkLinkBCZAgithub.com/doublecloud/go-genproto/doublecloud/network/v1;networkb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,11 +25,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'ZAgithub.com/doublecloud/go-genproto/doublecloud/network/v1;network'
   _globals['_NETWORK']._serialized_start=130
-  _globals['_NETWORK']._serialized_end=827
-  _globals['_NETWORK_NETWORKSTATUS']._serialized_start=651
-  _globals['_NETWORK_NETWORKSTATUS']._serialized_end=805
-  _globals['_AWSEXTERNALRESOURCES']._serialized_start=830
-  _globals['_AWSEXTERNALRESOURCES']._serialized_end=1309
-  _globals['_AWSEXTERNALRESOURCES_SUBNET']._serialized_start=1260
-  _globals['_AWSEXTERNALRESOURCES_SUBNET']._serialized_end=1309
+  _globals['_NETWORK']._serialized_end=893
+  _globals['_NETWORK_NETWORKSTATUS']._serialized_start=717
+  _globals['_NETWORK_NETWORKSTATUS']._serialized_end=871
+  _globals['_AWSEXTERNALRESOURCES']._serialized_start=896
+  _globals['_AWSEXTERNALRESOURCES']._serialized_end=1375
+  _globals['_AWSEXTERNALRESOURCES_SUBNET']._serialized_start=1326
+  _globals['_AWSEXTERNALRESOURCES_SUBNET']._serialized_end=1375
+  _globals['_GCPEXTERNALRESOURCES']._serialized_start=1377
+  _globals['_GCPEXTERNALRESOURCES']._serialized_end=1440
 # @@protoc_insertion_point(module_scope)
