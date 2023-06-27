@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.7.0 (2023-06-27)
+
+### Feature
+
+* Build: regenerate proto ([`e78a467`](https://github.com/doublecloud/python-sdk/commit/e78a467e8ffe589813b748357b52d06007b16032))
+
 ## v0.6.0 (2023-06-13)
 
 ### Feature
