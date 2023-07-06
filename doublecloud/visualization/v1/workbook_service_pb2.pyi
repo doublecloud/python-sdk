@@ -14,10 +14,16 @@ class GetWorkbookRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ...) -> None: ...
 
 class GetWorkbookResponse(_message.Message):
-    __slots__ = ["workbook"]
+    __slots__ = ["workbook", "id", "title", "project_id"]
     WORKBOOK_FIELD_NUMBER: _ClassVar[int]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     workbook: _workbook_pb2.Workbook
-    def __init__(self, workbook: _Optional[_Union[_workbook_pb2.Workbook, _Mapping]] = ...) -> None: ...
+    id: str
+    title: str
+    project_id: str
+    def __init__(self, workbook: _Optional[_Union[_workbook_pb2.Workbook, _Mapping]] = ..., id: _Optional[str] = ..., title: _Optional[str] = ..., project_id: _Optional[str] = ...) -> None: ...
 
 class CreateWorkbookRequest(_message.Message):
     __slots__ = ["project_id", "workbook_title"]
