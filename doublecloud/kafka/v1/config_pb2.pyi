@@ -18,3 +18,9 @@ class SchemaRegistryConfig(_message.Message):
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     enabled: bool
     def __init__(self, enabled: bool = ...) -> None: ...
+
+class RestAPIConfig(_message.Message):
+    __slots__ = ["enabled"]
+    ENABLED_FIELD_NUMBER: _ClassVar[int]
+    enabled: bool
+    def __init__(self, enabled: bool = ...) -> None: ...

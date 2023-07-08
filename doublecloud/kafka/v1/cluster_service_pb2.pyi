@@ -49,7 +49,7 @@ class ListClustersResponse(_message.Message):
     def __init__(self, clusters: _Optional[_Iterable[_Union[_cluster_pb2_1.Cluster, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateClusterRequest(_message.Message):
-    __slots__ = ["project_id", "cloud_type", "region_id", "name", "description", "version", "resources", "access", "encryption", "network_id", "maintenance_window", "kafka_config", "schema_registry_config"]
+    __slots__ = ["project_id", "cloud_type", "region_id", "name", "description", "version", "resources", "access", "encryption", "network_id", "maintenance_window", "kafka_config", "schema_registry_config", "rest_api_config"]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,6 +63,7 @@ class CreateClusterRequest(_message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     KAFKA_CONFIG_FIELD_NUMBER: _ClassVar[int]
     SCHEMA_REGISTRY_CONFIG_FIELD_NUMBER: _ClassVar[int]
+    REST_API_CONFIG_FIELD_NUMBER: _ClassVar[int]
     project_id: str
     cloud_type: str
     region_id: str
@@ -76,10 +77,11 @@ class CreateClusterRequest(_message.Message):
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     kafka_config: _config_pb2.KafkaConfig
     schema_registry_config: _config_pb2.SchemaRegistryConfig
-    def __init__(self, project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2_1.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ..., schema_registry_config: _Optional[_Union[_config_pb2.SchemaRegistryConfig, _Mapping]] = ...) -> None: ...
+    rest_api_config: _config_pb2.RestAPIConfig
+    def __init__(self, project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2_1.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ..., schema_registry_config: _Optional[_Union[_config_pb2.SchemaRegistryConfig, _Mapping]] = ..., rest_api_config: _Optional[_Union[_config_pb2.RestAPIConfig, _Mapping]] = ...) -> None: ...
 
 class UpdateClusterRequest(_message.Message):
-    __slots__ = ["cluster_id", "name", "description", "version", "resources", "access", "maintenance_window", "kafka_config", "schema_registry_config"]
+    __slots__ = ["cluster_id", "name", "description", "version", "resources", "access", "maintenance_window", "kafka_config", "schema_registry_config", "rest_api_config"]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -89,6 +91,7 @@ class UpdateClusterRequest(_message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     KAFKA_CONFIG_FIELD_NUMBER: _ClassVar[int]
     SCHEMA_REGISTRY_CONFIG_FIELD_NUMBER: _ClassVar[int]
+    REST_API_CONFIG_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
     name: str
     description: str
@@ -98,7 +101,8 @@ class UpdateClusterRequest(_message.Message):
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     kafka_config: _config_pb2.KafkaConfig
     schema_registry_config: _config_pb2.SchemaRegistryConfig
-    def __init__(self, cluster_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2_1.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ..., schema_registry_config: _Optional[_Union[_config_pb2.SchemaRegistryConfig, _Mapping]] = ...) -> None: ...
+    rest_api_config: _config_pb2.RestAPIConfig
+    def __init__(self, cluster_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2_1.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., kafka_config: _Optional[_Union[_config_pb2.KafkaConfig, _Mapping]] = ..., schema_registry_config: _Optional[_Union[_config_pb2.SchemaRegistryConfig, _Mapping]] = ..., rest_api_config: _Optional[_Union[_config_pb2.RestAPIConfig, _Mapping]] = ...) -> None: ...
 
 class DeleteClusterRequest(_message.Message):
     __slots__ = ["cluster_id"]
