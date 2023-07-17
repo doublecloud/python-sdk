@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.8.0 (2023-07-17)
+
+### Feature
+
+* Build: pin semantic_release due to unstable 0.8 version ([`4b7a0e6`](https://github.com/doublecloud/python-sdk/commit/4b7a0e68839ab0db14c43eefc079cf52cc15603a))
+* Build: regenerate proto ([`77ac47b`](https://github.com/doublecloud/python-sdk/commit/77ac47b0069b46a2359c473c972e5738783b07c6))
+* Build: regenerate proto ([`89fc539`](https://github.com/doublecloud/python-sdk/commit/89fc5397d6558ab04470168bcc80634ef207f267))
+
 ## v0.7.0 (2023-06-27)
 
 ### Feature
