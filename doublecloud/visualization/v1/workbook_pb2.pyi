@@ -34,3 +34,11 @@ class Connection(_message.Message):
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _struct_pb2.Value
     def __init__(self, config: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
+
+class WorkbooksIndexItem(_message.Message):
+    __slots__ = ["id", "title"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    title: str
+    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...

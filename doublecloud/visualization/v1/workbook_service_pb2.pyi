@@ -1,9 +1,10 @@
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
 from doublecloud.v1 import operation_pb2 as _operation_pb2
 from doublecloud.visualization.v1 import workbook_pb2 as _workbook_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -110,3 +111,15 @@ class AdviseDatasetFieldsResponse(_message.Message):
     DATASET_FIELD_NUMBER: _ClassVar[int]
     dataset: _workbook_pb2.Dataset
     def __init__(self, dataset: _Optional[_Union[_workbook_pb2.Dataset, _Mapping]] = ...) -> None: ...
+
+class ListWorkbooksRequest(_message.Message):
+    __slots__ = ["project_id"]
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    def __init__(self, project_id: _Optional[str] = ...) -> None: ...
+
+class ListWorkbooksResponse(_message.Message):
+    __slots__ = ["workbooks"]
+    WORKBOOKS_FIELD_NUMBER: _ClassVar[int]
+    workbooks: _containers.RepeatedCompositeFieldContainer[_workbook_pb2.WorkbooksIndexItem]
+    def __init__(self, workbooks: _Optional[_Iterable[_Union[_workbook_pb2.WorkbooksIndexItem, _Mapping]]] = ...) -> None: ...
