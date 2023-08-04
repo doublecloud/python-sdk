@@ -25,7 +25,7 @@ class ClickhouseConfig(_message.Message):
     LOG_LEVEL_WARNING: ClickhouseConfig.LogLevel
     LOG_LEVEL_ERROR: ClickhouseConfig.LogLevel
     class MergeTree(_message.Message):
-        __slots__ = ["replicated_deduplication_window", "replicated_deduplication_window_seconds", "parts_to_delay_insert", "parts_to_throw_insert", "inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", "max_replicated_merges_in_queue", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", "max_bytes_to_merge_at_min_space_in_pool", "max_bytes_to_merge_at_max_space_in_pool", "min_bytes_for_wide_part", "min_rows_for_wide_part", "ttl_only_drop_parts", "allow_remote_fs_zero_copy_replication", "merge_with_ttl_timeout", "merge_with_recompression_ttl_timeout", "max_parts_in_total", "max_number_of_merges_with_ttl_in_pool", "cleanup_delay_period", "number_of_free_entries_in_pool_to_execute_mutation"]
+        __slots__ = ["replicated_deduplication_window", "replicated_deduplication_window_seconds", "parts_to_delay_insert", "parts_to_throw_insert", "inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", "max_replicated_merges_in_queue", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", "max_bytes_to_merge_at_min_space_in_pool", "max_bytes_to_merge_at_max_space_in_pool", "min_bytes_for_wide_part", "min_rows_for_wide_part", "ttl_only_drop_parts", "allow_remote_fs_zero_copy_replication", "merge_with_ttl_timeout", "merge_with_recompression_ttl_timeout", "max_parts_in_total", "max_number_of_merges_with_ttl_in_pool", "cleanup_delay_period", "number_of_free_entries_in_pool_to_execute_mutation", "max_avg_part_size_for_too_many_parts", "min_age_to_force_merge_seconds", "min_age_to_force_merge_on_partition_only", "merge_selecting_sleep_ms"]
         REPLICATED_DEDUPLICATION_WINDOW_FIELD_NUMBER: _ClassVar[int]
         REPLICATED_DEDUPLICATION_WINDOW_SECONDS_FIELD_NUMBER: _ClassVar[int]
         PARTS_TO_DELAY_INSERT_FIELD_NUMBER: _ClassVar[int]
@@ -46,6 +46,10 @@ class ClickhouseConfig(_message.Message):
         MAX_NUMBER_OF_MERGES_WITH_TTL_IN_POOL_FIELD_NUMBER: _ClassVar[int]
         CLEANUP_DELAY_PERIOD_FIELD_NUMBER: _ClassVar[int]
         NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_EXECUTE_MUTATION_FIELD_NUMBER: _ClassVar[int]
+        MAX_AVG_PART_SIZE_FOR_TOO_MANY_PARTS_FIELD_NUMBER: _ClassVar[int]
+        MIN_AGE_TO_FORCE_MERGE_SECONDS_FIELD_NUMBER: _ClassVar[int]
+        MIN_AGE_TO_FORCE_MERGE_ON_PARTITION_ONLY_FIELD_NUMBER: _ClassVar[int]
+        MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: _ClassVar[int]
         replicated_deduplication_window: _wrappers_pb2.Int64Value
         replicated_deduplication_window_seconds: _duration_pb2.Duration
         parts_to_delay_insert: _wrappers_pb2.Int64Value
@@ -66,9 +70,13 @@ class ClickhouseConfig(_message.Message):
         max_number_of_merges_with_ttl_in_pool: _wrappers_pb2.Int64Value
         cleanup_delay_period: _duration_pb2.Duration
         number_of_free_entries_in_pool_to_execute_mutation: _wrappers_pb2.Int64Value
-        def __init__(self, replicated_deduplication_window: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replicated_deduplication_window_seconds: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_replicated_merges_in_queue: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., number_of_free_entries_in_pool_to_lower_max_size_of_merge: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_min_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_max_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_bytes_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_rows_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., ttl_only_drop_parts: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., allow_remote_fs_zero_copy_replication: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., merge_with_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., merge_with_recompression_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., max_parts_in_total: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_number_of_merges_with_ttl_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., cleanup_delay_period: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., number_of_free_entries_in_pool_to_execute_mutation: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
+        max_avg_part_size_for_too_many_parts: _wrappers_pb2.Int64Value
+        min_age_to_force_merge_seconds: _duration_pb2.Duration
+        min_age_to_force_merge_on_partition_only: _wrappers_pb2.BoolValue
+        merge_selecting_sleep_ms: _duration_pb2.Duration
+        def __init__(self, replicated_deduplication_window: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replicated_deduplication_window_seconds: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_delay_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., inactive_parts_to_throw_insert: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_replicated_merges_in_queue: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., number_of_free_entries_in_pool_to_lower_max_size_of_merge: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_min_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_bytes_to_merge_at_max_space_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_bytes_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_rows_for_wide_part: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., ttl_only_drop_parts: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., allow_remote_fs_zero_copy_replication: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., merge_with_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., merge_with_recompression_ttl_timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., max_parts_in_total: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_number_of_merges_with_ttl_in_pool: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., cleanup_delay_period: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., number_of_free_entries_in_pool_to_execute_mutation: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_avg_part_size_for_too_many_parts: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_age_to_force_merge_seconds: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., min_age_to_force_merge_on_partition_only: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., merge_selecting_sleep_ms: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
     class Kafka(_message.Message):
-        __slots__ = ["security_protocol", "sasl_mechanism", "sasl_username", "sasl_password", "enable_ssl_certificate_verification"]
+        __slots__ = ["security_protocol", "sasl_mechanism", "sasl_username", "sasl_password", "enable_ssl_certificate_verification", "max_poll_interval_ms", "session_timeout_ms"]
         class SecurityProtocol(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
             SECURITY_PROTOCOL_INVALID: _ClassVar[ClickhouseConfig.Kafka.SecurityProtocol]
@@ -98,12 +106,16 @@ class ClickhouseConfig(_message.Message):
         SASL_USERNAME_FIELD_NUMBER: _ClassVar[int]
         SASL_PASSWORD_FIELD_NUMBER: _ClassVar[int]
         ENABLE_SSL_CERTIFICATE_VERIFICATION_FIELD_NUMBER: _ClassVar[int]
+        MAX_POLL_INTERVAL_MS_FIELD_NUMBER: _ClassVar[int]
+        SESSION_TIMEOUT_MS_FIELD_NUMBER: _ClassVar[int]
         security_protocol: ClickhouseConfig.Kafka.SecurityProtocol
         sasl_mechanism: ClickhouseConfig.Kafka.SaslMechanism
         sasl_username: _wrappers_pb2.StringValue
         sasl_password: _wrappers_pb2.StringValue
         enable_ssl_certificate_verification: _wrappers_pb2.BoolValue
-        def __init__(self, security_protocol: _Optional[_Union[ClickhouseConfig.Kafka.SecurityProtocol, str]] = ..., sasl_mechanism: _Optional[_Union[ClickhouseConfig.Kafka.SaslMechanism, str]] = ..., sasl_username: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_password: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., enable_ssl_certificate_verification: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
+        max_poll_interval_ms: _duration_pb2.Duration
+        session_timeout_ms: _duration_pb2.Duration
+        def __init__(self, security_protocol: _Optional[_Union[ClickhouseConfig.Kafka.SecurityProtocol, str]] = ..., sasl_mechanism: _Optional[_Union[ClickhouseConfig.Kafka.SaslMechanism, str]] = ..., sasl_username: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_password: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., enable_ssl_certificate_verification: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., max_poll_interval_ms: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., session_timeout_ms: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
     class Rabbitmq(_message.Message):
         __slots__ = ["username", "password", "vhost"]
         USERNAME_FIELD_NUMBER: _ClassVar[int]
