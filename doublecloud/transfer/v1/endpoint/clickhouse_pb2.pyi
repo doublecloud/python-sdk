@@ -60,7 +60,7 @@ class ClickhouseConnection(_message.Message):
     def __init__(self, connection_options: _Optional[_Union[ClickhouseConnectionOptions, _Mapping]] = ...) -> None: ...
 
 class ClickhouseSharding(_message.Message):
-    __slots__ = ["column_value_hash", "custom_mapping", "transfer_id"]
+    __slots__ = ["column_value_hash", "custom_mapping", "transfer_id", "round_robin"]
     class ColumnValueHash(_message.Message):
         __slots__ = ["column_name"]
         COLUMN_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -83,10 +83,12 @@ class ClickhouseSharding(_message.Message):
     COLUMN_VALUE_HASH_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_MAPPING_FIELD_NUMBER: _ClassVar[int]
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
+    ROUND_ROBIN_FIELD_NUMBER: _ClassVar[int]
     column_value_hash: ClickhouseSharding.ColumnValueHash
     custom_mapping: ClickhouseSharding.ColumnValueMapping
     transfer_id: _empty_pb2.Empty
-    def __init__(self, column_value_hash: _Optional[_Union[ClickhouseSharding.ColumnValueHash, _Mapping]] = ..., custom_mapping: _Optional[_Union[ClickhouseSharding.ColumnValueMapping, _Mapping]] = ..., transfer_id: _Optional[_Union[_empty_pb2.Empty, _Mapping]] = ...) -> None: ...
+    round_robin: _empty_pb2.Empty
+    def __init__(self, column_value_hash: _Optional[_Union[ClickhouseSharding.ColumnValueHash, _Mapping]] = ..., custom_mapping: _Optional[_Union[ClickhouseSharding.ColumnValueMapping, _Mapping]] = ..., transfer_id: _Optional[_Union[_empty_pb2.Empty, _Mapping]] = ..., round_robin: _Optional[_Union[_empty_pb2.Empty, _Mapping]] = ...) -> None: ...
 
 class ClickhouseSource(_message.Message):
     __slots__ = ["connection", "include_tables", "exclude_tables"]
