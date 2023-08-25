@@ -79,17 +79,19 @@ class ImportNetworkRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., aws: _Optional[_Union[ImportAWSVPCRequest, _Mapping]] = ...) -> None: ...
 
 class ImportAWSVPCRequest(_message.Message):
-    __slots__ = ["vpc_id", "region_id", "account_id", "iam_role_arn", "stack_id", "version"]
+    __slots__ = ["vpc_id", "region_id", "account_id", "iam_role_arn", "stack_id", "version", "private_subnets"]
     VPC_ID_FIELD_NUMBER: _ClassVar[int]
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
     ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     IAM_ROLE_ARN_FIELD_NUMBER: _ClassVar[int]
     STACK_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    PRIVATE_SUBNETS_FIELD_NUMBER: _ClassVar[int]
     vpc_id: str
     region_id: str
     account_id: str
     iam_role_arn: str
     stack_id: str
     version: str
-    def __init__(self, vpc_id: _Optional[str] = ..., region_id: _Optional[str] = ..., account_id: _Optional[str] = ..., iam_role_arn: _Optional[str] = ..., stack_id: _Optional[str] = ..., version: _Optional[str] = ...) -> None: ...
+    private_subnets: bool
+    def __init__(self, vpc_id: _Optional[str] = ..., region_id: _Optional[str] = ..., account_id: _Optional[str] = ..., iam_role_arn: _Optional[str] = ..., stack_id: _Optional[str] = ..., version: _Optional[str] = ..., private_subnets: bool = ...) -> None: ...
