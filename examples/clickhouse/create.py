@@ -7,12 +7,12 @@ from doublecloud.clickhouse.v1.cluster_service_pb2 import CreateClusterRequest
 from doublecloud.clickhouse.v1.cluster_service_pb2_grpc import ClusterServiceStub
 
 
-def create_cluster(sdk, project_id, region_id, name, network_id):
+def create_cluster(sdk, project_id, cloud_type, region_id, name, network_id):
     cluster_service = sdk.client(ClusterServiceStub)
     operation = cluster_service.Create(
         CreateClusterRequest(
             project_id=project_id,
-            cloud_type="aws",
+            cloud_type=cloud_type,
             region_id=region_id,
             name=name,
             resources=ClusterResources(
