@@ -21,7 +21,7 @@ def main():
 
     cluster_id = None
     try:
-        operation = create_cluster(sdk, arguments.project_id, arguments.region, arguments.name, arguments.network_id)
+        operation = create_cluster(sdk, arguments.project_id, arguments.cloud_type, arguments.region, arguments.name, arguments.network_id)
         operation_result = sdk.wait_operation_and_get_result(
             operation,
         )
@@ -50,6 +50,7 @@ def parse_args():
     )
     auth.add_argument("--token", help="IAM token")
     parser.add_argument("--project-id", help="Your project id", required=True)
+    parser.add_argument("--cloud-type", default="aws", help="Cloud provider")
     parser.add_argument("--region", default="eu-central-1", help="Region to deploy to.")
     parser.add_argument("--name", default="sdk-example", help="New cluster name.")
     parser.add_argument("--network-id", help="Network of the cluster.")
