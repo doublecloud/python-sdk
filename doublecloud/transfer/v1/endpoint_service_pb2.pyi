@@ -11,13 +11,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetEndpointRequest(_message.Message):
-    __slots__ = ["endpoint_id"]
+    __slots__ = ("endpoint_id",)
     ENDPOINT_ID_FIELD_NUMBER: _ClassVar[int]
     endpoint_id: str
     def __init__(self, endpoint_id: _Optional[str] = ...) -> None: ...
 
 class ListEndpointsRequest(_message.Message):
-    __slots__ = ["project_id", "page"]
+    __slots__ = ("project_id", "page")
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     PAGE_FIELD_NUMBER: _ClassVar[int]
     project_id: str
@@ -25,7 +25,7 @@ class ListEndpointsRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., page: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListEndpointsResponse(_message.Message):
-    __slots__ = ["endpoints", "next_page"]
+    __slots__ = ("endpoints", "next_page")
     ENDPOINTS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_FIELD_NUMBER: _ClassVar[int]
     endpoints: _containers.RepeatedCompositeFieldContainer[_endpoint_pb2.Endpoint]
@@ -33,9 +33,9 @@ class ListEndpointsResponse(_message.Message):
     def __init__(self, endpoints: _Optional[_Iterable[_Union[_endpoint_pb2.Endpoint, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateEndpointRequest(_message.Message):
-    __slots__ = ["project_id", "name", "description", "labels", "settings"]
+    __slots__ = ("project_id", "name", "description", "labels", "settings")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -54,9 +54,9 @@ class CreateEndpointRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., settings: _Optional[_Union[_endpoint_pb2.EndpointSettings, _Mapping]] = ...) -> None: ...
 
 class UpdateEndpointRequest(_message.Message):
-    __slots__ = ["endpoint_id", "name", "description", "labels", "settings"]
+    __slots__ = ("endpoint_id", "name", "description", "labels", "settings")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -75,7 +75,7 @@ class UpdateEndpointRequest(_message.Message):
     def __init__(self, endpoint_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., settings: _Optional[_Union[_endpoint_pb2.EndpointSettings, _Mapping]] = ...) -> None: ...
 
 class DeleteEndpointRequest(_message.Message):
-    __slots__ = ["endpoint_id"]
+    __slots__ = ("endpoint_id",)
     ENDPOINT_ID_FIELD_NUMBER: _ClassVar[int]
     endpoint_id: str
     def __init__(self, endpoint_id: _Optional[str] = ...) -> None: ...

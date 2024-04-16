@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ConnectorSpec(_message.Message):
-    __slots__ = ["name", "tasks_max", "properties", "connector_config_mirrormaker", "connector_config_s3_sink"]
+    __slots__ = ("name", "tasks_max", "properties", "connector_config_mirrormaker", "connector_config_s3_sink")
     class PropertiesEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -29,11 +29,11 @@ class ConnectorSpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., tasks_max: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., properties: _Optional[_Mapping[str, str]] = ..., connector_config_mirrormaker: _Optional[_Union[ConnectorConfigMirrorMakerSpec, _Mapping]] = ..., connector_config_s3_sink: _Optional[_Union[ConnectorConfigS3SinkSpec, _Mapping]] = ...) -> None: ...
 
 class UpdateConnectorSpec(_message.Message):
-    __slots__ = ["tasks_max", "properties", "connector_config_mirrormaker", "connector_config_s3_sink"]
+    __slots__ = ("tasks_max", "properties", "connector_config_mirrormaker", "connector_config_s3_sink")
     class UpdateProperties(_message.Message):
-        __slots__ = ["properties"]
+        __slots__ = ("properties",)
         class PropertiesEntry(_message.Message):
-            __slots__ = ["key", "value"]
+            __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
             VALUE_FIELD_NUMBER: _ClassVar[int]
             key: str
@@ -53,7 +53,7 @@ class UpdateConnectorSpec(_message.Message):
     def __init__(self, tasks_max: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., properties: _Optional[_Union[UpdateConnectorSpec.UpdateProperties, _Mapping]] = ..., connector_config_mirrormaker: _Optional[_Union[UpdateConnectorConfigMirrorMakerSpec, _Mapping]] = ..., connector_config_s3_sink: _Optional[_Union[UpdateConnectorConfigS3SinkSpec, _Mapping]] = ...) -> None: ...
 
 class ConnectorConfigMirrorMakerSpec(_message.Message):
-    __slots__ = ["source_cluster", "target_cluster", "topics", "replication_factor"]
+    __slots__ = ("source_cluster", "target_cluster", "topics", "replication_factor")
     SOURCE_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TARGET_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
@@ -65,7 +65,7 @@ class ConnectorConfigMirrorMakerSpec(_message.Message):
     def __init__(self, source_cluster: _Optional[_Union[ClusterConnectionSpec, _Mapping]] = ..., target_cluster: _Optional[_Union[ClusterConnectionSpec, _Mapping]] = ..., topics: _Optional[str] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
 
 class ClusterConnectionSpec(_message.Message):
-    __slots__ = ["alias", "this_cluster", "external_cluster"]
+    __slots__ = ("alias", "this_cluster", "external_cluster")
     ALIAS_FIELD_NUMBER: _ClassVar[int]
     THIS_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_CLUSTER_FIELD_NUMBER: _ClassVar[int]
@@ -75,7 +75,7 @@ class ClusterConnectionSpec(_message.Message):
     def __init__(self, alias: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., this_cluster: _Optional[_Union[ThisCluster, _Mapping]] = ..., external_cluster: _Optional[_Union[ExternalClusterConnectionSpec, _Mapping]] = ...) -> None: ...
 
 class ExternalClusterConnectionSpec(_message.Message):
-    __slots__ = ["bootstrap_servers", "sasl_username", "sasl_password", "sasl_mechanism", "security_protocol", "ssl_truststore_certificates"]
+    __slots__ = ("bootstrap_servers", "sasl_username", "sasl_password", "sasl_mechanism", "security_protocol", "ssl_truststore_certificates")
     BOOTSTRAP_SERVERS_FIELD_NUMBER: _ClassVar[int]
     SASL_USERNAME_FIELD_NUMBER: _ClassVar[int]
     SASL_PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -91,7 +91,7 @@ class ExternalClusterConnectionSpec(_message.Message):
     def __init__(self, bootstrap_servers: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_username: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_password: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., sasl_mechanism: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., security_protocol: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., ssl_truststore_certificates: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class ConnectorConfigS3SinkSpec(_message.Message):
-    __slots__ = ["topics", "file_compression_type", "file_max_records", "s3_connection"]
+    __slots__ = ("topics", "file_compression_type", "file_max_records", "s3_connection")
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     FILE_COMPRESSION_TYPE_FIELD_NUMBER: _ClassVar[int]
     FILE_MAX_RECORDS_FIELD_NUMBER: _ClassVar[int]
@@ -103,7 +103,7 @@ class ConnectorConfigS3SinkSpec(_message.Message):
     def __init__(self, topics: _Optional[str] = ..., file_compression_type: _Optional[str] = ..., file_max_records: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., s3_connection: _Optional[_Union[S3ConnectionSpec, _Mapping]] = ...) -> None: ...
 
 class UpdateConnectorConfigMirrorMakerSpec(_message.Message):
-    __slots__ = ["source_cluster", "target_cluster", "topics", "replication_factor"]
+    __slots__ = ("source_cluster", "target_cluster", "topics", "replication_factor")
     SOURCE_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TARGET_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
@@ -115,7 +115,7 @@ class UpdateConnectorConfigMirrorMakerSpec(_message.Message):
     def __init__(self, source_cluster: _Optional[_Union[ClusterConnectionSpec, _Mapping]] = ..., target_cluster: _Optional[_Union[ClusterConnectionSpec, _Mapping]] = ..., topics: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
 
 class UpdateConnectorConfigS3SinkSpec(_message.Message):
-    __slots__ = ["topics", "file_max_records", "s3_connection"]
+    __slots__ = ("topics", "file_max_records", "s3_connection")
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     FILE_MAX_RECORDS_FIELD_NUMBER: _ClassVar[int]
     S3_CONNECTION_FIELD_NUMBER: _ClassVar[int]
@@ -125,7 +125,7 @@ class UpdateConnectorConfigS3SinkSpec(_message.Message):
     def __init__(self, topics: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., file_max_records: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., s3_connection: _Optional[_Union[S3ConnectionSpec, _Mapping]] = ...) -> None: ...
 
 class S3ConnectionSpec(_message.Message):
-    __slots__ = ["bucket_name", "access_key_id", "secret_access_key", "endpoint", "region"]
+    __slots__ = ("bucket_name", "access_key_id", "secret_access_key", "endpoint", "region")
     BUCKET_NAME_FIELD_NUMBER: _ClassVar[int]
     ACCESS_KEY_ID_FIELD_NUMBER: _ClassVar[int]
     SECRET_ACCESS_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -139,9 +139,9 @@ class S3ConnectionSpec(_message.Message):
     def __init__(self, bucket_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., access_key_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., secret_access_key: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., endpoint: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., region: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class Connector(_message.Message):
-    __slots__ = ["name", "tasks_max", "properties", "health", "status", "cluster_id", "connector_config_mirrormaker", "connector_config_s3_sink"]
+    __slots__ = ("name", "tasks_max", "properties", "health", "status", "cluster_id", "connector_config_mirrormaker", "connector_config_s3_sink")
     class Health(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         HEALTH_INVALID: _ClassVar[Connector.Health]
         HEALTH_ALIVE: _ClassVar[Connector.Health]
         HEALTH_DEAD: _ClassVar[Connector.Health]
@@ -149,7 +149,7 @@ class Connector(_message.Message):
     HEALTH_ALIVE: Connector.Health
     HEALTH_DEAD: Connector.Health
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         STATUS_INVALID: _ClassVar[Connector.Status]
         STATUS_RUNNING: _ClassVar[Connector.Status]
         STATUS_ERROR: _ClassVar[Connector.Status]
@@ -159,7 +159,7 @@ class Connector(_message.Message):
     STATUS_ERROR: Connector.Status
     STATUS_PAUSED: Connector.Status
     class PropertiesEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -184,7 +184,7 @@ class Connector(_message.Message):
     def __init__(self, name: _Optional[str] = ..., tasks_max: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., properties: _Optional[_Mapping[str, str]] = ..., health: _Optional[_Union[Connector.Health, str]] = ..., status: _Optional[_Union[Connector.Status, str]] = ..., cluster_id: _Optional[str] = ..., connector_config_mirrormaker: _Optional[_Union[ConnectorConfigMirrorMaker, _Mapping]] = ..., connector_config_s3_sink: _Optional[_Union[ConnectorConfigS3Sink, _Mapping]] = ...) -> None: ...
 
 class ConnectorConfigMirrorMaker(_message.Message):
-    __slots__ = ["source_cluster", "target_cluster", "topics", "replication_factor"]
+    __slots__ = ("source_cluster", "target_cluster", "topics", "replication_factor")
     SOURCE_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TARGET_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
@@ -196,7 +196,7 @@ class ConnectorConfigMirrorMaker(_message.Message):
     def __init__(self, source_cluster: _Optional[_Union[ClusterConnection, _Mapping]] = ..., target_cluster: _Optional[_Union[ClusterConnection, _Mapping]] = ..., topics: _Optional[str] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
 
 class ClusterConnection(_message.Message):
-    __slots__ = ["alias", "this_cluster", "external_cluster"]
+    __slots__ = ("alias", "this_cluster", "external_cluster")
     ALIAS_FIELD_NUMBER: _ClassVar[int]
     THIS_CLUSTER_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_CLUSTER_FIELD_NUMBER: _ClassVar[int]
@@ -206,11 +206,11 @@ class ClusterConnection(_message.Message):
     def __init__(self, alias: _Optional[str] = ..., this_cluster: _Optional[_Union[ThisCluster, _Mapping]] = ..., external_cluster: _Optional[_Union[ExternalClusterConnection, _Mapping]] = ...) -> None: ...
 
 class ThisCluster(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ExternalClusterConnection(_message.Message):
-    __slots__ = ["bootstrap_servers", "sasl_username", "sasl_mechanism", "security_protocol"]
+    __slots__ = ("bootstrap_servers", "sasl_username", "sasl_mechanism", "security_protocol")
     BOOTSTRAP_SERVERS_FIELD_NUMBER: _ClassVar[int]
     SASL_USERNAME_FIELD_NUMBER: _ClassVar[int]
     SASL_MECHANISM_FIELD_NUMBER: _ClassVar[int]
@@ -222,7 +222,7 @@ class ExternalClusterConnection(_message.Message):
     def __init__(self, bootstrap_servers: _Optional[str] = ..., sasl_username: _Optional[str] = ..., sasl_mechanism: _Optional[str] = ..., security_protocol: _Optional[str] = ...) -> None: ...
 
 class ConnectorConfigS3Sink(_message.Message):
-    __slots__ = ["topics", "file_compression_type", "file_max_records", "s3_connection"]
+    __slots__ = ("topics", "file_compression_type", "file_max_records", "s3_connection")
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     FILE_COMPRESSION_TYPE_FIELD_NUMBER: _ClassVar[int]
     FILE_MAX_RECORDS_FIELD_NUMBER: _ClassVar[int]
@@ -234,7 +234,7 @@ class ConnectorConfigS3Sink(_message.Message):
     def __init__(self, topics: _Optional[str] = ..., file_compression_type: _Optional[str] = ..., file_max_records: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., s3_connection: _Optional[_Union[S3Connection, _Mapping]] = ...) -> None: ...
 
 class S3Connection(_message.Message):
-    __slots__ = ["bucket_name", "access_key_id", "endpoint", "region"]
+    __slots__ = ("bucket_name", "access_key_id", "endpoint", "region")
     BUCKET_NAME_FIELD_NUMBER: _ClassVar[int]
     ACCESS_KEY_ID_FIELD_NUMBER: _ClassVar[int]
     ENDPOINT_FIELD_NUMBER: _ClassVar[int]

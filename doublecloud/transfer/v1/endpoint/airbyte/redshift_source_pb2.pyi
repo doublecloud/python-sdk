@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RedshiftSource(_message.Message):
-    __slots__ = ["host", "port", "database", "schemas", "username", "password"]
+    __slots__ = ("host", "port", "database", "schemas", "username", "password")
     HOST_FIELD_NUMBER: _ClassVar[int]
     PORT_FIELD_NUMBER: _ClassVar[int]
     DATABASE_FIELD_NUMBER: _ClassVar[int]

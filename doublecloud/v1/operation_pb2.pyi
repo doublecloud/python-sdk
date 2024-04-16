@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Operation(_message.Message):
-    __slots__ = ["id", "project_id", "description", "created_by", "metadata", "create_time", "start_time", "finish_time", "status", "error", "resource_id"]
+    __slots__ = ("id", "project_id", "description", "created_by", "metadata", "create_time", "start_time", "finish_time", "status", "error", "resource_id")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         STATUS_INVALID: _ClassVar[Operation.Status]
         STATUS_PENDING: _ClassVar[Operation.Status]
         STATUS_RUNNING: _ClassVar[Operation.Status]
@@ -21,7 +21,7 @@ class Operation(_message.Message):
     STATUS_RUNNING: Operation.Status
     STATUS_DONE: Operation.Status
     class MetadataEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

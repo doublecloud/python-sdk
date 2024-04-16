@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["name", "cluster_id", "permissions"]
+    __slots__ = ("name", "cluster_id", "permissions")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
@@ -17,7 +17,7 @@ class User(_message.Message):
     def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., permissions: _Optional[_Iterable[_Union[Permission, _Mapping]]] = ...) -> None: ...
 
 class UserSpec(_message.Message):
-    __slots__ = ["name", "password", "permissions"]
+    __slots__ = ("name", "password", "permissions")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
@@ -27,9 +27,9 @@ class UserSpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., password: _Optional[str] = ..., permissions: _Optional[_Iterable[_Union[Permission, _Mapping]]] = ...) -> None: ...
 
 class Permission(_message.Message):
-    __slots__ = ["topic_name", "role"]
+    __slots__ = ("topic_name", "role")
     class AccessRole(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ACCESS_ROLE_INVALID: _ClassVar[Permission.AccessRole]
         ACCESS_ROLE_PRODUCER: _ClassVar[Permission.AccessRole]
         ACCESS_ROLE_CONSUMER: _ClassVar[Permission.AccessRole]

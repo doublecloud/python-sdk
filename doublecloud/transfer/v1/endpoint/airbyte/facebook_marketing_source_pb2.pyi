@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class FacebookMarketingSource(_message.Message):
-    __slots__ = ["start_date", "account_id", "end_date", "access_token", "include_deleted", "fetch_thumbnail_images", "custom_insights"]
+    __slots__ = ("start_date", "end_date", "account_id", "access_token", "include_deleted", "fetch_thumbnail_images", "custom_insights")
     class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         FIELD_UNSPECIFIED: _ClassVar[FacebookMarketingSource.Field]
         ACCOUNT_CURRENCY: _ClassVar[FacebookMarketingSource.Field]
         ACCOUNT_ID: _ClassVar[FacebookMarketingSource.Field]
@@ -273,7 +273,7 @@ class FacebookMarketingSource(_message.Message):
     WEBSITE_PURCHASE_ROAS: FacebookMarketingSource.Field
     WISH_BID: FacebookMarketingSource.Field
     class Breakdown(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         BREAKDOWN_UNSPECIFIED: _ClassVar[FacebookMarketingSource.Breakdown]
         AD_FORMAT_ASSET: _ClassVar[FacebookMarketingSource.Breakdown]
         AGE: _ClassVar[FacebookMarketingSource.Breakdown]
@@ -325,7 +325,7 @@ class FacebookMarketingSource(_message.Message):
     TITLE_ASSET: FacebookMarketingSource.Breakdown
     VIDEO_ASSE: FacebookMarketingSource.Breakdown
     class ActionBreakdown(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ACTION_BREAKDOWN_UNSPECIFIED: _ClassVar[FacebookMarketingSource.ActionBreakdown]
         ACTION_CANVAS_COMPONENT_NAME: _ClassVar[FacebookMarketingSource.ActionBreakdown]
         ACTION_CAROUSEL_CARD_ID: _ClassVar[FacebookMarketingSource.ActionBreakdown]
@@ -349,7 +349,7 @@ class FacebookMarketingSource(_message.Message):
     ACTION_VIDEO_SOUND: FacebookMarketingSource.ActionBreakdown
     ACTION_VIDEO_TYPE: FacebookMarketingSource.ActionBreakdown
     class InsightConfig(_message.Message):
-        __slots__ = ["name", "fields", "breakdowns", "action_breakdowns"]
+        __slots__ = ("name", "fields", "breakdowns", "action_breakdowns")
         NAME_FIELD_NUMBER: _ClassVar[int]
         FIELDS_FIELD_NUMBER: _ClassVar[int]
         BREAKDOWNS_FIELD_NUMBER: _ClassVar[int]
@@ -360,17 +360,17 @@ class FacebookMarketingSource(_message.Message):
         action_breakdowns: _containers.RepeatedScalarFieldContainer[FacebookMarketingSource.ActionBreakdown]
         def __init__(self, name: _Optional[str] = ..., fields: _Optional[_Iterable[_Union[FacebookMarketingSource.Field, str]]] = ..., breakdowns: _Optional[_Iterable[_Union[FacebookMarketingSource.Breakdown, str]]] = ..., action_breakdowns: _Optional[_Iterable[_Union[FacebookMarketingSource.ActionBreakdown, str]]] = ...) -> None: ...
     START_DATE_FIELD_NUMBER: _ClassVar[int]
-    ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     END_DATE_FIELD_NUMBER: _ClassVar[int]
+    ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     INCLUDE_DELETED_FIELD_NUMBER: _ClassVar[int]
     FETCH_THUMBNAIL_IMAGES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_INSIGHTS_FIELD_NUMBER: _ClassVar[int]
     start_date: str
-    account_id: str
     end_date: str
+    account_id: str
     access_token: str
     include_deleted: bool
     fetch_thumbnail_images: bool
     custom_insights: _containers.RepeatedCompositeFieldContainer[FacebookMarketingSource.InsightConfig]
-    def __init__(self, start_date: _Optional[str] = ..., account_id: _Optional[str] = ..., end_date: _Optional[str] = ..., access_token: _Optional[str] = ..., include_deleted: bool = ..., fetch_thumbnail_images: bool = ..., custom_insights: _Optional[_Iterable[_Union[FacebookMarketingSource.InsightConfig, _Mapping]]] = ...) -> None: ...
+    def __init__(self, start_date: _Optional[str] = ..., end_date: _Optional[str] = ..., account_id: _Optional[str] = ..., access_token: _Optional[str] = ..., include_deleted: bool = ..., fetch_thumbnail_images: bool = ..., custom_insights: _Optional[_Iterable[_Union[FacebookMarketingSource.InsightConfig, _Mapping]]] = ...) -> None: ...

@@ -6,37 +6,37 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PlainSecret(_message.Message):
-    __slots__ = ["secret"]
+    __slots__ = ("secret",)
     SECRET_FIELD_NUMBER: _ClassVar[int]
     secret: str
     def __init__(self, secret: _Optional[str] = ...) -> None: ...
 
 class Secret(_message.Message):
-    __slots__ = ["plain_secret"]
+    __slots__ = ("plain_secret",)
     PLAIN_SECRET_FIELD_NUMBER: _ClassVar[int]
     plain_secret: PlainSecret
     def __init__(self, plain_secret: _Optional[_Union[PlainSecret, _Mapping]] = ...) -> None: ...
 
 class Workbook(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _struct_pb2.Value
     def __init__(self, config: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class Dataset(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _struct_pb2.Value
     def __init__(self, config: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class Connection(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _struct_pb2.Value
     def __init__(self, config: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class WorkbooksIndexItem(_message.Message):
-    __slots__ = ["id", "title"]
+    __slots__ = ("id", "title")
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     id: str

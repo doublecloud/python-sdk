@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Cluster(_message.Message):
-    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation", "metrics_exporter_connection_info"]
+    __slots__ = ("id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation", "metrics_exporter_connection_info")
     ID_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -52,24 +52,47 @@ class Cluster(_message.Message):
     def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., maintenance_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., metrics_exporter_connection_info: _Optional[_Union[MetricsExporterConnectionInfo, _Mapping]] = ...) -> None: ...
 
 class ClusterResources(_message.Message):
-    __slots__ = ["clickhouse"]
+    __slots__ = ("clickhouse", "dedicated_keeper")
     class Clickhouse(_message.Message):
-        __slots__ = ["resource_preset_id", "disk_size", "replica_count", "shard_count"]
+        __slots__ = ("resource_preset_id", "disk_size", "replica_count", "shard_count", "max_disk_size", "min_resource_preset_id", "max_resource_preset_id")
         RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
         DISK_SIZE_FIELD_NUMBER: _ClassVar[int]
         REPLICA_COUNT_FIELD_NUMBER: _ClassVar[int]
         SHARD_COUNT_FIELD_NUMBER: _ClassVar[int]
+        MAX_DISK_SIZE_FIELD_NUMBER: _ClassVar[int]
+        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
+        MAX_RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
         resource_preset_id: str
         disk_size: _wrappers_pb2.Int64Value
         replica_count: _wrappers_pb2.Int64Value
         shard_count: _wrappers_pb2.Int64Value
-        def __init__(self, resource_preset_id: _Optional[str] = ..., disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replica_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., shard_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
+        max_disk_size: _wrappers_pb2.Int64Value
+        min_resource_preset_id: _wrappers_pb2.StringValue
+        max_resource_preset_id: _wrappers_pb2.StringValue
+        def __init__(self, resource_preset_id: _Optional[str] = ..., disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replica_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., shard_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_resource_preset_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., max_resource_preset_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
+    class Keeper(_message.Message):
+        __slots__ = ("resource_preset_id", "disk_size", "replica_count", "max_disk_size", "min_resource_preset_id", "max_resource_preset_id")
+        RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
+        DISK_SIZE_FIELD_NUMBER: _ClassVar[int]
+        REPLICA_COUNT_FIELD_NUMBER: _ClassVar[int]
+        MAX_DISK_SIZE_FIELD_NUMBER: _ClassVar[int]
+        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
+        MAX_RESOURCE_PRESET_ID_FIELD_NUMBER: _ClassVar[int]
+        resource_preset_id: str
+        disk_size: _wrappers_pb2.Int64Value
+        replica_count: _wrappers_pb2.Int64Value
+        max_disk_size: _wrappers_pb2.Int64Value
+        min_resource_preset_id: _wrappers_pb2.StringValue
+        max_resource_preset_id: _wrappers_pb2.StringValue
+        def __init__(self, resource_preset_id: _Optional[str] = ..., disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replica_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_resource_preset_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., max_resource_preset_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
     CLICKHOUSE_FIELD_NUMBER: _ClassVar[int]
+    DEDICATED_KEEPER_FIELD_NUMBER: _ClassVar[int]
     clickhouse: ClusterResources.Clickhouse
-    def __init__(self, clickhouse: _Optional[_Union[ClusterResources.Clickhouse, _Mapping]] = ...) -> None: ...
+    dedicated_keeper: ClusterResources.Keeper
+    def __init__(self, clickhouse: _Optional[_Union[ClusterResources.Clickhouse, _Mapping]] = ..., dedicated_keeper: _Optional[_Union[ClusterResources.Keeper, _Mapping]] = ...) -> None: ...
 
 class ConnectionInfo(_message.Message):
-    __slots__ = ["host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri"]
+    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri")
     HOST_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -91,7 +114,7 @@ class ConnectionInfo(_message.Message):
     def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
 
 class PrivateConnectionInfo(_message.Message):
-    __slots__ = ["host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri"]
+    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri")
     HOST_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -113,7 +136,7 @@ class PrivateConnectionInfo(_message.Message):
     def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
 
 class MetricsExporterConnectionInfo(_message.Message):
-    __slots__ = ["user", "password"]
+    __slots__ = ("user", "password")
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     user: str
@@ -121,7 +144,7 @@ class MetricsExporterConnectionInfo(_message.Message):
     def __init__(self, user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class Host(_message.Message):
-    __slots__ = ["name", "cluster_id", "shard_name", "private_name", "status"]
+    __slots__ = ("name", "cluster_id", "shard_name", "private_name", "status")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     SHARD_NAME_FIELD_NUMBER: _ClassVar[int]

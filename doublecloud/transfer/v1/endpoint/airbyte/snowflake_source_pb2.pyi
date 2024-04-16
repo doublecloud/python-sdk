@@ -5,11 +5,11 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SnowflakeSource(_message.Message):
-    __slots__ = ["host", "role", "warehouse", "database", "schema", "jdbc_url_params", "credentials"]
+    __slots__ = ("host", "role", "warehouse", "database", "schema", "jdbc_url_params", "credentials")
     class Credentials(_message.Message):
-        __slots__ = ["oauth", "basic_auth"]
+        __slots__ = ("oauth", "basic_auth")
         class OAuth(_message.Message):
-            __slots__ = ["client_id", "client_secret", "access_token", "refresh_token"]
+            __slots__ = ("client_id", "client_secret", "access_token", "refresh_token")
             CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
             CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
             ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class SnowflakeSource(_message.Message):
             refresh_token: str
             def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., access_token: _Optional[str] = ..., refresh_token: _Optional[str] = ...) -> None: ...
         class BasicAuth(_message.Message):
-            __slots__ = ["username", "password"]
+            __slots__ = ("username", "password")
             USERNAME_FIELD_NUMBER: _ClassVar[int]
             PASSWORD_FIELD_NUMBER: _ClassVar[int]
             username: str

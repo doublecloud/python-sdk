@@ -17,7 +17,7 @@ def create_cluster(sdk, project_id, region_id, name, network_id):
             name=name,
             resources=ClusterResources(
                 clickhouse=ClusterResources.Clickhouse(
-                    resource_preset_id="s1-c2-m4",
+                    resource_preset_id="g2-c2-m4",
                     disk_size=Int64Value(value=32 * 2**30),
                     replica_count=Int64Value(value=1),
                 )

@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateTransferRequest(_message.Message):
-    __slots__ = ["source_id", "target_id", "name", "description", "labels", "project_id", "type"]
+    __slots__ = ("source_id", "target_id", "description", "project_id", "runtime", "type", "name", "labels", "regular_snapshot", "transformation", "data_objects")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -21,24 +21,32 @@ class CreateTransferRequest(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    REGULAR_SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    TRANSFORMATION_FIELD_NUMBER: _ClassVar[int]
+    DATA_OBJECTS_FIELD_NUMBER: _ClassVar[int]
     source_id: str
     target_id: str
-    name: str
     description: str
-    labels: _containers.ScalarMap[str, str]
     project_id: str
+    runtime: _transfer_pb2.Runtime
     type: _transfer_pb2.TransferType
-    def __init__(self, source_id: _Optional[str] = ..., target_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., project_id: _Optional[str] = ..., type: _Optional[_Union[_transfer_pb2.TransferType, str]] = ...) -> None: ...
+    name: str
+    labels: _containers.ScalarMap[str, str]
+    regular_snapshot: _transfer_pb2.RegularSnapshot
+    transformation: _transfer_pb2.Transformation
+    data_objects: _transfer_pb2.DataObjects
+    def __init__(self, source_id: _Optional[str] = ..., target_id: _Optional[str] = ..., description: _Optional[str] = ..., project_id: _Optional[str] = ..., runtime: _Optional[_Union[_transfer_pb2.Runtime, _Mapping]] = ..., type: _Optional[_Union[_transfer_pb2.TransferType, str]] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., regular_snapshot: _Optional[_Union[_transfer_pb2.RegularSnapshot, _Mapping]] = ..., transformation: _Optional[_Union[_transfer_pb2.Transformation, _Mapping]] = ..., data_objects: _Optional[_Union[_transfer_pb2.DataObjects, _Mapping]] = ...) -> None: ...
 
 class UpdateTransferRequest(_message.Message):
-    __slots__ = ["transfer_id", "description", "labels", "name"]
+    __slots__ = ("transfer_id", "description", "runtime", "name", "labels", "regular_snapshot", "transformation", "data_objects")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -46,22 +54,30 @@ class UpdateTransferRequest(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    REGULAR_SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    TRANSFORMATION_FIELD_NUMBER: _ClassVar[int]
+    DATA_OBJECTS_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     description: str
-    labels: _containers.ScalarMap[str, str]
+    runtime: _transfer_pb2.Runtime
     name: str
-    def __init__(self, transfer_id: _Optional[str] = ..., description: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., name: _Optional[str] = ...) -> None: ...
+    labels: _containers.ScalarMap[str, str]
+    regular_snapshot: _transfer_pb2.RegularSnapshot
+    transformation: _transfer_pb2.Transformation
+    data_objects: _transfer_pb2.DataObjects
+    def __init__(self, transfer_id: _Optional[str] = ..., description: _Optional[str] = ..., runtime: _Optional[_Union[_transfer_pb2.Runtime, _Mapping]] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., regular_snapshot: _Optional[_Union[_transfer_pb2.RegularSnapshot, _Mapping]] = ..., transformation: _Optional[_Union[_transfer_pb2.Transformation, _Mapping]] = ..., data_objects: _Optional[_Union[_transfer_pb2.DataObjects, _Mapping]] = ...) -> None: ...
 
 class DeleteTransferRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class ListTransfersRequest(_message.Message):
-    __slots__ = ["project_id", "page"]
+    __slots__ = ("project_id", "page")
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     PAGE_FIELD_NUMBER: _ClassVar[int]
     project_id: str
@@ -69,7 +85,7 @@ class ListTransfersRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., page: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListTransfersResponse(_message.Message):
-    __slots__ = ["transfers", "next_page_token"]
+    __slots__ = ("transfers", "next_page_token")
     TRANSFERS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     transfers: _containers.RepeatedCompositeFieldContainer[_transfer_pb2.Transfer]
@@ -77,33 +93,33 @@ class ListTransfersResponse(_message.Message):
     def __init__(self, transfers: _Optional[_Iterable[_Union[_transfer_pb2.Transfer, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class GetTransferRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class DeactivateTransferRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class ActivateTransferRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class GetMetricsRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class TransferMetrics(_message.Message):
-    __slots__ = ["metrics"]
+    __slots__ = ("metrics",)
     class Metric(_message.Message):
-        __slots__ = ["help", "type", "value"]
+        __slots__ = ("help", "type", "value")
         HELP_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -116,13 +132,13 @@ class TransferMetrics(_message.Message):
     def __init__(self, metrics: _Optional[_Iterable[_Union[TransferMetrics.Metric, _Mapping]]] = ...) -> None: ...
 
 class MetricExporterConnectionInfoRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class MetricExporterConnectionInfoMetadata(_message.Message):
-    __slots__ = ["connection_string", "user", "password"]
+    __slots__ = ("connection_string", "user", "password")
     CONNECTION_STRING_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -132,13 +148,13 @@ class MetricExporterConnectionInfoMetadata(_message.Message):
     def __init__(self, connection_string: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class DeleteExporterConnectionInfoRequest(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...
 
 class DeleteExporterConnectionInfoMetadata(_message.Message):
-    __slots__ = ["transfer_id"]
+    __slots__ = ("transfer_id",)
     TRANSFER_ID_FIELD_NUMBER: _ClassVar[int]
     transfer_id: str
     def __init__(self, transfer_id: _Optional[str] = ...) -> None: ...

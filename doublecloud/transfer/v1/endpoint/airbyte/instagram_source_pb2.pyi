@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class InstagramSource(_message.Message):
-    __slots__ = ["start_date", "access_token"]
+    __slots__ = ("start_date", "access_token")
     START_DATE_FIELD_NUMBER: _ClassVar[int]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     start_date: str

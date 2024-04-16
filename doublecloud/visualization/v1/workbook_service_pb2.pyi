@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetWorkbookRequest(_message.Message):
-    __slots__ = ["workbook_id"]
+    __slots__ = ("workbook_id",)
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     workbook_id: str
     def __init__(self, workbook_id: _Optional[str] = ...) -> None: ...
 
 class GetWorkbookResponse(_message.Message):
-    __slots__ = ["workbook", "id", "title", "project_id"]
+    __slots__ = ("workbook", "id", "title", "project_id")
     WORKBOOK_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
@@ -27,7 +27,7 @@ class GetWorkbookResponse(_message.Message):
     def __init__(self, workbook: _Optional[_Union[_workbook_pb2.Workbook, _Mapping]] = ..., id: _Optional[str] = ..., title: _Optional[str] = ..., project_id: _Optional[str] = ...) -> None: ...
 
 class CreateWorkbookRequest(_message.Message):
-    __slots__ = ["project_id", "workbook_title"]
+    __slots__ = ("project_id", "workbook_title")
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     WORKBOOK_TITLE_FIELD_NUMBER: _ClassVar[int]
     project_id: str
@@ -35,7 +35,7 @@ class CreateWorkbookRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., workbook_title: _Optional[str] = ...) -> None: ...
 
 class UpdateWorkbookRequest(_message.Message):
-    __slots__ = ["workbook_id", "workbook", "force_rewrite"]
+    __slots__ = ("workbook_id", "workbook", "force_rewrite")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     WORKBOOK_FIELD_NUMBER: _ClassVar[int]
     FORCE_REWRITE_FIELD_NUMBER: _ClassVar[int]
@@ -45,13 +45,13 @@ class UpdateWorkbookRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., workbook: _Optional[_Union[_workbook_pb2.Workbook, _Mapping]] = ..., force_rewrite: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
 
 class DeleteWorkbookRequest(_message.Message):
-    __slots__ = ["workbook_id"]
+    __slots__ = ("workbook_id",)
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     workbook_id: str
     def __init__(self, workbook_id: _Optional[str] = ...) -> None: ...
 
 class GetWorkbookConnectionRequest(_message.Message):
-    __slots__ = ["workbook_id", "connection_name"]
+    __slots__ = ("workbook_id", "connection_name")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     workbook_id: str
@@ -59,13 +59,13 @@ class GetWorkbookConnectionRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., connection_name: _Optional[str] = ...) -> None: ...
 
 class GetWorkbookConnectionResponse(_message.Message):
-    __slots__ = ["connection"]
+    __slots__ = ("connection",)
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     connection: _workbook_pb2.Connection
     def __init__(self, connection: _Optional[_Union[_workbook_pb2.Connection, _Mapping]] = ...) -> None: ...
 
 class CreateWorkbookConnectionRequest(_message.Message):
-    __slots__ = ["workbook_id", "connection_name", "connection", "secret"]
+    __slots__ = ("workbook_id", "connection_name", "connection", "secret")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
@@ -77,7 +77,7 @@ class CreateWorkbookConnectionRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., connection_name: _Optional[str] = ..., connection: _Optional[_Union[_workbook_pb2.Connection, _Mapping]] = ..., secret: _Optional[_Union[_workbook_pb2.Secret, _Mapping]] = ...) -> None: ...
 
 class UpdateWorkbookConnectionRequest(_message.Message):
-    __slots__ = ["workbook_id", "connection_name", "connection", "secret"]
+    __slots__ = ("workbook_id", "connection_name", "connection", "secret")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
@@ -89,7 +89,7 @@ class UpdateWorkbookConnectionRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., connection_name: _Optional[str] = ..., connection: _Optional[_Union[_workbook_pb2.Connection, _Mapping]] = ..., secret: _Optional[_Union[_workbook_pb2.Secret, _Mapping]] = ...) -> None: ...
 
 class DeleteWorkbookConnectionRequest(_message.Message):
-    __slots__ = ["workbook_id", "connection_name"]
+    __slots__ = ("workbook_id", "connection_name")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     workbook_id: str
@@ -97,7 +97,7 @@ class DeleteWorkbookConnectionRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., connection_name: _Optional[str] = ...) -> None: ...
 
 class AdviseDatasetFieldsRequest(_message.Message):
-    __slots__ = ["workbook_id", "connection_name", "partial_dataset"]
+    __slots__ = ("workbook_id", "connection_name", "partial_dataset")
     WORKBOOK_ID_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     PARTIAL_DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -107,19 +107,35 @@ class AdviseDatasetFieldsRequest(_message.Message):
     def __init__(self, workbook_id: _Optional[str] = ..., connection_name: _Optional[str] = ..., partial_dataset: _Optional[_Union[_workbook_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class AdviseDatasetFieldsResponse(_message.Message):
-    __slots__ = ["dataset"]
+    __slots__ = ("dataset",)
     DATASET_FIELD_NUMBER: _ClassVar[int]
     dataset: _workbook_pb2.Dataset
     def __init__(self, dataset: _Optional[_Union[_workbook_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class ListWorkbooksRequest(_message.Message):
-    __slots__ = ["project_id"]
+    __slots__ = ("project_id",)
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     project_id: str
     def __init__(self, project_id: _Optional[str] = ...) -> None: ...
 
 class ListWorkbooksResponse(_message.Message):
-    __slots__ = ["workbooks"]
+    __slots__ = ("workbooks",)
     WORKBOOKS_FIELD_NUMBER: _ClassVar[int]
     workbooks: _containers.RepeatedCompositeFieldContainer[_workbook_pb2.WorkbooksIndexItem]
     def __init__(self, workbooks: _Optional[_Iterable[_Union[_workbook_pb2.WorkbooksIndexItem, _Mapping]]] = ...) -> None: ...
+
+class ErrorDetailsRequest(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...
+
+class ErrorDetailsResponse(_message.Message):
+    __slots__ = ("id", "format", "details")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
+    DETAILS_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    format: str
+    details: str
+    def __init__(self, id: _Optional[str] = ..., format: _Optional[str] = ..., details: _Optional[str] = ...) -> None: ...

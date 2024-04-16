@@ -65,6 +65,11 @@ class WorkbookServiceStub(object):
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksResponse.FromString,
                 )
+        self.GetErrorDetails = channel.unary_unary(
+                '/doublecloud.visualization.v1.WorkbookService/GetErrorDetails',
+                request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsRequest.SerializeToString,
+                response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsResponse.FromString,
+                )
 
 
 class WorkbookServiceServicer(object):
@@ -134,6 +139,13 @@ class WorkbookServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetErrorDetails(self, request, context):
+        """Error details
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_WorkbookServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -186,6 +198,11 @@ def add_WorkbookServiceServicer_to_server(servicer, server):
                     servicer.ListWorkbooks,
                     request_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksRequest.FromString,
                     response_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksResponse.SerializeToString,
+            ),
+            'GetErrorDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetErrorDetails,
+                    request_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsRequest.FromString,
+                    response_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -364,5 +381,22 @@ class WorkbookService(object):
         return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/ListWorkbooks',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetErrorDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/GetErrorDetails',
+            doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsRequest.SerializeToString,
+            doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
