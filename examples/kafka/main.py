@@ -21,7 +21,9 @@ def main():
 
     cluster_id = None
     try:
-        operation = create_cluster(sdk, arguments.project_id, arguments.cloud_type, arguments.region, arguments.name, arguments.network_id)
+        operation = create_cluster(
+            sdk, arguments.project_id, arguments.cloud_type, arguments.region, arguments.name, arguments.network_id
+        )
         operation_result = sdk.wait_operation_and_get_result(
             operation,
         )

@@ -3,11 +3,11 @@
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-BUF_VERSION="1.16.0"
+BUF_VERSION="1.30.1"
 BIN="venv/bin"
 
 venv: ## install deps (library & development)
-	python -m venv venv
+	python3 -m venv venv
 	$(BIN)/python3 -m pip install --upgrade pip
 	$(BIN)/python3 -m pip install -r requirements-dev.txt
 	@ curl --fail --silent --show-error --location \

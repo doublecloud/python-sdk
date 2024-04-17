@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class NetworkConnection(_message.Message):
-    __slots__ = ["id", "network_id", "aws", "google", "create_time", "description", "status", "status_reason"]
+    __slots__ = ("id", "network_id", "aws", "google", "create_time", "description", "status", "status_reason")
     class NetworkConnectionStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NETWORK_CONNECTION_STATUS_INVALID: _ClassVar[NetworkConnection.NetworkConnectionStatus]
         NETWORK_CONNECTION_STATUS_CREATING: _ClassVar[NetworkConnection.NetworkConnectionStatus]
         NETWORK_CONNECTION_STATUS_PENDING: _ClassVar[NetworkConnection.NetworkConnectionStatus]
@@ -41,13 +41,13 @@ class NetworkConnection(_message.Message):
     def __init__(self, id: _Optional[str] = ..., network_id: _Optional[str] = ..., aws: _Optional[_Union[AWSNetworkConnectionInfo, _Mapping]] = ..., google: _Optional[_Union[GoogleNetworkConnectionInfo, _Mapping]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., description: _Optional[str] = ..., status: _Optional[_Union[NetworkConnection.NetworkConnectionStatus, str]] = ..., status_reason: _Optional[str] = ...) -> None: ...
 
 class AWSNetworkConnectionInfo(_message.Message):
-    __slots__ = ["peering"]
+    __slots__ = ("peering",)
     PEERING_FIELD_NUMBER: _ClassVar[int]
     peering: AWSNetworkConnectionPeeringInfo
     def __init__(self, peering: _Optional[_Union[AWSNetworkConnectionPeeringInfo, _Mapping]] = ...) -> None: ...
 
 class AWSNetworkConnectionPeeringInfo(_message.Message):
-    __slots__ = ["vpc_id", "account_id", "region_id", "ipv4_cidr_block", "ipv6_cidr_block", "peering_connection_id", "managed_ipv4_cidr_block", "managed_ipv6_cidr_block"]
+    __slots__ = ("vpc_id", "account_id", "region_id", "ipv4_cidr_block", "ipv6_cidr_block", "peering_connection_id", "managed_ipv4_cidr_block", "managed_ipv6_cidr_block")
     VPC_ID_FIELD_NUMBER: _ClassVar[int]
     ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -67,7 +67,7 @@ class AWSNetworkConnectionPeeringInfo(_message.Message):
     def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[str] = ..., region_id: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., peering_connection_id: _Optional[str] = ..., managed_ipv4_cidr_block: _Optional[str] = ..., managed_ipv6_cidr_block: _Optional[str] = ...) -> None: ...
 
 class GoogleNetworkConnectionInfo(_message.Message):
-    __slots__ = ["name", "peer_network_url", "managed_network_url"]
+    __slots__ = ("name", "peer_network_url", "managed_network_url")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PEER_NETWORK_URL_FIELD_NUMBER: _ClassVar[int]
     MANAGED_NETWORK_URL_FIELD_NUMBER: _ClassVar[int]

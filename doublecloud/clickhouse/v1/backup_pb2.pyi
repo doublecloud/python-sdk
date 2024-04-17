@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Backup(_message.Message):
-    __slots__ = ["id", "project_id", "name", "create_time", "start_time", "source_cluster_id", "size", "type"]
+    __slots__ = ("id", "project_id", "name", "create_time", "start_time", "source_cluster_id", "size", "type")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         TYPE_INVALID: _ClassVar[Backup.Type]
         TYPE_AUTOMATED: _ClassVar[Backup.Type]
         TYPE_MANUAL: _ClassVar[Backup.Type]

@@ -52,7 +52,7 @@ def parse_args():
     )
     auth.add_argument("--token", help="IAM token")
     parser.add_argument("--project-id", help="Your project ID", required=True)
-    parser.add_argument("--cloud-type", default="aws," help="Cloud provider")
+    parser.add_argument("--cloud-type", default="aws", help="Cloud provider")
     parser.add_argument("--region", default="eu-central-1", help="Region to deploy to.")
     parser.add_argument("--name", default="sdk-example", help="New cluster name.")
     parser.add_argument("--network-id", help="Network of the cluster.")

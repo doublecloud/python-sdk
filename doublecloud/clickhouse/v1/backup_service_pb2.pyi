@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetBackupRequest(_message.Message):
-    __slots__ = ["backup_id"]
+    __slots__ = ("backup_id",)
     BACKUP_ID_FIELD_NUMBER: _ClassVar[int]
     backup_id: str
     def __init__(self, backup_id: _Optional[str] = ...) -> None: ...
 
 class ListBackupsRequest(_message.Message):
-    __slots__ = ["project_id", "paging"]
+    __slots__ = ("project_id", "paging")
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     PAGING_FIELD_NUMBER: _ClassVar[int]
     project_id: str
@@ -23,7 +23,7 @@ class ListBackupsRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListBackupsResponse(_message.Message):
-    __slots__ = ["backups", "next_page"]
+    __slots__ = ("backups", "next_page")
     BACKUPS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_FIELD_NUMBER: _ClassVar[int]
     backups: _containers.RepeatedCompositeFieldContainer[_backup_pb2.Backup]
@@ -31,7 +31,7 @@ class ListBackupsResponse(_message.Message):
     def __init__(self, backups: _Optional[_Iterable[_Union[_backup_pb2.Backup, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateBackupRequest(_message.Message):
-    __slots__ = ["cluster_id", "name"]
+    __slots__ = ("cluster_id", "name")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -39,7 +39,7 @@ class CreateBackupRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteBackupRequest(_message.Message):
-    __slots__ = ["backup_id"]
+    __slots__ = ("backup_id",)
     BACKUP_ID_FIELD_NUMBER: _ClassVar[int]
     backup_id: str
     def __init__(self, backup_id: _Optional[str] = ...) -> None: ...

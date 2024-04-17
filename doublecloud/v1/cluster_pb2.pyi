@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ClusterStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     CLUSTER_STATUS_INVALID: _ClassVar[ClusterStatus]
     CLUSTER_STATUS_ALIVE: _ClassVar[ClusterStatus]
     CLUSTER_STATUS_DEGRADED: _ClassVar[ClusterStatus]
@@ -22,7 +22,7 @@ class ClusterStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CLUSTER_STATUS_ERROR: _ClassVar[ClusterStatus]
 
 class HostStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     HOST_STATUS_INVALID: _ClassVar[HostStatus]
     HOST_STATUS_ALIVE: _ClassVar[HostStatus]
     HOST_STATUS_DEAD: _ClassVar[HostStatus]
@@ -44,9 +44,9 @@ HOST_STATUS_DEAD: HostStatus
 HOST_STATUS_DEGRADED: HostStatus
 
 class Access(_message.Message):
-    __slots__ = ["ipv4_cidr_blocks", "ipv6_cidr_blocks", "data_services"]
+    __slots__ = ("ipv4_cidr_blocks", "ipv6_cidr_blocks", "data_services")
     class DataService(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         DATA_SERVICE_INVALID: _ClassVar[Access.DataService]
         DATA_SERVICE_VISUALIZATION: _ClassVar[Access.DataService]
         DATA_SERVICE_TRANSFER: _ClassVar[Access.DataService]
@@ -54,19 +54,19 @@ class Access(_message.Message):
     DATA_SERVICE_VISUALIZATION: Access.DataService
     DATA_SERVICE_TRANSFER: Access.DataService
     class CidrBlock(_message.Message):
-        __slots__ = ["value", "description"]
+        __slots__ = ("value", "description")
         VALUE_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         value: str
         description: str
         def __init__(self, value: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
     class CidrBlockList(_message.Message):
-        __slots__ = ["values"]
+        __slots__ = ("values",)
         VALUES_FIELD_NUMBER: _ClassVar[int]
         values: _containers.RepeatedCompositeFieldContainer[Access.CidrBlock]
         def __init__(self, values: _Optional[_Iterable[_Union[Access.CidrBlock, _Mapping]]] = ...) -> None: ...
     class DataServiceList(_message.Message):
-        __slots__ = ["values"]
+        __slots__ = ("values",)
         VALUES_FIELD_NUMBER: _ClassVar[int]
         values: _containers.RepeatedScalarFieldContainer[Access.DataService]
         def __init__(self, values: _Optional[_Iterable[_Union[Access.DataService, str]]] = ...) -> None: ...
@@ -79,7 +79,7 @@ class Access(_message.Message):
     def __init__(self, ipv4_cidr_blocks: _Optional[_Union[Access.CidrBlockList, _Mapping]] = ..., ipv6_cidr_blocks: _Optional[_Union[Access.CidrBlockList, _Mapping]] = ..., data_services: _Optional[_Union[Access.DataServiceList, _Mapping]] = ...) -> None: ...
 
 class DataEncryption(_message.Message):
-    __slots__ = ["enabled"]
+    __slots__ = ("enabled",)
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     enabled: _wrappers_pb2.BoolValue
     def __init__(self, enabled: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...

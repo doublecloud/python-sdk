@@ -6,11 +6,11 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LinkedinAdsSource(_message.Message):
-    __slots__ = ["start_date", "account_ids", "credentials"]
+    __slots__ = ("start_date", "account_ids", "credentials")
     class Credentials(_message.Message):
-        __slots__ = ["oauth", "access_token"]
+        __slots__ = ("oauth", "access_token")
         class OAuth(_message.Message):
-            __slots__ = ["client_id", "client_secret", "refresh_token"]
+            __slots__ = ("client_id", "client_secret", "refresh_token")
             CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
             CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
             REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]

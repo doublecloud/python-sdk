@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Topic(_message.Message):
-    __slots__ = ["name", "cluster_id", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3", "is_ha"]
+    __slots__ = ("name", "cluster_id", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3", "is_ha")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     PARTITIONS_FIELD_NUMBER: _ClassVar[int]
@@ -25,7 +25,7 @@ class Topic(_message.Message):
     def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., partitions: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., topic_config_2_8: _Optional[_Union[TopicConfig28, _Mapping]] = ..., topic_config_3: _Optional[_Union[TopicConfig3, _Mapping]] = ..., is_ha: bool = ...) -> None: ...
 
 class TopicSpec(_message.Message):
-    __slots__ = ["name", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3"]
+    __slots__ = ("name", "partitions", "replication_factor", "topic_config_2_8", "topic_config_3")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PARTITIONS_FIELD_NUMBER: _ClassVar[int]
     REPLICATION_FACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -39,9 +39,9 @@ class TopicSpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., partitions: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., replication_factor: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., topic_config_2_8: _Optional[_Union[TopicConfig28, _Mapping]] = ..., topic_config_3: _Optional[_Union[TopicConfig3, _Mapping]] = ...) -> None: ...
 
 class TopicConfig28(_message.Message):
-    __slots__ = ["cleanup_policy", "compression_type", "retention_bytes", "retention_ms", "max_message_bytes"]
+    __slots__ = ("cleanup_policy", "compression_type", "retention_bytes", "retention_ms", "max_message_bytes")
     class CleanupPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         CLEANUP_POLICY_INVALID: _ClassVar[TopicConfig28.CleanupPolicy]
         CLEANUP_POLICY_DELETE: _ClassVar[TopicConfig28.CleanupPolicy]
         CLEANUP_POLICY_COMPACT: _ClassVar[TopicConfig28.CleanupPolicy]
@@ -51,7 +51,7 @@ class TopicConfig28(_message.Message):
     CLEANUP_POLICY_COMPACT: TopicConfig28.CleanupPolicy
     CLEANUP_POLICY_COMPACT_AND_DELETE: TopicConfig28.CleanupPolicy
     class CompressionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         COMPRESSION_TYPE_INVALID: _ClassVar[TopicConfig28.CompressionType]
         COMPRESSION_TYPE_UNCOMPRESSED: _ClassVar[TopicConfig28.CompressionType]
         COMPRESSION_TYPE_ZSTD: _ClassVar[TopicConfig28.CompressionType]
@@ -79,9 +79,9 @@ class TopicConfig28(_message.Message):
     def __init__(self, cleanup_policy: _Optional[_Union[TopicConfig28.CleanupPolicy, str]] = ..., compression_type: _Optional[_Union[TopicConfig28.CompressionType, str]] = ..., retention_bytes: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., retention_ms: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., max_message_bytes: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ...) -> None: ...
 
 class TopicConfig3(_message.Message):
-    __slots__ = ["cleanup_policy", "compression_type", "retention_bytes", "retention_ms", "max_message_bytes"]
+    __slots__ = ("cleanup_policy", "compression_type", "retention_bytes", "retention_ms", "max_message_bytes")
     class CleanupPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         CLEANUP_POLICY_INVALID: _ClassVar[TopicConfig3.CleanupPolicy]
         CLEANUP_POLICY_DELETE: _ClassVar[TopicConfig3.CleanupPolicy]
         CLEANUP_POLICY_COMPACT: _ClassVar[TopicConfig3.CleanupPolicy]
@@ -91,7 +91,7 @@ class TopicConfig3(_message.Message):
     CLEANUP_POLICY_COMPACT: TopicConfig3.CleanupPolicy
     CLEANUP_POLICY_COMPACT_AND_DELETE: TopicConfig3.CleanupPolicy
     class CompressionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         COMPRESSION_TYPE_INVALID: _ClassVar[TopicConfig3.CompressionType]
         COMPRESSION_TYPE_UNCOMPRESSED: _ClassVar[TopicConfig3.CompressionType]
         COMPRESSION_TYPE_ZSTD: _ClassVar[TopicConfig3.CompressionType]

@@ -8,13 +8,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListVersionsRequest(_message.Message):
-    __slots__ = ["paging"]
+    __slots__ = ("paging",)
     PAGING_FIELD_NUMBER: _ClassVar[int]
     paging: _paging_pb2.Paging
     def __init__(self, paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListVersionsResponse(_message.Message):
-    __slots__ = ["versions", "next_page"]
+    __slots__ = ("versions", "next_page")
     VERSIONS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_FIELD_NUMBER: _ClassVar[int]
     versions: _containers.RepeatedCompositeFieldContainer[_version_pb2.Version]

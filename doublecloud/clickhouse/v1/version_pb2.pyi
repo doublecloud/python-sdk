@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Version(_message.Message):
-    __slots__ = ["id", "name", "deprecated", "updatable_to"]
+    __slots__ = ("id", "name", "deprecated", "updatable_to")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEPRECATED_FIELD_NUMBER: _ClassVar[int]
