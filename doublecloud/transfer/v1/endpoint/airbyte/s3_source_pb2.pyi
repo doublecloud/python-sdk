@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class S3Source(_message.Message):
-    __slots__ = ["dataset", "path_pattern", "schema", "format", "provider"]
+    __slots__ = ("dataset", "path_pattern", "schema", "format", "provider")
     class Format(_message.Message):
-        __slots__ = ["csv", "parquet", "avro", "jsonl"]
+        __slots__ = ("csv", "parquet", "avro", "jsonl")
         CSV_FIELD_NUMBER: _ClassVar[int]
         PARQUET_FIELD_NUMBER: _ClassVar[int]
         AVRO_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class S3Source(_message.Message):
         jsonl: S3Source.Jsonl
         def __init__(self, csv: _Optional[_Union[S3Source.Csv, _Mapping]] = ..., parquet: _Optional[_Union[S3Source.Parquet, _Mapping]] = ..., avro: _Optional[_Union[S3Source.Avro, _Mapping]] = ..., jsonl: _Optional[_Union[S3Source.Jsonl, _Mapping]] = ...) -> None: ...
     class Provider(_message.Message):
-        __slots__ = ["bucket", "aws_access_key_id", "aws_secret_access_key", "path_prefix", "endpoint", "use_ssl", "verify_ssl_cert"]
+        __slots__ = ("bucket", "aws_access_key_id", "aws_secret_access_key", "path_prefix", "endpoint", "use_ssl", "verify_ssl_cert")
         BUCKET_FIELD_NUMBER: _ClassVar[int]
         AWS_ACCESS_KEY_ID_FIELD_NUMBER: _ClassVar[int]
         AWS_SECRET_ACCESS_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -37,7 +37,7 @@ class S3Source(_message.Message):
         verify_ssl_cert: bool
         def __init__(self, bucket: _Optional[str] = ..., aws_access_key_id: _Optional[str] = ..., aws_secret_access_key: _Optional[str] = ..., path_prefix: _Optional[str] = ..., endpoint: _Optional[str] = ..., use_ssl: bool = ..., verify_ssl_cert: bool = ...) -> None: ...
     class Csv(_message.Message):
-        __slots__ = ["delimiter", "quote_char", "escape_char", "encoding", "double_quote", "newlines_in_values", "block_size", "additional_reader_options", "advanced_options"]
+        __slots__ = ("delimiter", "quote_char", "escape_char", "encoding", "double_quote", "newlines_in_values", "block_size", "additional_reader_options", "advanced_options")
         DELIMITER_FIELD_NUMBER: _ClassVar[int]
         QUOTE_CHAR_FIELD_NUMBER: _ClassVar[int]
         ESCAPE_CHAR_FIELD_NUMBER: _ClassVar[int]
@@ -58,12 +58,12 @@ class S3Source(_message.Message):
         advanced_options: str
         def __init__(self, delimiter: _Optional[str] = ..., quote_char: _Optional[str] = ..., escape_char: _Optional[str] = ..., encoding: _Optional[str] = ..., double_quote: bool = ..., newlines_in_values: bool = ..., block_size: _Optional[int] = ..., additional_reader_options: _Optional[str] = ..., advanced_options: _Optional[str] = ...) -> None: ...
     class Avro(_message.Message):
-        __slots__ = []
+        __slots__ = ()
         def __init__(self) -> None: ...
     class Jsonl(_message.Message):
-        __slots__ = ["newlines_in_values", "unexpected_field_behavior", "block_size"]
+        __slots__ = ("newlines_in_values", "unexpected_field_behavior", "block_size")
         class UnexpectedFieldBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+            __slots__ = ()
             UNEXPECTED_FIELD_BEHAVIOR_UNSPECIFIED: _ClassVar[S3Source.Jsonl.UnexpectedFieldBehavior]
             UNEXPECTED_FIELD_BEHAVIOR_IGNORE: _ClassVar[S3Source.Jsonl.UnexpectedFieldBehavior]
             UNEXPECTED_FIELD_BEHAVIOR_INFER: _ClassVar[S3Source.Jsonl.UnexpectedFieldBehavior]
@@ -80,7 +80,7 @@ class S3Source(_message.Message):
         block_size: int
         def __init__(self, newlines_in_values: bool = ..., unexpected_field_behavior: _Optional[_Union[S3Source.Jsonl.UnexpectedFieldBehavior, str]] = ..., block_size: _Optional[int] = ...) -> None: ...
     class Parquet(_message.Message):
-        __slots__ = ["buffer_size", "columns", "batch_size"]
+        __slots__ = ("buffer_size", "columns", "batch_size")
         BUFFER_SIZE_FIELD_NUMBER: _ClassVar[int]
         COLUMNS_FIELD_NUMBER: _ClassVar[int]
         BATCH_SIZE_FIELD_NUMBER: _ClassVar[int]

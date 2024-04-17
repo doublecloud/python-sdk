@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AmazonAdsSource(_message.Message):
-    __slots__ = ["client_id", "client_secret", "scope", "refresh_token", "start_date", "region", "profiles"]
+    __slots__ = ("client_id", "client_secret", "scope", "refresh_token", "start_date", "region", "profiles")
     CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
     CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]

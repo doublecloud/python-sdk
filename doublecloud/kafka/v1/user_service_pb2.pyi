@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetUserRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_name"]
+    __slots__ = ("cluster_id", "user_name")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -18,7 +18,7 @@ class GetUserRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., user_name: _Optional[str] = ...) -> None: ...
 
 class ListUsersRequest(_message.Message):
-    __slots__ = ["cluster_id", "paging"]
+    __slots__ = ("cluster_id", "paging")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     PAGING_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -26,7 +26,7 @@ class ListUsersRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListUsersResponse(_message.Message):
-    __slots__ = ["users", "next_page"]
+    __slots__ = ("users", "next_page")
     USERS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_FIELD_NUMBER: _ClassVar[int]
     users: _containers.RepeatedCompositeFieldContainer[_user_pb2.User]
@@ -34,7 +34,7 @@ class ListUsersResponse(_message.Message):
     def __init__(self, users: _Optional[_Iterable[_Union[_user_pb2.User, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateUserRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_spec"]
+    __slots__ = ("cluster_id", "user_spec")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_SPEC_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -42,11 +42,11 @@ class CreateUserRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., user_spec: _Optional[_Union[_user_pb2.UserSpec, _Mapping]] = ...) -> None: ...
 
 class UpdateUserRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_name", "update_spec"]
+    __slots__ = ("cluster_id", "user_name", "update_spec")
     class UpdateSpec(_message.Message):
-        __slots__ = ["password", "permissions"]
+        __slots__ = ("password", "permissions")
         class UpdatePermissions(_message.Message):
-            __slots__ = ["permissions"]
+            __slots__ = ("permissions",)
             PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
             permissions: _containers.RepeatedCompositeFieldContainer[_user_pb2.Permission]
             def __init__(self, permissions: _Optional[_Iterable[_Union[_user_pb2.Permission, _Mapping]]] = ...) -> None: ...
@@ -64,7 +64,7 @@ class UpdateUserRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., user_name: _Optional[str] = ..., update_spec: _Optional[_Union[UpdateUserRequest.UpdateSpec, _Mapping]] = ...) -> None: ...
 
 class DeleteUserRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_name"]
+    __slots__ = ("cluster_id", "user_name")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -72,7 +72,7 @@ class DeleteUserRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., user_name: _Optional[str] = ...) -> None: ...
 
 class GrantUserPermissionRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_name", "permission"]
+    __slots__ = ("cluster_id", "user_name", "permission")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_NAME_FIELD_NUMBER: _ClassVar[int]
     PERMISSION_FIELD_NUMBER: _ClassVar[int]
@@ -82,7 +82,7 @@ class GrantUserPermissionRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., user_name: _Optional[str] = ..., permission: _Optional[_Union[_user_pb2.Permission, _Mapping]] = ...) -> None: ...
 
 class RevokeUserPermissionRequest(_message.Message):
-    __slots__ = ["cluster_id", "user_name", "permission"]
+    __slots__ = ("cluster_id", "user_name", "permission")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_NAME_FIELD_NUMBER: _ClassVar[int]
     PERMISSION_FIELD_NUMBER: _ClassVar[int]

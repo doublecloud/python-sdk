@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetTopicRequest(_message.Message):
-    __slots__ = ["cluster_id", "topic_name"]
+    __slots__ = ("cluster_id", "topic_name")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     TOPIC_NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -17,7 +17,7 @@ class GetTopicRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., topic_name: _Optional[str] = ...) -> None: ...
 
 class ListTopicsRequest(_message.Message):
-    __slots__ = ["cluster_id", "paging"]
+    __slots__ = ("cluster_id", "paging")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     PAGING_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -25,7 +25,7 @@ class ListTopicsRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., paging: _Optional[_Union[_paging_pb2.Paging, _Mapping]] = ...) -> None: ...
 
 class ListTopicsResponse(_message.Message):
-    __slots__ = ["topics", "next_page"]
+    __slots__ = ("topics", "next_page")
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_FIELD_NUMBER: _ClassVar[int]
     topics: _containers.RepeatedCompositeFieldContainer[_topic_pb2.Topic]
@@ -33,7 +33,7 @@ class ListTopicsResponse(_message.Message):
     def __init__(self, topics: _Optional[_Iterable[_Union[_topic_pb2.Topic, _Mapping]]] = ..., next_page: _Optional[_Union[_paging_pb2.NextPage, _Mapping]] = ...) -> None: ...
 
 class CreateTopicRequest(_message.Message):
-    __slots__ = ["cluster_id", "topic_spec"]
+    __slots__ = ("cluster_id", "topic_spec")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     TOPIC_SPEC_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
@@ -41,7 +41,7 @@ class CreateTopicRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., topic_spec: _Optional[_Union[_topic_pb2.TopicSpec, _Mapping]] = ...) -> None: ...
 
 class UpdateTopicRequest(_message.Message):
-    __slots__ = ["cluster_id", "topic_name", "topic_spec"]
+    __slots__ = ("cluster_id", "topic_name", "topic_spec")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     TOPIC_NAME_FIELD_NUMBER: _ClassVar[int]
     TOPIC_SPEC_FIELD_NUMBER: _ClassVar[int]
@@ -51,7 +51,7 @@ class UpdateTopicRequest(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ..., topic_name: _Optional[str] = ..., topic_spec: _Optional[_Union[_topic_pb2.TopicSpec, _Mapping]] = ...) -> None: ...
 
 class DeleteTopicRequest(_message.Message):
-    __slots__ = ["cluster_id", "topic_name"]
+    __slots__ = ("cluster_id", "topic_name")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     TOPIC_NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str

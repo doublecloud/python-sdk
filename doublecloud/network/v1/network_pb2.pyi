@@ -1,17 +1,16 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
-from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Network(_message.Message):
-    __slots__ = ["id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "ipv4_cidr_block", "ipv6_cidr_block", "status", "status_reason", "aws", "gcp", "is_external"]
+    __slots__ = ("id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "ipv4_cidr_block", "ipv6_cidr_block", "status", "status_reason", "aws", "gcp", "is_external")
     class NetworkStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NETWORK_STATUS_INVALID: _ClassVar[Network.NetworkStatus]
         NETWORK_STATUS_CREATING: _ClassVar[Network.NetworkStatus]
         NETWORK_STATUS_ACTIVE: _ClassVar[Network.NetworkStatus]
@@ -53,32 +52,29 @@ class Network(_message.Message):
     def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., status: _Optional[_Union[Network.NetworkStatus, str]] = ..., status_reason: _Optional[str] = ..., aws: _Optional[_Union[AwsExternalResources, _Mapping]] = ..., gcp: _Optional[_Union[GcpExternalResources, _Mapping]] = ..., is_external: bool = ...) -> None: ...
 
 class AwsExternalResources(_message.Message):
-    __slots__ = ["vpc_id", "subnets", "security_group_id", "account_id", "iam_role_arn", "stack_id", "cf_template_version"]
-    class Subnet(_message.Message):
-        __slots__ = ["id", "zone_id"]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        ZONE_ID_FIELD_NUMBER: _ClassVar[int]
-        id: str
-        zone_id: str
-        def __init__(self, id: _Optional[str] = ..., zone_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("vpc_id", "account_id", "iam_role_arn", "stack_id", "cf_template_version", "private_subnets")
     VPC_ID_FIELD_NUMBER: _ClassVar[int]
-    SUBNETS_FIELD_NUMBER: _ClassVar[int]
-    SECURITY_GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     IAM_ROLE_ARN_FIELD_NUMBER: _ClassVar[int]
     STACK_ID_FIELD_NUMBER: _ClassVar[int]
     CF_TEMPLATE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    PRIVATE_SUBNETS_FIELD_NUMBER: _ClassVar[int]
     vpc_id: str
-    subnets: _containers.RepeatedCompositeFieldContainer[AwsExternalResources.Subnet]
-    security_group_id: str
     account_id: _wrappers_pb2.StringValue
     iam_role_arn: _wrappers_pb2.StringValue
     stack_id: _wrappers_pb2.StringValue
     cf_template_version: _wrappers_pb2.StringValue
-    def __init__(self, vpc_id: _Optional[str] = ..., subnets: _Optional[_Iterable[_Union[AwsExternalResources.Subnet, _Mapping]]] = ..., security_group_id: _Optional[str] = ..., account_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., iam_role_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., stack_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., cf_template_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
+    private_subnets: _wrappers_pb2.BoolValue
+    def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., iam_role_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., stack_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., cf_template_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., private_subnets: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
 
 class GcpExternalResources(_message.Message):
-    __slots__ = ["subnetwork_link"]
-    SUBNETWORK_LINK_FIELD_NUMBER: _ClassVar[int]
-    subnetwork_link: str
-    def __init__(self, subnetwork_link: _Optional[str] = ...) -> None: ...
+    __slots__ = ("project_name", "service_account_email", "network_name", "subnetwork_name")
+    PROJECT_NAME_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER: _ClassVar[int]
+    NETWORK_NAME_FIELD_NUMBER: _ClassVar[int]
+    SUBNETWORK_NAME_FIELD_NUMBER: _ClassVar[int]
+    project_name: _wrappers_pb2.StringValue
+    service_account_email: _wrappers_pb2.StringValue
+    network_name: _wrappers_pb2.StringValue
+    subnetwork_name: _wrappers_pb2.StringValue
+    def __init__(self, project_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., service_account_email: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., network_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., subnetwork_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...

@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class BigQuerySource(_message.Message):
-    __slots__ = ["project_id", "dataset_id", "credentials_json"]
+    __slots__ = ("project_id", "dataset_id", "credentials_json")
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     DATASET_ID_FIELD_NUMBER: _ClassVar[int]
     CREDENTIALS_JSON_FIELD_NUMBER: _ClassVar[int]
