@@ -6,8 +6,64 @@ import logging
 # pylint: disable=E0401
 from create import create_cluster
 from delete import delete_cluster
+from topics import create_topic, delete_topic
+from users import create_user, delete_user
 
 import doublecloud
+from doublecloud.kafka.v1.user_pb2 import Permission
+
+
+def populate(sdk, cluster_id):
+    for topic in ["events", "orders", "calls"]:
+        logging.info(f'🪵 Creating topic "{topic}" ...')
+        create_topic(sdk, cluster_id, name=topic, partitions=1)
+    logging.info(f"🪵 Topics: https://app.double.cloud/kafka/{cluster_id}/topics")
+
+    logging.info('🤖 Creating user "engineer" ...')
+    create_user(
+        sdk,
+        cluster_id,
+        name="engineer",
+        password="Gizmo-Headsman-Travel3",
+        permissions=[Permission(topic_name="*", role=Permission.ACCESS_ROLE_ADMIN)],
+    )
+    logging.info('🤖 Creating user "api" who will produce messages to topics ...')
+    # A user without permission will have all permissions
+    create_user(sdk, cluster_id, name="api", password="Happiness1-Confirm-Saloon")
+
+    logging.info('🤖 Creating user "crm" who will consume messages for CRM system ...')
+    create_user(
+        sdk,
+        cluster_id,
+        name="crm",
+        password="Crazed-Unclamped-Efficient0",
+        permissions=[
+            Permission(topic_name="orders", role=Permission.ACCESS_ROLE_CONSUMER),
+            Permission(topic_name="calls", role=Permission.ACCESS_ROLE_PRODUCER),
+        ],
+    )
+    logging.info('🤖 Creating user "transfer" who will consume messages for CRM system ...')
+    create_user(
+        sdk,
+        cluster_id,
+        name="transfer",
+        password="Delegator-Chaos0-Driven",
+        permissions=[
+            Permission(topic_name="events", role=Permission.ACCESS_ROLE_CONSUMER),
+            Permission(topic_name="orders", role=Permission.ACCESS_ROLE_CONSUMER),
+            Permission(topic_name="calls", role=Permission.ACCESS_ROLE_CONSUMER),
+        ],
+    )
+
+
+def clean(sdk, cluster_id):
+    for topic in ["events", "orders", "calls"]:
+        logging.info(f'🪵 Deleting topic "{topic}" ...\n')
+        delete_topic(sdk, cluster_id, topic)
+
+    for user in ["engineer", "api", "crm", "transfer"]:
+        logging.info(f'🤖 Deleting user "{user}" ...\n')
+        delete_user(sdk, cluster_id, name=user)
 
 
 def main():
@@ -31,7 +87,9 @@ def main():
 
         logging.info("\n\nWonderful! 🚀 Check out created cluster\n" f"https://app.double.cloud/kafka/{cluster_id}\n")
 
+        populate(sdk, cluster_id)
         input("Press F to respect and delete all created resources ...")
+        clean(sdk, cluster_id)
     finally:
         if cluster_id:
             logging.info(f"Deleting cluster {cluster_id}")
