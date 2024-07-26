@@ -20,27 +20,27 @@ class EndpointServiceStub(object):
                 '/doublecloud.transfer.v1.EndpointService/Get',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
-                )
+                _registered_method=True)
         self.List = channel.unary_unary(
                 '/doublecloud.transfer.v1.EndpointService/List',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
-                )
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/doublecloud.transfer.v1.EndpointService/Create',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/doublecloud.transfer.v1.EndpointService/Update',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.UpdateEndpointRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/doublecloud.transfer.v1.EndpointService/Delete',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.DeleteEndpointRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
 
 
 class EndpointServiceServicer(object):
@@ -108,6 +108,7 @@ def add_EndpointServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.transfer.v1.EndpointService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('doublecloud.transfer.v1.EndpointService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -125,11 +126,21 @@ class EndpointService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.EndpointService/Get',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.transfer.v1.EndpointService/Get',
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def List(request,
@@ -142,11 +153,21 @@ class EndpointService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.EndpointService/List',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.transfer.v1.EndpointService/List',
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Create(request,
@@ -159,11 +180,21 @@ class EndpointService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.EndpointService/Create',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.transfer.v1.EndpointService/Create',
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Update(request,
@@ -176,11 +207,21 @@ class EndpointService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.EndpointService/Update',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.transfer.v1.EndpointService/Update',
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.UpdateEndpointRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Delete(request,
@@ -193,8 +234,18 @@ class EndpointService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.EndpointService/Delete',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.transfer.v1.EndpointService/Delete',
             doublecloud_dot_transfer_dot_v1_dot_endpoint__service__pb2.DeleteEndpointRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

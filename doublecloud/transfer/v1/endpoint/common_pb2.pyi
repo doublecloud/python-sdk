@@ -110,6 +110,32 @@ class ColumnValue(_message.Message):
     string_value: str
     def __init__(self, string_value: _Optional[str] = ...) -> None: ...
 
+class HeaderValue(_message.Message):
+    __slots__ = ("key", "value")
+    KEY_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    key: str
+    value: str
+    def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+
+class DataTransformationOptions(_message.Message):
+    __slots__ = ("cloud_function", "number_of_retries", "buffer_size", "buffer_flush_interval", "invocation_timeout", "cloud_function_url", "headers")
+    CLOUD_FUNCTION_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_OF_RETRIES_FIELD_NUMBER: _ClassVar[int]
+    BUFFER_SIZE_FIELD_NUMBER: _ClassVar[int]
+    BUFFER_FLUSH_INTERVAL_FIELD_NUMBER: _ClassVar[int]
+    INVOCATION_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
+    CLOUD_FUNCTION_URL_FIELD_NUMBER: _ClassVar[int]
+    HEADERS_FIELD_NUMBER: _ClassVar[int]
+    cloud_function: str
+    number_of_retries: int
+    buffer_size: str
+    buffer_flush_interval: str
+    invocation_timeout: str
+    cloud_function_url: str
+    headers: _containers.RepeatedCompositeFieldContainer[HeaderValue]
+    def __init__(self, cloud_function: _Optional[str] = ..., number_of_retries: _Optional[int] = ..., buffer_size: _Optional[str] = ..., buffer_flush_interval: _Optional[str] = ..., invocation_timeout: _Optional[str] = ..., cloud_function_url: _Optional[str] = ..., headers: _Optional[_Iterable[_Union[HeaderValue, _Mapping]]] = ...) -> None: ...
+
 class FieldList(_message.Message):
     __slots__ = ("fields",)
     FIELDS_FIELD_NUMBER: _ClassVar[int]
@@ -117,12 +143,12 @@ class FieldList(_message.Message):
     def __init__(self, fields: _Optional[_Iterable[_Union[ColSchema, _Mapping]]] = ...) -> None: ...
 
 class DataSchema(_message.Message):
-    __slots__ = ("fields", "json_fields")
-    FIELDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("json_fields", "fields")
     JSON_FIELDS_FIELD_NUMBER: _ClassVar[int]
-    fields: FieldList
+    FIELDS_FIELD_NUMBER: _ClassVar[int]
     json_fields: str
-    def __init__(self, fields: _Optional[_Union[FieldList, _Mapping]] = ..., json_fields: _Optional[str] = ...) -> None: ...
+    fields: FieldList
+    def __init__(self, json_fields: _Optional[str] = ..., fields: _Optional[_Union[FieldList, _Mapping]] = ...) -> None: ...
 
 class NoAuth(_message.Message):
     __slots__ = ()

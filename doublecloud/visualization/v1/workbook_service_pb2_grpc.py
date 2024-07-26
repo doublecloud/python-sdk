@@ -19,57 +19,57 @@ class WorkbookServiceStub(object):
                 '/doublecloud.visualization.v1.WorkbookService/Get',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookResponse.FromString,
-                )
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/Create',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.CreateWorkbookRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/Update',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.UpdateWorkbookRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/Delete',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.DeleteWorkbookRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.GetConnection = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/GetConnection',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookConnectionResponse.FromString,
-                )
+                _registered_method=True)
         self.CreateConnection = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/CreateConnection',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.CreateWorkbookConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.UpdateConnection = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/UpdateConnection',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.UpdateWorkbookConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.DeleteConnection = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/DeleteConnection',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.DeleteWorkbookConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.AdviseDatasetFields = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/AdviseDatasetFields',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.AdviseDatasetFieldsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.AdviseDatasetFieldsResponse.FromString,
-                )
+                _registered_method=True)
         self.ListWorkbooks = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/ListWorkbooks',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksResponse.FromString,
-                )
+                _registered_method=True)
         self.GetErrorDetails = channel.unary_unary(
                 '/doublecloud.visualization.v1.WorkbookService/GetErrorDetails',
                 request_serializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class WorkbookServiceServicer(object):
@@ -208,6 +208,7 @@ def add_WorkbookServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.visualization.v1.WorkbookService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('doublecloud.visualization.v1.WorkbookService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -225,11 +226,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/Get',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/Get',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Create(request,
@@ -242,11 +253,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/Create',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/Create',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.CreateWorkbookRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Update(request,
@@ -259,11 +280,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/Update',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/Update',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.UpdateWorkbookRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Delete(request,
@@ -276,11 +307,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/Delete',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/Delete',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.DeleteWorkbookRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetConnection(request,
@@ -293,11 +334,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/GetConnection',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/GetConnection',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookConnectionRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.GetWorkbookConnectionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CreateConnection(request,
@@ -310,11 +361,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/CreateConnection',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/CreateConnection',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.CreateWorkbookConnectionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateConnection(request,
@@ -327,11 +388,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/UpdateConnection',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/UpdateConnection',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.UpdateWorkbookConnectionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteConnection(request,
@@ -344,11 +415,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/DeleteConnection',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/DeleteConnection',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.DeleteWorkbookConnectionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def AdviseDatasetFields(request,
@@ -361,11 +442,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/AdviseDatasetFields',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/AdviseDatasetFields',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.AdviseDatasetFieldsRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.AdviseDatasetFieldsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListWorkbooks(request,
@@ -378,11 +469,21 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/ListWorkbooks',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/ListWorkbooks',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ListWorkbooksResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetErrorDetails(request,
@@ -395,8 +496,18 @@ class WorkbookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.visualization.v1.WorkbookService/GetErrorDetails',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.visualization.v1.WorkbookService/GetErrorDetails',
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsRequest.SerializeToString,
             doublecloud_dot_visualization_dot_v1_dot_workbook__service__pb2.ErrorDetailsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

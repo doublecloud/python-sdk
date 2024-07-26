@@ -27,6 +27,10 @@ class HostStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     HOST_STATUS_ALIVE: _ClassVar[HostStatus]
     HOST_STATUS_DEAD: _ClassVar[HostStatus]
     HOST_STATUS_DEGRADED: _ClassVar[HostStatus]
+    HOST_STATUS_CREATING: _ClassVar[HostStatus]
+    HOST_STATUS_STOPPING: _ClassVar[HostStatus]
+    HOST_STATUS_STOPPED: _ClassVar[HostStatus]
+    HOST_STATUS_STARTING: _ClassVar[HostStatus]
 CLUSTER_STATUS_INVALID: ClusterStatus
 CLUSTER_STATUS_ALIVE: ClusterStatus
 CLUSTER_STATUS_DEGRADED: ClusterStatus
@@ -42,6 +46,10 @@ HOST_STATUS_INVALID: HostStatus
 HOST_STATUS_ALIVE: HostStatus
 HOST_STATUS_DEAD: HostStatus
 HOST_STATUS_DEGRADED: HostStatus
+HOST_STATUS_CREATING: HostStatus
+HOST_STATUS_STOPPING: HostStatus
+HOST_STATUS_STOPPED: HostStatus
+HOST_STATUS_STARTING: HostStatus
 
 class Access(_message.Message):
     __slots__ = ("ipv4_cidr_blocks", "ipv6_cidr_blocks", "data_services")

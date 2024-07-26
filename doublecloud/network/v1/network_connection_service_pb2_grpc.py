@@ -21,22 +21,22 @@ class NetworkConnectionServiceStub(object):
                 '/doublecloud.network.v1.NetworkConnectionService/Get',
                 request_serializer=doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.GetNetworkConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_network_dot_v1_dot_network__connection__pb2.NetworkConnection.FromString,
-                )
+                _registered_method=True)
         self.List = channel.unary_unary(
                 '/doublecloud.network.v1.NetworkConnectionService/List',
                 request_serializer=doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.ListNetworkConnectionsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.ListNetworkConnectionsResponse.FromString,
-                )
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/doublecloud.network.v1.NetworkConnectionService/Create',
                 request_serializer=doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.CreateNetworkConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/doublecloud.network.v1.NetworkConnectionService/Delete',
                 request_serializer=doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.DeleteNetworkConnectionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
 
 
 class NetworkConnectionServiceServicer(object):
@@ -98,6 +98,7 @@ def add_NetworkConnectionServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.network.v1.NetworkConnectionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('doublecloud.network.v1.NetworkConnectionService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -116,11 +117,21 @@ class NetworkConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.network.v1.NetworkConnectionService/Get',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.network.v1.NetworkConnectionService/Get',
             doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.GetNetworkConnectionRequest.SerializeToString,
             doublecloud_dot_network_dot_v1_dot_network__connection__pb2.NetworkConnection.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def List(request,
@@ -133,11 +144,21 @@ class NetworkConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.network.v1.NetworkConnectionService/List',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.network.v1.NetworkConnectionService/List',
             doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.ListNetworkConnectionsRequest.SerializeToString,
             doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.ListNetworkConnectionsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Create(request,
@@ -150,11 +171,21 @@ class NetworkConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.network.v1.NetworkConnectionService/Create',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.network.v1.NetworkConnectionService/Create',
             doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.CreateNetworkConnectionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Delete(request,
@@ -167,8 +198,18 @@ class NetworkConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.network.v1.NetworkConnectionService/Delete',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.network.v1.NetworkConnectionService/Delete',
             doublecloud_dot_network_dot_v1_dot_network__connection__service__pb2.DeleteNetworkConnectionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

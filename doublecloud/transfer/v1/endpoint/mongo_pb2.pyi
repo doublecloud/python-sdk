@@ -6,6 +6,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class SrvMongo(_message.Message):
+    __slots__ = ("hostname", "replica_set", "tls_mode")
+    HOSTNAME_FIELD_NUMBER: _ClassVar[int]
+    REPLICA_SET_FIELD_NUMBER: _ClassVar[int]
+    TLS_MODE_FIELD_NUMBER: _ClassVar[int]
+    hostname: str
+    replica_set: str
+    tls_mode: _common_pb2.TLSMode
+    def __init__(self, hostname: _Optional[str] = ..., replica_set: _Optional[str] = ..., tls_mode: _Optional[_Union[_common_pb2.TLSMode, _Mapping]] = ...) -> None: ...
+
 class OnPremiseMongo(_message.Message):
     __slots__ = ("hosts", "port", "replica_set", "tls_mode")
     HOSTS_FIELD_NUMBER: _ClassVar[int]
@@ -19,16 +29,18 @@ class OnPremiseMongo(_message.Message):
     def __init__(self, hosts: _Optional[_Iterable[str]] = ..., port: _Optional[int] = ..., replica_set: _Optional[str] = ..., tls_mode: _Optional[_Union[_common_pb2.TLSMode, _Mapping]] = ...) -> None: ...
 
 class MongoConnectionOptions(_message.Message):
-    __slots__ = ("on_premise", "user", "password", "auth_source")
+    __slots__ = ("on_premise", "srv", "user", "password", "auth_source")
     ON_PREMISE_FIELD_NUMBER: _ClassVar[int]
+    SRV_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     AUTH_SOURCE_FIELD_NUMBER: _ClassVar[int]
     on_premise: OnPremiseMongo
+    srv: SrvMongo
     user: str
     password: _common_pb2.Secret
     auth_source: str
-    def __init__(self, on_premise: _Optional[_Union[OnPremiseMongo, _Mapping]] = ..., user: _Optional[str] = ..., password: _Optional[_Union[_common_pb2.Secret, _Mapping]] = ..., auth_source: _Optional[str] = ...) -> None: ...
+    def __init__(self, on_premise: _Optional[_Union[OnPremiseMongo, _Mapping]] = ..., srv: _Optional[_Union[SrvMongo, _Mapping]] = ..., user: _Optional[str] = ..., password: _Optional[_Union[_common_pb2.Secret, _Mapping]] = ..., auth_source: _Optional[str] = ...) -> None: ...
 
 class MongoConnection(_message.Message):
     __slots__ = ("connection_options",)

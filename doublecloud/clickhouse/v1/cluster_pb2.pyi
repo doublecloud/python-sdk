@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Cluster(_message.Message):
-    __slots__ = ("id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation", "metrics_exporter_connection_info")
+    __slots__ = ("id", "project_id", "cloud_type", "region_id", "create_time", "name", "description", "status", "version", "resources", "connection_info", "access", "private_connection_info", "encryption", "network_id", "clickhouse_config", "maintenance_window", "maintenance_operation", "metrics_exporter_connection_info", "custom_certificate")
     ID_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     CLOUD_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -30,6 +30,7 @@ class Cluster(_message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     MAINTENANCE_OPERATION_FIELD_NUMBER: _ClassVar[int]
     METRICS_EXPORTER_CONNECTION_INFO_FIELD_NUMBER: _ClassVar[int]
+    CUSTOM_CERTIFICATE_FIELD_NUMBER: _ClassVar[int]
     id: str
     project_id: str
     cloud_type: str
@@ -49,7 +50,8 @@ class Cluster(_message.Message):
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     maintenance_operation: _maintenance_pb2.MaintenanceOperation
     metrics_exporter_connection_info: MetricsExporterConnectionInfo
-    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., maintenance_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., metrics_exporter_connection_info: _Optional[_Union[MetricsExporterConnectionInfo, _Mapping]] = ...) -> None: ...
+    custom_certificate: CustomCertificate
+    def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.ClusterStatus, str]] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[ClusterResources, _Mapping]] = ..., connection_info: _Optional[_Union[ConnectionInfo, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., private_connection_info: _Optional[_Union[PrivateConnectionInfo, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., maintenance_operation: _Optional[_Union[_maintenance_pb2.MaintenanceOperation, _Mapping]] = ..., metrics_exporter_connection_info: _Optional[_Union[MetricsExporterConnectionInfo, _Mapping]] = ..., custom_certificate: _Optional[_Union[CustomCertificate, _Mapping]] = ...) -> None: ...
 
 class ClusterResources(_message.Message):
     __slots__ = ("clickhouse", "dedicated_keeper")
@@ -156,3 +158,15 @@ class Host(_message.Message):
     private_name: str
     status: _cluster_pb2.HostStatus
     def __init__(self, name: _Optional[str] = ..., cluster_id: _Optional[str] = ..., shard_name: _Optional[str] = ..., private_name: _Optional[str] = ..., status: _Optional[_Union[_cluster_pb2.HostStatus, str]] = ...) -> None: ...
+
+class CustomCertificate(_message.Message):
+    __slots__ = ("enabled", "certificate", "key", "root_ca")
+    ENABLED_FIELD_NUMBER: _ClassVar[int]
+    CERTIFICATE_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
+    ROOT_CA_FIELD_NUMBER: _ClassVar[int]
+    enabled: bool
+    certificate: _wrappers_pb2.BytesValue
+    key: _wrappers_pb2.BytesValue
+    root_ca: _wrappers_pb2.BytesValue
+    def __init__(self, enabled: bool = ..., certificate: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ..., key: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ..., root_ca: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ...) -> None: ...

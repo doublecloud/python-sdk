@@ -1,3 +1,5 @@
+from doublecloud.transfer.v1.endpoint import common_pb2 as _common_pb2
+from doublecloud.transfer.v1.endpoint import parsers_pb2 as _parsers_pb2
 from doublecloud.transfer.v1 import endpoint_pb2 as _endpoint_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -129,12 +131,12 @@ class ServerlessRuntime(_message.Message):
     def __init__(self, job_count: _Optional[int] = ...) -> None: ...
 
 class RegularSnapshot(_message.Message):
-    __slots__ = ("disabled", "settings")
-    DISABLED_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("settings", "disabled")
     SETTINGS_FIELD_NUMBER: _ClassVar[int]
-    disabled: RegularSnapshotDisabled
+    DISABLED_FIELD_NUMBER: _ClassVar[int]
     settings: RegularSnapshotSettings
-    def __init__(self, disabled: _Optional[_Union[RegularSnapshotDisabled, _Mapping]] = ..., settings: _Optional[_Union[RegularSnapshotSettings, _Mapping]] = ...) -> None: ...
+    disabled: RegularSnapshotDisabled
+    def __init__(self, settings: _Optional[_Union[RegularSnapshotSettings, _Mapping]] = ..., disabled: _Optional[_Union[RegularSnapshotDisabled, _Mapping]] = ...) -> None: ...
 
 class RegularSnapshotDisabled(_message.Message):
     __slots__ = ()
@@ -371,7 +373,7 @@ class NumberToFloatTransformer(_message.Message):
     def __init__(self, tables: _Optional[_Union[TablesFilter, _Mapping]] = ...) -> None: ...
 
 class Transformer(_message.Message):
-    __slots__ = ("mask_field", "filter_columns", "skip_events", "rename_tables", "replace_primary_key", "convert_to_string", "sharder_transformer", "sql", "dbt", "table_splitter_transformer", "filter_rows", "number_to_float_transformer")
+    __slots__ = ("mask_field", "filter_columns", "skip_events", "rename_tables", "replace_primary_key", "convert_to_string", "sharder_transformer", "sql", "dbt", "table_splitter_transformer", "filter_rows", "number_to_float_transformer", "json_mapper_transformer", "cloud_function_transformer")
     MASK_FIELD_FIELD_NUMBER: _ClassVar[int]
     FILTER_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     SKIP_EVENTS_FIELD_NUMBER: _ClassVar[int]
@@ -384,6 +386,8 @@ class Transformer(_message.Message):
     TABLE_SPLITTER_TRANSFORMER_FIELD_NUMBER: _ClassVar[int]
     FILTER_ROWS_FIELD_NUMBER: _ClassVar[int]
     NUMBER_TO_FLOAT_TRANSFORMER_FIELD_NUMBER: _ClassVar[int]
+    JSON_MAPPER_TRANSFORMER_FIELD_NUMBER: _ClassVar[int]
+    CLOUD_FUNCTION_TRANSFORMER_FIELD_NUMBER: _ClassVar[int]
     mask_field: MaskFieldTransformer
     filter_columns: FilterColumnsTransformer
     skip_events: SkipEventsTransformer
@@ -396,7 +400,27 @@ class Transformer(_message.Message):
     table_splitter_transformer: TableSplitterTransformer
     filter_rows: FilterRowsTransformer
     number_to_float_transformer: NumberToFloatTransformer
-    def __init__(self, mask_field: _Optional[_Union[MaskFieldTransformer, _Mapping]] = ..., filter_columns: _Optional[_Union[FilterColumnsTransformer, _Mapping]] = ..., skip_events: _Optional[_Union[SkipEventsTransformer, _Mapping]] = ..., rename_tables: _Optional[_Union[RenameTablesTransformer, _Mapping]] = ..., replace_primary_key: _Optional[_Union[ReplacePrimaryKeyTransformer, _Mapping]] = ..., convert_to_string: _Optional[_Union[ToStringTransformer, _Mapping]] = ..., sharder_transformer: _Optional[_Union[SharderTransformer, _Mapping]] = ..., sql: _Optional[_Union[SQLTransformer, _Mapping]] = ..., dbt: _Optional[_Union[DBTTransformer, _Mapping]] = ..., table_splitter_transformer: _Optional[_Union[TableSplitterTransformer, _Mapping]] = ..., filter_rows: _Optional[_Union[FilterRowsTransformer, _Mapping]] = ..., number_to_float_transformer: _Optional[_Union[NumberToFloatTransformer, _Mapping]] = ...) -> None: ...
+    json_mapper_transformer: JsonParserTransformer
+    cloud_function_transformer: CloudFunctionTransformer
+    def __init__(self, mask_field: _Optional[_Union[MaskFieldTransformer, _Mapping]] = ..., filter_columns: _Optional[_Union[FilterColumnsTransformer, _Mapping]] = ..., skip_events: _Optional[_Union[SkipEventsTransformer, _Mapping]] = ..., rename_tables: _Optional[_Union[RenameTablesTransformer, _Mapping]] = ..., replace_primary_key: _Optional[_Union[ReplacePrimaryKeyTransformer, _Mapping]] = ..., convert_to_string: _Optional[_Union[ToStringTransformer, _Mapping]] = ..., sharder_transformer: _Optional[_Union[SharderTransformer, _Mapping]] = ..., sql: _Optional[_Union[SQLTransformer, _Mapping]] = ..., dbt: _Optional[_Union[DBTTransformer, _Mapping]] = ..., table_splitter_transformer: _Optional[_Union[TableSplitterTransformer, _Mapping]] = ..., filter_rows: _Optional[_Union[FilterRowsTransformer, _Mapping]] = ..., number_to_float_transformer: _Optional[_Union[NumberToFloatTransformer, _Mapping]] = ..., json_mapper_transformer: _Optional[_Union[JsonParserTransformer, _Mapping]] = ..., cloud_function_transformer: _Optional[_Union[CloudFunctionTransformer, _Mapping]] = ...) -> None: ...
+
+class CloudFunctionTransformer(_message.Message):
+    __slots__ = ("name", "name_space", "options")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    NAME_SPACE_FIELD_NUMBER: _ClassVar[int]
+    OPTIONS_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    name_space: str
+    options: _common_pb2.DataTransformationOptions
+    def __init__(self, name: _Optional[str] = ..., name_space: _Optional[str] = ..., options: _Optional[_Union[_common_pb2.DataTransformationOptions, _Mapping]] = ...) -> None: ...
+
+class JsonParserTransformer(_message.Message):
+    __slots__ = ("topic", "config")
+    TOPIC_FIELD_NUMBER: _ClassVar[int]
+    CONFIG_FIELD_NUMBER: _ClassVar[int]
+    topic: str
+    config: _parsers_pb2.GenericParserCommon
+    def __init__(self, topic: _Optional[str] = ..., config: _Optional[_Union[_parsers_pb2.GenericParserCommon, _Mapping]] = ...) -> None: ...
 
 class Transformation(_message.Message):
     __slots__ = ("transformers",)

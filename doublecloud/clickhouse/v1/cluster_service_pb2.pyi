@@ -78,7 +78,7 @@ class CreateClusterRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2_1.Access, _Mapping]] = ..., encryption: _Optional[_Union[_cluster_pb2_1.DataEncryption, _Mapping]] = ..., network_id: _Optional[str] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ...) -> None: ...
 
 class UpdateClusterRequest(_message.Message):
-    __slots__ = ("cluster_id", "name", "description", "version", "resources", "access", "clickhouse_config", "maintenance_window")
+    __slots__ = ("cluster_id", "name", "description", "version", "resources", "access", "clickhouse_config", "maintenance_window", "custom_certificate")
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -87,6 +87,7 @@ class UpdateClusterRequest(_message.Message):
     ACCESS_FIELD_NUMBER: _ClassVar[int]
     CLICKHOUSE_CONFIG_FIELD_NUMBER: _ClassVar[int]
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
+    CUSTOM_CERTIFICATE_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
     name: str
     description: str
@@ -95,7 +96,8 @@ class UpdateClusterRequest(_message.Message):
     access: _cluster_pb2_1.Access
     clickhouse_config: _config_pb2.ClickhouseConfig
     maintenance_window: _maintenance_pb2.MaintenanceWindow
-    def __init__(self, cluster_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2_1.Access, _Mapping]] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ...) -> None: ...
+    custom_certificate: _cluster_pb2.CustomCertificate
+    def __init__(self, cluster_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., version: _Optional[str] = ..., resources: _Optional[_Union[_cluster_pb2.ClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2_1.Access, _Mapping]] = ..., clickhouse_config: _Optional[_Union[_config_pb2.ClickhouseConfig, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., custom_certificate: _Optional[_Union[_cluster_pb2.CustomCertificate, _Mapping]] = ...) -> None: ...
 
 class DeleteClusterRequest(_message.Message):
     __slots__ = ("cluster_id",)

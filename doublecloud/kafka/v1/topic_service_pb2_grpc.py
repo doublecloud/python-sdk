@@ -21,27 +21,27 @@ class TopicServiceStub(object):
                 '/doublecloud.kafka.v1.TopicService/Get',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.GetTopicRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_topic__pb2.Topic.FromString,
-                )
+                _registered_method=True)
         self.List = channel.unary_unary(
                 '/doublecloud.kafka.v1.TopicService/List',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.ListTopicsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.ListTopicsResponse.FromString,
-                )
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/doublecloud.kafka.v1.TopicService/Create',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.CreateTopicRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/doublecloud.kafka.v1.TopicService/Update',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.UpdateTopicRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/doublecloud.kafka.v1.TopicService/Delete',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.DeleteTopicRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                )
+                _registered_method=True)
 
 
 class TopicServiceServicer(object):
@@ -118,6 +118,7 @@ def add_TopicServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.kafka.v1.TopicService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('doublecloud.kafka.v1.TopicService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -136,11 +137,21 @@ class TopicService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.TopicService/Get',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.kafka.v1.TopicService/Get',
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.GetTopicRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_topic__pb2.Topic.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def List(request,
@@ -153,11 +164,21 @@ class TopicService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.TopicService/List',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.kafka.v1.TopicService/List',
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.ListTopicsRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.ListTopicsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Create(request,
@@ -170,11 +191,21 @@ class TopicService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.TopicService/Create',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.kafka.v1.TopicService/Create',
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.CreateTopicRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Update(request,
@@ -187,11 +218,21 @@ class TopicService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.TopicService/Update',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.kafka.v1.TopicService/Update',
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.UpdateTopicRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Delete(request,
@@ -204,8 +245,18 @@ class TopicService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.TopicService/Delete',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/doublecloud.kafka.v1.TopicService/Delete',
             doublecloud_dot_kafka_dot_v1_dot_topic__service__pb2.DeleteTopicRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

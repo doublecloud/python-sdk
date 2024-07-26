@@ -40,18 +40,18 @@ class OnPremiseClickhouse(_message.Message):
     def __init__(self, shards: _Optional[_Iterable[_Union[ClickhouseShard, _Mapping]]] = ..., http_port: _Optional[int] = ..., native_port: _Optional[int] = ..., tls_mode: _Optional[_Union[_common_pb2.TLSMode, _Mapping]] = ...) -> None: ...
 
 class ClickhouseConnectionOptions(_message.Message):
-    __slots__ = ("mdb_cluster_id", "on_premise", "user", "password", "database")
-    MDB_CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("on_premise", "mdb_cluster_id", "user", "password", "database")
     ON_PREMISE_FIELD_NUMBER: _ClassVar[int]
+    MDB_CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     DATABASE_FIELD_NUMBER: _ClassVar[int]
-    mdb_cluster_id: str
     on_premise: OnPremiseClickhouse
+    mdb_cluster_id: str
     user: str
     password: _common_pb2.Secret
     database: str
-    def __init__(self, mdb_cluster_id: _Optional[str] = ..., on_premise: _Optional[_Union[OnPremiseClickhouse, _Mapping]] = ..., user: _Optional[str] = ..., password: _Optional[_Union[_common_pb2.Secret, _Mapping]] = ..., database: _Optional[str] = ...) -> None: ...
+    def __init__(self, on_premise: _Optional[_Union[OnPremiseClickhouse, _Mapping]] = ..., mdb_cluster_id: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[_Union[_common_pb2.Secret, _Mapping]] = ..., database: _Optional[str] = ...) -> None: ...
 
 class ClickhouseConnection(_message.Message):
     __slots__ = ("connection_options",)
@@ -96,6 +96,12 @@ class ClickhouseMigrationOptions(_message.Message):
     add_new_columns: bool
     def __init__(self, add_new_columns: bool = ...) -> None: ...
 
+class ClickhouseInsertOptions(_message.Message):
+    __slots__ = ("materialized_views_ignore_errors",)
+    MATERIALIZED_VIEWS_IGNORE_ERRORS_FIELD_NUMBER: _ClassVar[int]
+    materialized_views_ignore_errors: bool
+    def __init__(self, materialized_views_ignore_errors: bool = ...) -> None: ...
+
 class ClickhouseSource(_message.Message):
     __slots__ = ("connection", "include_tables", "exclude_tables")
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
@@ -107,17 +113,19 @@ class ClickhouseSource(_message.Message):
     def __init__(self, connection: _Optional[_Union[ClickhouseConnection, _Mapping]] = ..., include_tables: _Optional[_Iterable[str]] = ..., exclude_tables: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ClickhouseTarget(_message.Message):
-    __slots__ = ("connection", "alt_names", "migration_options", "cleanup_policy", "sharding", "clickhouse_cluster_name")
+    __slots__ = ("connection", "alt_names", "migration_options", "cleanup_policy", "sharding", "insert_options", "clickhouse_cluster_name")
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     ALT_NAMES_FIELD_NUMBER: _ClassVar[int]
     MIGRATION_OPTIONS_FIELD_NUMBER: _ClassVar[int]
     CLEANUP_POLICY_FIELD_NUMBER: _ClassVar[int]
     SHARDING_FIELD_NUMBER: _ClassVar[int]
+    INSERT_OPTIONS_FIELD_NUMBER: _ClassVar[int]
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: _ClassVar[int]
     connection: ClickhouseConnection
     alt_names: _containers.RepeatedCompositeFieldContainer[_common_pb2.AltName]
     migration_options: ClickhouseMigrationOptions
     cleanup_policy: ClickhouseCleanupPolicy
     sharding: ClickhouseSharding
+    insert_options: ClickhouseInsertOptions
     clickhouse_cluster_name: str
-    def __init__(self, connection: _Optional[_Union[ClickhouseConnection, _Mapping]] = ..., alt_names: _Optional[_Iterable[_Union[_common_pb2.AltName, _Mapping]]] = ..., migration_options: _Optional[_Union[ClickhouseMigrationOptions, _Mapping]] = ..., cleanup_policy: _Optional[_Union[ClickhouseCleanupPolicy, str]] = ..., sharding: _Optional[_Union[ClickhouseSharding, _Mapping]] = ..., clickhouse_cluster_name: _Optional[str] = ...) -> None: ...
+    def __init__(self, connection: _Optional[_Union[ClickhouseConnection, _Mapping]] = ..., alt_names: _Optional[_Iterable[_Union[_common_pb2.AltName, _Mapping]]] = ..., migration_options: _Optional[_Union[ClickhouseMigrationOptions, _Mapping]] = ..., cleanup_policy: _Optional[_Union[ClickhouseCleanupPolicy, str]] = ..., sharding: _Optional[_Union[ClickhouseSharding, _Mapping]] = ..., insert_options: _Optional[_Union[ClickhouseInsertOptions, _Mapping]] = ..., clickhouse_cluster_name: _Optional[str] = ...) -> None: ...
