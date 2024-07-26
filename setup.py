@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 packages = find_packages(".", include=["doublecloud*"])
 
-__version__ = "0.8.0"
+__version__ = "0.9.0"
 
 setup(
     name="doublecloud",

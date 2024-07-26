@@ -2,6 +2,25 @@
 
 <!--next-version-placeholder-->
 
+## v0.9.0 (2024-07-26)
+
+### Feature
+
+* Build: regenerate proto ([`0178456`](https://github.com/doublecloud/python-sdk/commit/0178456337349b0f62aa9c95c48f44e5a70c1633))
+* Do not test auto-generated files ([`d2c9af9`](https://github.com/doublecloud/python-sdk/commit/d2c9af923a588211989f242fa15d3ada2dd3887d))
+* * feat: use graviton 3 for examples
+* feat: add example with kafka topics and user ([`fecae0e`](https://github.com/doublecloud/python-sdk/commit/fecae0ef9a146f116022fe42b83a5d6778c8d5a9))
+* * feat: update specs and rebuild stubs
+* build: update buf and python3.12 and eliminate python3.8 ([`18dd16f`](https://github.com/doublecloud/python-sdk/commit/18dd16f442c56d016aca6a9ead5b6338de9c46ad))
+* DOCS-220 update resource preset generation in example ([`7cd7267`](https://github.com/doublecloud/python-sdk/commit/7cd7267ff2d221bf9722dccc19285cc79e7136c0))
+* DOCS-179 Add GCP as a cloud provider option ([`9b8dd25`](https://github.com/doublecloud/python-sdk/commit/9b8dd2554c38ae3a39d2abcf47fb484de391221d))
+* Build: regenerate proto ([`03011bc`](https://github.com/doublecloud/python-sdk/commit/03011bc401506594b9d085cdb27b06c5c9f746e5))
+* Build: regenerate proto ([`2451518`](https://github.com/doublecloud/python-sdk/commit/2451518f619fe462f1fe8ec9206c9847238847a7))
+* Build: regenerate proto ([`b7570da`](https://github.com/doublecloud/python-sdk/commit/b7570dae815657458a0d5b6e37020f71c76d3206))
+* Build: regenerate proto ([`0ff5adc`](https://github.com/doublecloud/python-sdk/commit/0ff5adc68564cb7075b71897e5997c85d13273bb))
+* Build: regenerate proto ([`068f873`](https://github.com/doublecloud/python-sdk/commit/068f8736990b62892711bf0312e1ade65b8de112))
+* Build: regenerate proto ([`fd85f9e`](https://github.com/doublecloud/python-sdk/commit/fd85f9e51f623530accb6cedffbaee248869d42c))
+
 ## v0.8.0 (2023-07-17)
 
 ### Feature
