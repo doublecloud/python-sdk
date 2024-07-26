@@ -28,7 +28,6 @@ jobs:
       run: |
         make venv
         make generate
-        make tox
         
         git config --global user.name 'Double.Cloud Bot'
         git config --global user.email 'bot@double.cloud'
