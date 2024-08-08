@@ -2,18 +2,6 @@
 
 <!--next-version-placeholder-->
 
-## v0.11.0 (2024-08-08)
-
-### Feature
-
-* Better
-
-* upgrade all deps to latest to fix issues with local toolchain
-* add exceptions for linters for new generated paths
-* tiny rename for buf ([`58b59d5`](https://github.com/doublecloud/python-sdk/commit/58b59d55d298cc85af5ad6fc97dacee92ce2d11d))
-* * update buf and pin all dependencies ([`e34b843`](https://github.com/doublecloud/python-sdk/commit/e34b84351d058436fb4202efe5edcf3bbfa42d68))
-* Build: regenerate proto ([`6666e51`](https://github.com/doublecloud/python-sdk/commit/6666e515561c67f1f5faeada45654c61c7f4e02d))
-
 ## v0.10.0 (2024-07-26)
 
 
