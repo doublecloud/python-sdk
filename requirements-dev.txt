@@ -7,5 +7,5 @@ pytest
 python-semantic-release==7.34.6
 tox
 tox-gh-actions
-grpcio-tools
+grpcio-tools==1.62.1
 wheel

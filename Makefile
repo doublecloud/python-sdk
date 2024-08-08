@@ -3,7 +3,7 @@
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-BUF_VERSION="1.30.1"
+BUF_VERSION="1.36.0"
 BIN="venv/bin"
 
 venv: ## install deps (library & development)
