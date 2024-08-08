@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v0.12.0 (2024-08-08)
+
+### Feature
+
+* Revert "Revert "0.11.0""
+
+This reverts commit bfe4aa2490c9549845948e6f3fbb240cf806c77e. ([`fcca8b3`](https://github.com/doublecloud/python-sdk/commit/fcca8b36cb2c729c2b8840c107e6be4aa8f3952d))
+* Revert "0.11.0"
+
+This reverts commit d8eb080af0ed4d0f6710241d4d1364a8c56c0cda. ([`bfe4aa2`](https://github.com/doublecloud/python-sdk/commit/bfe4aa2490c9549845948e6f3fbb240cf806c77e))
+
 ## v0.11.0 (2024-08-08)
 
 ### Feature
