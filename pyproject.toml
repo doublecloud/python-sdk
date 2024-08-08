@@ -18,9 +18,12 @@ extend-exclude = '''
 [tool.isort]
 profile = "black"
 skip_glob = [
+    "doublecloud/access/*",
     "doublecloud/clickhouse/*",
     "doublecloud/kafka/*",
+    "doublecloud/logs/*",
     "doublecloud/network/*",
+    "doublecloud/organizationmanager/*",
     "doublecloud/transfer/*",
     "doublecloud/v1/*",
     "doublecloud/visualization/*"

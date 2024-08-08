@@ -4,8 +4,11 @@ max-complexity = 15
 # https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices
 extend-ignore = E203
 exclude = 
+    doublecloud/access
+    doublecloud/organizationmanager
     doublecloud/clickhouse
     doublecloud/kafka
+    doublecloud/logs
     doublecloud/network
     doublecloud/transfer
     doublecloud/v1

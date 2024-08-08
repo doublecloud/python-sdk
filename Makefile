@@ -3,7 +3,7 @@
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-BUF_VERSION="1.30.1"
+BUF_VERSION="1.36.0"
 BIN="venv/bin"
 
 venv: ## install deps (library & development)
@@ -44,7 +44,7 @@ clean: ## clean environment and generated code
 generate: submodule venv ## generate code from specifications
 	cp buf.yaml api/buf.yaml
 	cp buf.gen.yaml api/buf.gen.yaml
-	cd api; ../venv/bin/buf mod update
+	cd api; ../venv/bin/buf dep update
 	cd api; ../venv/bin/buf generate
 
 	find doublecloud -type d -exec touch {}/__init__.py \;
