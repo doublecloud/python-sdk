@@ -52,20 +52,22 @@ class Network(_message.Message):
     def __init__(self, id: _Optional[str] = ..., project_id: _Optional[str] = ..., cloud_type: _Optional[str] = ..., region_id: _Optional[str] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., ipv4_cidr_block: _Optional[str] = ..., ipv6_cidr_block: _Optional[str] = ..., status: _Optional[_Union[Network.NetworkStatus, str]] = ..., status_reason: _Optional[str] = ..., aws: _Optional[_Union[AwsExternalResources, _Mapping]] = ..., gcp: _Optional[_Union[GcpExternalResources, _Mapping]] = ..., is_external: bool = ...) -> None: ...
 
 class AwsExternalResources(_message.Message):
-    __slots__ = ("vpc_id", "account_id", "iam_role_arn", "stack_id", "cf_template_version", "private_subnets")
+    __slots__ = ("vpc_id", "account_id", "iam_role_arn", "stack_id", "cf_template_version", "private_subnets", "iam_policy_permission_boundary_arn")
     VPC_ID_FIELD_NUMBER: _ClassVar[int]
     ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
     IAM_ROLE_ARN_FIELD_NUMBER: _ClassVar[int]
     STACK_ID_FIELD_NUMBER: _ClassVar[int]
     CF_TEMPLATE_VERSION_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_SUBNETS_FIELD_NUMBER: _ClassVar[int]
+    IAM_POLICY_PERMISSION_BOUNDARY_ARN_FIELD_NUMBER: _ClassVar[int]
     vpc_id: str
     account_id: _wrappers_pb2.StringValue
     iam_role_arn: _wrappers_pb2.StringValue
     stack_id: _wrappers_pb2.StringValue
     cf_template_version: _wrappers_pb2.StringValue
     private_subnets: _wrappers_pb2.BoolValue
-    def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., iam_role_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., stack_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., cf_template_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., private_subnets: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ...) -> None: ...
+    iam_policy_permission_boundary_arn: _wrappers_pb2.StringValue
+    def __init__(self, vpc_id: _Optional[str] = ..., account_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., iam_role_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., stack_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., cf_template_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., private_subnets: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., iam_policy_permission_boundary_arn: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class GcpExternalResources(_message.Message):
     __slots__ = ("project_name", "service_account_email", "network_name", "subnetwork_name")
