@@ -81,7 +81,7 @@ class ImportNetworkRequest(_message.Message):
     def __init__(self, project_id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., aws: _Optional[_Union[ImportAWSVPCRequest, _Mapping]] = ..., google: _Optional[_Union[ImportGoogleVPCRequest, _Mapping]] = ...) -> None: ...
 
 class ImportAWSVPCRequest(_message.Message):
-    __slots__ = ("vpc_id", "region_id", "account_id", "iam_role_arn", "stack_id", "version", "private_subnets", "iam_policy_permission_boundary_arn")
+    __slots__ = ("vpc_id", "region_id", "account_id", "iam_role_arn", "stack_id", "version", "private_subnets")
     VPC_ID_FIELD_NUMBER: _ClassVar[int]
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
     ACCOUNT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -89,7 +89,6 @@ class ImportAWSVPCRequest(_message.Message):
     STACK_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_SUBNETS_FIELD_NUMBER: _ClassVar[int]
-    IAM_POLICY_PERMISSION_BOUNDARY_ARN_FIELD_NUMBER: _ClassVar[int]
     vpc_id: str
     region_id: str
     account_id: str
@@ -97,8 +96,7 @@ class ImportAWSVPCRequest(_message.Message):
     stack_id: str
     version: str
     private_subnets: bool
-    iam_policy_permission_boundary_arn: str
-    def __init__(self, vpc_id: _Optional[str] = ..., region_id: _Optional[str] = ..., account_id: _Optional[str] = ..., iam_role_arn: _Optional[str] = ..., stack_id: _Optional[str] = ..., version: _Optional[str] = ..., private_subnets: bool = ..., iam_policy_permission_boundary_arn: _Optional[str] = ...) -> None: ...
+    def __init__(self, vpc_id: _Optional[str] = ..., region_id: _Optional[str] = ..., account_id: _Optional[str] = ..., iam_role_arn: _Optional[str] = ..., stack_id: _Optional[str] = ..., version: _Optional[str] = ..., private_subnets: bool = ...) -> None: ...
 
 class ImportGoogleVPCRequest(_message.Message):
     __slots__ = ("service_account_email", "project_name", "network_name", "region_id", "subnetwork_name")
