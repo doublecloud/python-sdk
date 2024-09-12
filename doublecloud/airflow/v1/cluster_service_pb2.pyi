@@ -144,7 +144,7 @@ class DeleteClusterMetadata(_message.Message):
     def __init__(self, cluster_id: _Optional[str] = ...) -> None: ...
 
 class UpdateClusterRequest(_message.Message):
-    __slots__ = ("cluster_id", "description", "resources", "access", "maintenance_window", "config")
+    __slots__ = ("cluster_id", "description", "resources", "access", "maintenance_window", "config", "name")
     class UpdateClusterResources(_message.Message):
         __slots__ = ("airflow",)
         class Airflow(_message.Message):
@@ -187,13 +187,15 @@ class UpdateClusterRequest(_message.Message):
     ACCESS_FIELD_NUMBER: _ClassVar[int]
     MAINTENANCE_WINDOW_FIELD_NUMBER: _ClassVar[int]
     CONFIG_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     cluster_id: str
     description: _wrappers_pb2.StringValue
     resources: UpdateClusterRequest.UpdateClusterResources
     access: _cluster_pb2.Access
     maintenance_window: _maintenance_pb2.MaintenanceWindow
     config: UpdateClusterRequest.UpdateAirflowConfig
-    def __init__(self, cluster_id: _Optional[str] = ..., description: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., resources: _Optional[_Union[UpdateClusterRequest.UpdateClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., config: _Optional[_Union[UpdateClusterRequest.UpdateAirflowConfig, _Mapping]] = ...) -> None: ...
+    name: _wrappers_pb2.StringValue
+    def __init__(self, cluster_id: _Optional[str] = ..., description: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., resources: _Optional[_Union[UpdateClusterRequest.UpdateClusterResources, _Mapping]] = ..., access: _Optional[_Union[_cluster_pb2.Access, _Mapping]] = ..., maintenance_window: _Optional[_Union[_maintenance_pb2.MaintenanceWindow, _Mapping]] = ..., config: _Optional[_Union[UpdateClusterRequest.UpdateAirflowConfig, _Mapping]] = ..., name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class RescheduleMaintenanceRequest(_message.Message):
     __slots__ = ("cluster_id", "reschedule_type", "delayed_until_time")

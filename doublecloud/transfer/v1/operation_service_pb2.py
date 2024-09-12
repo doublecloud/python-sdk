@@ -26,7 +26,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from doublecloud.v1 import operation_pb2 as doublecloud_dot_v1_dot_operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/doublecloud/transfer/v1/operation_service.proto\x12\x17\x64oublecloud.transfer.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x64oublecloud/v1/operation.proto\"8\n\x13GetOperationRequest\x12!\n\x0coperation_id\x18\x01 \x01(\tR\x0boperationId2\x88\x01\n\x10OperationService\x12t\n\x03Get\x12,.doublecloud.transfer.v1.GetOperationRequest\x1a\x19.doublecloud.v1.Operation\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/operation/{operation_id}BEZCgithub.com/doublecloud/go-genproto/doublecloud/transfer/v1;transferb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/doublecloud/transfer/v1/operation_service.proto\x12\x17\x64oublecloud.transfer.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x64oublecloud/v1/operation.proto\"8\n\x13GetOperationRequest\x12!\n\x0coperation_id\x18\x01 \x01(\tR\x0boperationId2b\n\x10OperationService\x12N\n\x03Get\x12,.doublecloud.transfer.v1.GetOperationRequest\x1a\x19.doublecloud.v1.OperationBEZCgithub.com/doublecloud/go-genproto/doublecloud/transfer/v1;transferb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +34,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'doublecloud.transfer.v1.ope
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'ZCgithub.com/doublecloud/go-genproto/doublecloud/transfer/v1;transfer'
-  _globals['_OPERATIONSERVICE'].methods_by_name['Get']._loaded_options = None
-  _globals['_OPERATIONSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\036\022\034/v1/operation/{operation_id}'
   _globals['_GETOPERATIONREQUEST']._serialized_start=138
   _globals['_GETOPERATIONREQUEST']._serialized_end=194
-  _globals['_OPERATIONSERVICE']._serialized_start=197
-  _globals['_OPERATIONSERVICE']._serialized_end=333
+  _globals['_OPERATIONSERVICE']._serialized_start=196
+  _globals['_OPERATIONSERVICE']._serialized_end=294
 # @@protoc_insertion_point(module_scope)
