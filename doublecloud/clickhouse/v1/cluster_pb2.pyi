@@ -94,7 +94,7 @@ class ClusterResources(_message.Message):
     def __init__(self, clickhouse: _Optional[_Union[ClusterResources.Clickhouse, _Mapping]] = ..., dedicated_keeper: _Optional[_Union[ClusterResources.Keeper, _Mapping]] = ...) -> None: ...
 
 class ConnectionInfo(_message.Message):
-    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri")
+    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri", "https_port_ctls", "tcp_port_secure_ctls", "native_protocol_ctls", "https_uri_ctls")
     HOST_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -104,6 +104,10 @@ class ConnectionInfo(_message.Message):
     HTTPS_URI_FIELD_NUMBER: _ClassVar[int]
     JDBC_URI_FIELD_NUMBER: _ClassVar[int]
     ODBC_URI_FIELD_NUMBER: _ClassVar[int]
+    HTTPS_PORT_CTLS_FIELD_NUMBER: _ClassVar[int]
+    TCP_PORT_SECURE_CTLS_FIELD_NUMBER: _ClassVar[int]
+    NATIVE_PROTOCOL_CTLS_FIELD_NUMBER: _ClassVar[int]
+    HTTPS_URI_CTLS_FIELD_NUMBER: _ClassVar[int]
     host: str
     user: str
     password: str
@@ -113,10 +117,14 @@ class ConnectionInfo(_message.Message):
     https_uri: str
     jdbc_uri: str
     odbc_uri: str
-    def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
+    https_port_ctls: _wrappers_pb2.Int64Value
+    tcp_port_secure_ctls: _wrappers_pb2.Int64Value
+    native_protocol_ctls: str
+    https_uri_ctls: str
+    def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ..., https_port_ctls: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure_ctls: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol_ctls: _Optional[str] = ..., https_uri_ctls: _Optional[str] = ...) -> None: ...
 
 class PrivateConnectionInfo(_message.Message):
-    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri")
+    __slots__ = ("host", "user", "password", "https_port", "tcp_port_secure", "native_protocol", "https_uri", "jdbc_uri", "odbc_uri", "https_port_ctls", "tcp_port_secure_ctls", "native_protocol_ctls", "https_uri_ctls")
     HOST_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -126,6 +134,10 @@ class PrivateConnectionInfo(_message.Message):
     HTTPS_URI_FIELD_NUMBER: _ClassVar[int]
     JDBC_URI_FIELD_NUMBER: _ClassVar[int]
     ODBC_URI_FIELD_NUMBER: _ClassVar[int]
+    HTTPS_PORT_CTLS_FIELD_NUMBER: _ClassVar[int]
+    TCP_PORT_SECURE_CTLS_FIELD_NUMBER: _ClassVar[int]
+    NATIVE_PROTOCOL_CTLS_FIELD_NUMBER: _ClassVar[int]
+    HTTPS_URI_CTLS_FIELD_NUMBER: _ClassVar[int]
     host: str
     user: str
     password: str
@@ -135,7 +147,11 @@ class PrivateConnectionInfo(_message.Message):
     https_uri: str
     jdbc_uri: str
     odbc_uri: str
-    def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ...) -> None: ...
+    https_port_ctls: _wrappers_pb2.Int64Value
+    tcp_port_secure_ctls: _wrappers_pb2.Int64Value
+    native_protocol_ctls: str
+    https_uri_ctls: str
+    def __init__(self, host: _Optional[str] = ..., user: _Optional[str] = ..., password: _Optional[str] = ..., https_port: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol: _Optional[str] = ..., https_uri: _Optional[str] = ..., jdbc_uri: _Optional[str] = ..., odbc_uri: _Optional[str] = ..., https_port_ctls: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., tcp_port_secure_ctls: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., native_protocol_ctls: _Optional[str] = ..., https_uri_ctls: _Optional[str] = ...) -> None: ...
 
 class MetricsExporterConnectionInfo(_message.Message):
     __slots__ = ("user", "password")
