@@ -1,8 +1,8 @@
 version: v1
 plugins:
-  - plugin: buf.build/protocolbuffers/python
+  - plugin: buf.build/protocolbuffers/python:v25.3
     out: ../.
-  - plugin: buf.build/grpc/python
+  - plugin: buf.build/grpc/python:v1.62.2
     out: ../.
-  - plugin: buf.build/protocolbuffers/pyi
+  - plugin: buf.build/protocolbuffers/pyi:v25.3
     out: ../.
