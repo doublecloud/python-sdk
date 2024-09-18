@@ -21,67 +21,67 @@ class ClusterServiceStub(object):
                 '/doublecloud.clickhouse.v1.ClusterService/Get',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.GetClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__pb2.Cluster.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/List',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClustersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClustersResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Create',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Update',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Delete',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ResetCredentials = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/ResetCredentials',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ResetClusterCredentialsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListHosts = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/ListHosts',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
-                _registered_method=True)
+                )
         self.Restore = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Restore',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListBackups = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/ListBackups',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
-                _registered_method=True)
+                )
         self.Start = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Start',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Stop = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/Stop',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.RescheduleMaintenance = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/RescheduleMaintenance',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListOperations = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.ClusterService/ListOperations',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
-                _registered_method=True)
+                )
 
 
 class ClusterServiceServicer(object):
@@ -251,7 +251,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.clickhouse.v1.ClusterService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.clickhouse.v1.ClusterService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -270,21 +269,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Get',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.GetClusterRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__pb2.Cluster.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -297,21 +286,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/List',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClustersRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClustersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -324,21 +303,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Create',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -351,21 +320,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Update',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -378,21 +337,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Delete',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ResetCredentials(request,
@@ -405,21 +354,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/ResetCredentials',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/ResetCredentials',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ResetClusterCredentialsRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListHosts(request,
@@ -432,21 +371,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/ListHosts',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/ListHosts',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Restore(request,
@@ -459,21 +388,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Restore',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Restore',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListBackups(request,
@@ -486,21 +405,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/ListBackups',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/ListBackups',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Start(request,
@@ -513,21 +422,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Start',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Start',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Stop(request,
@@ -540,21 +439,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/Stop',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/Stop',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def RescheduleMaintenance(request,
@@ -567,21 +456,11 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/RescheduleMaintenance',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/RescheduleMaintenance',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListOperations(request,
@@ -594,18 +473,8 @@ class ClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.ClusterService/ListOperations',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.ClusterService/ListOperations',
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -22,57 +22,57 @@ class GroupServiceStub(object):
                 '/doublecloud.organizationmanager.v1.GroupService/Get',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.GetGroupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/List',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/Create',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateGroupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/Update',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/Delete',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.DeleteGroupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListOperations = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/ListOperations',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupOperationsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupOperationsResponse.FromString,
-                _registered_method=True)
+                )
         self.ListMembers = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/ListMembers',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupMembersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupMembersResponse.FromString,
-                _registered_method=True)
+                )
         self.UpdateMembers = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/UpdateMembers',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupMembersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListAccessBindings = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/ListAccessBindings',
                 request_serializer=doublecloud_dot_access_dot_v1_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_access_dot_v1_dot_access__pb2.ListAccessBindingsResponse.FromString,
-                _registered_method=True)
+                )
         self.SetAccessBindings = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/SetAccessBindings',
                 request_serializer=doublecloud_dot_access_dot_v1_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.UpdateAccessBindings = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupService/UpdateAccessBindings',
                 request_serializer=doublecloud_dot_access_dot_v1_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class GroupServiceServicer(object):
@@ -224,7 +224,6 @@ def add_GroupServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.organizationmanager.v1.GroupService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.organizationmanager.v1.GroupService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -243,21 +242,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/Get',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.GetGroupRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -270,21 +259,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/List',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -297,21 +276,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/Create',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateGroupRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -324,21 +293,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/Update',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -351,21 +310,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/Delete',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.DeleteGroupRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListOperations(request,
@@ -378,21 +327,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/ListOperations',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/ListOperations',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupOperationsRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupOperationsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListMembers(request,
@@ -405,21 +344,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/ListMembers',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/ListMembers',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupMembersRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupMembersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateMembers(request,
@@ -432,21 +361,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/UpdateMembers',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/UpdateMembers',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupMembersRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListAccessBindings(request,
@@ -459,21 +378,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/ListAccessBindings',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/ListAccessBindings',
             doublecloud_dot_access_dot_v1_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
             doublecloud_dot_access_dot_v1_dot_access__pb2.ListAccessBindingsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SetAccessBindings(request,
@@ -486,21 +395,11 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/SetAccessBindings',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/SetAccessBindings',
             doublecloud_dot_access_dot_v1_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateAccessBindings(request,
@@ -513,18 +412,8 @@ class GroupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupService/UpdateAccessBindings',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupService/UpdateAccessBindings',
             doublecloud_dot_access_dot_v1_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

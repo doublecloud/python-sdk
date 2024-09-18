@@ -18,7 +18,7 @@ class LogServiceStub(object):
                 '/doublecloud.logs.v1.LogService/Read',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__service__pb2.ReadLogsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_logs_dot_v1_dot_log__service__pb2.ReadLogRecord.FromString,
-                _registered_method=True)
+                )
 
 
 class LogServiceServicer(object):
@@ -44,7 +44,6 @@ def add_LogServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.logs.v1.LogService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.logs.v1.LogService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -62,18 +61,8 @@ class LogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogService/Read',
+        return grpc.experimental.unary_stream(request, target, '/doublecloud.logs.v1.LogService/Read',
             doublecloud_dot_logs_dot_v1_dot_log__service__pb2.ReadLogsRequest.SerializeToString,
             doublecloud_dot_logs_dot_v1_dot_log__service__pb2.ReadLogRecord.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

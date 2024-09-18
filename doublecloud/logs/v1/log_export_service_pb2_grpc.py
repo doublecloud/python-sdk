@@ -20,27 +20,27 @@ class LogExportServiceStub(object):
                 '/doublecloud.logs.v1.LogExportService/Get',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.GetExportRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_logs_dot_v1_dot_log__export__pb2.LogsExport.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.logs.v1.LogExportService/List',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.ListExportRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.ListExportResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.logs.v1.LogExportService/Create',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.CreateExportRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.logs.v1.LogExportService/Update',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.UpdateExportRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.logs.v1.LogExportService/Delete',
                 request_serializer=doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.DeleteExportRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class LogExportServiceServicer(object):
@@ -108,7 +108,6 @@ def add_LogExportServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.logs.v1.LogExportService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.logs.v1.LogExportService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -126,21 +125,11 @@ class LogExportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogExportService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.logs.v1.LogExportService/Get',
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.GetExportRequest.SerializeToString,
             doublecloud_dot_logs_dot_v1_dot_log__export__pb2.LogsExport.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -153,21 +142,11 @@ class LogExportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogExportService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.logs.v1.LogExportService/List',
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.ListExportRequest.SerializeToString,
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.ListExportResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -180,21 +159,11 @@ class LogExportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogExportService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.logs.v1.LogExportService/Create',
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.CreateExportRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -207,21 +176,11 @@ class LogExportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogExportService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.logs.v1.LogExportService/Update',
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.UpdateExportRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -234,18 +193,8 @@ class LogExportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.logs.v1.LogExportService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.logs.v1.LogExportService/Delete',
             doublecloud_dot_logs_dot_v1_dot_log__export__service__pb2.DeleteExportRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

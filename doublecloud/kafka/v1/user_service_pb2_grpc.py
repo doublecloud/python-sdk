@@ -21,37 +21,37 @@ class UserServiceStub(object):
                 '/doublecloud.kafka.v1.UserService/Get',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_user__pb2.User.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/List',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/Create',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.CreateUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/Update',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/Delete',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.DeleteUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.GrantPermission = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/GrantPermission',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.GrantUserPermissionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.RevokePermission = channel.unary_unary(
                 '/doublecloud.kafka.v1.UserService/RevokePermission',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.RevokeUserPermissionRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class UserServiceServicer(object):
@@ -151,7 +151,6 @@ def add_UserServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.kafka.v1.UserService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.kafka.v1.UserService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -170,21 +169,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/Get',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.GetUserRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_user__pb2.User.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -197,21 +186,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/List',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -224,21 +203,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/Create',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.CreateUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -251,21 +220,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/Update',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.UpdateUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -278,21 +237,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/Delete',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.DeleteUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GrantPermission(request,
@@ -305,21 +254,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/GrantPermission',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/GrantPermission',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.GrantUserPermissionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def RevokePermission(request,
@@ -332,18 +271,8 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.UserService/RevokePermission',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.UserService/RevokePermission',
             doublecloud_dot_kafka_dot_v1_dot_user__service__pb2.RevokeUserPermissionRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

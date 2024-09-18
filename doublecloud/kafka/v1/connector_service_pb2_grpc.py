@@ -21,37 +21,37 @@ class ConnectorServiceStub(object):
                 '/doublecloud.kafka.v1.ConnectorService/Get',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.GetConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_connector__pb2.Connector.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/List',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ListConnectorsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ListConnectorsResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/Create',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.CreateConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/Update',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.UpdateConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/Delete',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.DeleteConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Resume = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/Resume',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ResumeConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Pause = channel.unary_unary(
                 '/doublecloud.kafka.v1.ConnectorService/Pause',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.PauseConnectorRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class ConnectorServiceServicer(object):
@@ -149,7 +149,6 @@ def add_ConnectorServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.kafka.v1.ConnectorService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.kafka.v1.ConnectorService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -168,21 +167,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Get',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.GetConnectorRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_connector__pb2.Connector.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -195,21 +184,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/List',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ListConnectorsRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ListConnectorsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -222,21 +201,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Create',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.CreateConnectorRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -249,21 +218,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Update',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.UpdateConnectorRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -276,21 +235,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Delete',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.DeleteConnectorRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Resume(request,
@@ -303,21 +252,11 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Resume',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Resume',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.ResumeConnectorRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Pause(request,
@@ -330,18 +269,8 @@ class ConnectorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.ConnectorService/Pause',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.ConnectorService/Pause',
             doublecloud_dot_kafka_dot_v1_dot_connector__service__pb2.PauseConnectorRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
