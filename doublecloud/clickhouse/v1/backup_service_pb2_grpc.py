@@ -20,22 +20,22 @@ class BackupServiceStub(object):
                 '/doublecloud.clickhouse.v1.BackupService/Get',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.GetBackupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__pb2.Backup.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.BackupService/List',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.BackupService/Create',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.CreateBackupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.BackupService/Delete',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class BackupServiceServicer(object):
@@ -96,7 +96,6 @@ def add_BackupServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.clickhouse.v1.BackupService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.clickhouse.v1.BackupService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -114,21 +113,11 @@ class BackupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.BackupService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.BackupService/Get',
             doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.GetBackupRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_backup__pb2.Backup.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -141,21 +130,11 @@ class BackupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.BackupService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.BackupService/List',
             doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -168,21 +147,11 @@ class BackupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.BackupService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.BackupService/Create',
             doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.CreateBackupRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -195,18 +164,8 @@ class BackupService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.BackupService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.BackupService/Delete',
             doublecloud_dot_clickhouse_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -1,15 +1,21 @@
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
-from google.protobuf import wrappers_pb2 as _wrappers_pb2
-from doublecloud.v1 import operation_pb2 as _operation_pb2
-from doublecloud.v1 import paging_pb2 as _paging_pb2
-from doublecloud.v1 import cluster_pb2 as _cluster_pb2
-from doublecloud.v1 import maintenance_pb2 as _maintenance_pb2
-from doublecloud.airflow.v1 import cluster_pb2 as _cluster_pb2_1
-from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+from typing import ClassVar as _ClassVar
+from typing import Iterable as _Iterable
+from typing import Mapping as _Mapping
+from typing import Optional as _Optional
+from typing import Union as _Union
+
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf import wrappers_pb2 as _wrappers_pb2
+from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+
+from doublecloud.airflow.v1 import cluster_pb2 as _cluster_pb2_1
+from doublecloud.v1 import cluster_pb2 as _cluster_pb2
+from doublecloud.v1 import maintenance_pb2 as _maintenance_pb2
+from doublecloud.v1 import operation_pb2 as _operation_pb2
+from doublecloud.v1 import paging_pb2 as _paging_pb2
 
 DESCRIPTOR: _descriptor.FileDescriptor
 

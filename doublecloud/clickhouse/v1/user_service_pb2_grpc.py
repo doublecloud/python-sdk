@@ -21,52 +21,52 @@ class UserServiceStub(object):
                 '/doublecloud.clickhouse.v1.UserService/Get',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_user__pb2.User.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/List',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/Create',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.CreateUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/Update',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/Delete',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.DeleteUserRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.GetRole = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/GetRole',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.GetRoleRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_user__pb2.Role.FromString,
-                _registered_method=True)
+                )
         self.ListRoles = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/ListRoles',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListRolesRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListRolesResponse.FromString,
-                _registered_method=True)
+                )
         self.CreateRole = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/CreateRole',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.CreateRoleRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.UpdateRole = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/UpdateRole',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.UpdateRoleRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.DeleteRole = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.UserService/DeleteRole',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.DeleteRoleRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class UserServiceServicer(object):
@@ -200,7 +200,6 @@ def add_UserServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.clickhouse.v1.UserService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.clickhouse.v1.UserService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -219,21 +218,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/Get',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.GetUserRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_user__pb2.User.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -246,21 +235,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/List',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -273,21 +252,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/Create',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.CreateUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -300,21 +269,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/Update',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.UpdateUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -327,21 +286,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/Delete',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.DeleteUserRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetRole(request,
@@ -354,21 +303,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/GetRole',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/GetRole',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.GetRoleRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_user__pb2.Role.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListRoles(request,
@@ -381,21 +320,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/ListRoles',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/ListRoles',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListRolesRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.ListRolesResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateRole(request,
@@ -408,21 +337,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/CreateRole',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/CreateRole',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.CreateRoleRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateRole(request,
@@ -435,21 +354,11 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/UpdateRole',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/UpdateRole',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.UpdateRoleRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteRole(request,
@@ -462,18 +371,8 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.UserService/DeleteRole',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.UserService/DeleteRole',
             doublecloud_dot_clickhouse_dot_v1_dot_user__service__pb2.DeleteRoleRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

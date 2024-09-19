@@ -21,22 +21,22 @@ class FederationServiceStub(object):
                 '/doublecloud.organizationmanager.saml.v1.FederationService/Get',
                 request_serializer=doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.GetFederationRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__pb2.Federation.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.organizationmanager.saml.v1.FederationService/Create',
                 request_serializer=doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.CreateFederationRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.organizationmanager.saml.v1.FederationService/Update',
                 request_serializer=doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.UpdateFederationRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.organizationmanager.saml.v1.FederationService/Delete',
                 request_serializer=doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.DeleteFederationRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class FederationServiceServicer(object):
@@ -100,7 +100,6 @@ def add_FederationServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.organizationmanager.saml.v1.FederationService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.organizationmanager.saml.v1.FederationService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -119,21 +118,11 @@ class FederationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.saml.v1.FederationService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.saml.v1.FederationService/Get',
             doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.GetFederationRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__pb2.Federation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -146,21 +135,11 @@ class FederationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.saml.v1.FederationService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.saml.v1.FederationService/Create',
             doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.CreateFederationRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -173,21 +152,11 @@ class FederationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.saml.v1.FederationService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.saml.v1.FederationService/Update',
             doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.UpdateFederationRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -200,18 +169,8 @@ class FederationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.saml.v1.FederationService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.saml.v1.FederationService/Delete',
             doublecloud_dot_organizationmanager_dot_saml_dot_v1_dot_federation__service__pb2.DeleteFederationRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

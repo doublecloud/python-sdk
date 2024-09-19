@@ -20,32 +20,32 @@ class GroupMappingServiceStub(object):
                 '/doublecloud.organizationmanager.v1.GroupMappingService/Get',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.GetGroupMappingRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.GetGroupMappingResponse.FromString,
-                _registered_method=True)
+                )
         self.Create = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupMappingService/Create',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.CreateGroupMappingRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupMappingService/Update',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.UpdateGroupMappingRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupMappingService/Delete',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.DeleteGroupMappingRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.ListItems = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupMappingService/ListItems',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.ListGroupMappingItemsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.ListGroupMappingItemsResponse.FromString,
-                _registered_method=True)
+                )
         self.UpdateItems = channel.unary_unary(
                 '/doublecloud.organizationmanager.v1.GroupMappingService/UpdateItems',
                 request_serializer=doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.UpdateGroupMappingItemsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class GroupMappingServiceServicer(object):
@@ -156,7 +156,6 @@ def add_GroupMappingServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.organizationmanager.v1.GroupMappingService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.organizationmanager.v1.GroupMappingService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -175,21 +174,11 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/Get',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.GetGroupMappingRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.GetGroupMappingResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -202,21 +191,11 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/Create',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.CreateGroupMappingRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -229,21 +208,11 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/Update',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.UpdateGroupMappingRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -256,21 +225,11 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/Delete',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.DeleteGroupMappingRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListItems(request,
@@ -283,21 +242,11 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/ListItems',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/ListItems',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.ListGroupMappingItemsRequest.SerializeToString,
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.ListGroupMappingItemsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateItems(request,
@@ -310,18 +259,8 @@ class GroupMappingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.organizationmanager.v1.GroupMappingService/UpdateItems',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.organizationmanager.v1.GroupMappingService/UpdateItems',
             doublecloud_dot_organizationmanager_dot_v1_dot_group__mapping__service__pb2.UpdateGroupMappingItemsRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

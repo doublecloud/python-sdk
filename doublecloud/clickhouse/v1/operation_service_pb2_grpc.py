@@ -20,12 +20,12 @@ class OperationServiceStub(object):
                 '/doublecloud.clickhouse.v1.OperationService/Get',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.GetOperationRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.clickhouse.v1.OperationService/List',
                 request_serializer=doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.ListOperationsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.ListOperationsResponse.FromString,
-                _registered_method=True)
+                )
 
 
 class OperationServiceServicer(object):
@@ -63,7 +63,6 @@ def add_OperationServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.clickhouse.v1.OperationService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.clickhouse.v1.OperationService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -82,21 +81,11 @@ class OperationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.OperationService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.OperationService/Get',
             doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.GetOperationRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -109,18 +98,8 @@ class OperationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.clickhouse.v1.OperationService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.clickhouse.v1.OperationService/List',
             doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.ListOperationsRequest.SerializeToString,
             doublecloud_dot_clickhouse_dot_v1_dot_operation__service__pb2.ListOperationsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

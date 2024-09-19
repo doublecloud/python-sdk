@@ -20,52 +20,52 @@ class TransferServiceStub(object):
                 '/doublecloud.transfer.v1.TransferService/Create',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.CreateTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Update = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/Update',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.UpdateTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Delete = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/Delete',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.List = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/List',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ListTransfersRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ListTransfersResponse.FromString,
-                _registered_method=True)
+                )
         self.Get = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/Get',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__pb2.Transfer.FromString,
-                _registered_method=True)
+                )
         self.Deactivate = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/Deactivate',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeactivateTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.Activate = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/Activate',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ActivateTransferRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
         self.GetMetrics = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/GetMetrics',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetMetricsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.TransferMetrics.FromString,
-                _registered_method=True)
+                )
         self.GetMetricExporterConnectionInfo = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/GetMetricExporterConnectionInfo',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoMetadata.FromString,
-                _registered_method=True)
+                )
         self.DeleteMetricExporterConnectionInfo = channel.unary_unary(
                 '/doublecloud.transfer.v1.TransferService/DeleteMetricExporterConnectionInfo',
                 request_serializer=doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteExporterConnectionInfoRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
+                )
 
 
 class TransferServiceServicer(object):
@@ -189,7 +189,6 @@ def add_TransferServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.transfer.v1.TransferService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.transfer.v1.TransferService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -207,21 +206,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Create',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Create',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.CreateTransferRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -234,21 +223,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Update',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Update',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.UpdateTransferRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -261,21 +240,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Delete',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteTransferRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -288,21 +257,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/List',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ListTransfersRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ListTransfersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -315,21 +274,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Get',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Get',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetTransferRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_transfer__pb2.Transfer.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Deactivate(request,
@@ -342,21 +291,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Deactivate',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Deactivate',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeactivateTransferRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Activate(request,
@@ -369,21 +308,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/Activate',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/Activate',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.ActivateTransferRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetMetrics(request,
@@ -396,21 +325,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/GetMetrics',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/GetMetrics',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.GetMetricsRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.TransferMetrics.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetMetricExporterConnectionInfo(request,
@@ -423,21 +342,11 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/GetMetricExporterConnectionInfo',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/GetMetricExporterConnectionInfo',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoRequest.SerializeToString,
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.MetricExporterConnectionInfoMetadata.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteMetricExporterConnectionInfo(request,
@@ -450,18 +359,8 @@ class TransferService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.transfer.v1.TransferService/DeleteMetricExporterConnectionInfo',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.transfer.v1.TransferService/DeleteMetricExporterConnectionInfo',
             doublecloud_dot_transfer_dot_v1_dot_transfer__service__pb2.DeleteExporterConnectionInfoRequest.SerializeToString,
             doublecloud_dot_v1_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

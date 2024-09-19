@@ -18,7 +18,7 @@ class VersionServiceStub(object):
                 '/doublecloud.kafka.v1.VersionService/List',
                 request_serializer=doublecloud_dot_kafka_dot_v1_dot_version__service__pb2.ListVersionsRequest.SerializeToString,
                 response_deserializer=doublecloud_dot_kafka_dot_v1_dot_version__service__pb2.ListVersionsResponse.FromString,
-                _registered_method=True)
+                )
 
 
 class VersionServiceServicer(object):
@@ -43,7 +43,6 @@ def add_VersionServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'doublecloud.kafka.v1.VersionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('doublecloud.kafka.v1.VersionService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -61,18 +60,8 @@ class VersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/doublecloud.kafka.v1.VersionService/List',
+        return grpc.experimental.unary_unary(request, target, '/doublecloud.kafka.v1.VersionService/List',
             doublecloud_dot_kafka_dot_v1_dot_version__service__pb2.ListVersionsRequest.SerializeToString,
             doublecloud_dot_kafka_dot_v1_dot_version__service__pb2.ListVersionsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -38,7 +38,7 @@ submodule:  ## retrieve public protospecs
 	git submodule update --init --recursive --remote
 
 clean: ## clean environment and generated code
-	@ rm -rf doublecloud/{clickhouse,kafka,network,transfer,v1,visualization} 
+	@ rm -rf doublecloud/{clickhouse,kafka,network,transfer,v1,visualization}
 	@ rm -rf venv
 
 generate: submodule venv ## generate code from specifications

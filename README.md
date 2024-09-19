@@ -28,7 +28,7 @@ There are a couple of options for authorizing your requests:
 ### Service Account Keys
 
 ```python
-# you can store and read it from a JSON file 
+# you can store and read it from a JSON file
 sa_key = {
     "id": "...",
     "service_account_id": "...",
@@ -57,6 +57,8 @@ For step-by-step instructions and examples of how to get an **IAM token** for yo
 * Use `make venv` command to install the library, its production and development dependencies.
 * Use `make submodule` to fetch proto specifications.
 * Use `make generate` to generate wrappers for gRPC services.
+
+Dependencies for the code generator tool are specified in `buf.gen.yaml`.
 
 ### Formatting
 

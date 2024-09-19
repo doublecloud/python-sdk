@@ -2,10 +2,11 @@
 black
 flake8
 isort
+protobuf==4.25.3  # To ensure compatibility with released SDK
 pylint
 pytest
 python-semantic-release==7.34.6
 tox
 tox-gh-actions
-grpcio-tools==1.65.4
+grpcio-tools
 wheel
