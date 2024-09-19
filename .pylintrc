@@ -3,6 +3,7 @@ max-line-length=120
 
 [MASTER]
 ignore-paths=^doublecloud/access/.*$,
+            ^doublecloud/airflow/.*$,
             ^doublecloud/clickhouse/.*$,
             ^doublecloud/kafka/.*$,
             ^doublecloud/logs/.*$,
