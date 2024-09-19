@@ -13,7 +13,7 @@ setup(
     author_email="support@double.cloud",
     license="Apache License 2.0",
     install_requires=[
-        "cryptography==43.0.0",
+        "cryptography==43.0.1",
         "grpcio==1.65.4",
         "protobuf==5.27.3",
         "grpcio-tools==1.65.4",
