@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.14.0 (2024-09-19)
+
+### Feature
+
+* Revert upgrade for compatibility reasons ([`6f57bd6`](https://github.com/doublecloud/python-sdk/commit/6f57bd6639348c70bce288071e070868c9462de1))
+
 ## v0.13.0 (2024-09-19)
 
 ### Feature
