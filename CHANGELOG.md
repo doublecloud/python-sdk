@@ -2,6 +2,24 @@
 
 <!--next-version-placeholder-->
 
+## v0.13.0 (2024-09-19)
+
+### Feature
+
+* Dependobot sec update ([`ecd4af3`](https://github.com/doublecloud/python-sdk/commit/ecd4af3f16b8a151911f97ca0d39f50b96ce7c90))
+* Update readme ([`2eb55e2`](https://github.com/doublecloud/python-sdk/commit/2eb55e27826c3b5e63650dc8a692eee16dd8924e))
+* Ignore generated code ([`dfbc403`](https://github.com/doublecloud/python-sdk/commit/dfbc403e47b084199688cb45ddb437a8c75e4287))
+* Regenerate for 4.25 ([`aff3358`](https://github.com/doublecloud/python-sdk/commit/aff33580b418ed127d4e6cbd8c0ebffc67dfdd2b))
+* Pin protobuf, revert other dependencies changes ([`0bb85eb`](https://github.com/doublecloud/python-sdk/commit/0bb85eb545544895268eab62c365520470585348))
+* Build: regenerate proto ([`8a32580`](https://github.com/doublecloud/python-sdk/commit/8a3258076094a355165c910023f7ecc77cab33e4))
+* Build: regenerate proto ([`071217a`](https://github.com/doublecloud/python-sdk/commit/071217a2190b974e4b5639295c940bcc73f7e422))
+* Build: regenerate proto ([`e8969eb`](https://github.com/doublecloud/python-sdk/commit/e8969ebe3892833c948558c33eb6d1e98681b08b))
+* Build: regenerate proto ([`4a3dd2a`](https://github.com/doublecloud/python-sdk/commit/4a3dd2a15d72d05f971b4d1a12f51421218e2f63))
+* Build: regenerate proto ([`222fbf4`](https://github.com/doublecloud/python-sdk/commit/222fbf4cd69ff8088f1546552e8a7ca55fca1ab4))
+* Build: regenerate proto ([`e71ed2a`](https://github.com/doublecloud/python-sdk/commit/e71ed2a4e4a45aca89663dae307a2a78012f2a82))
+* Build: regenerate proto ([`75e4b76`](https://github.com/doublecloud/python-sdk/commit/75e4b76886eda99de96337804264911a051b1a1a))
+* Build: regenerate proto ([`7c72fd9`](https://github.com/doublecloud/python-sdk/commit/7c72fd9a68ed1390792fc813426f810e7aed1cf0))
+
 ## v0.12.0 (2024-08-08)
 
 ### Feature
