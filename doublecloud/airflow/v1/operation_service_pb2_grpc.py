@@ -2,9 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from doublecloud.airflow.v1 import (
-    operation_service_pb2 as doublecloud_dot_airflow_dot_v1_dot_operation__service__pb2,
-)
+from doublecloud.airflow.v1 import operation_service_pb2 as doublecloud_dot_airflow_dot_v1_dot_operation__service__pb2
 from doublecloud.v1 import operation_pb2 as doublecloud_dot_v1_dot_operation__pb2
 
 
