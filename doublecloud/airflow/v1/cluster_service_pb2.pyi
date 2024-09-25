@@ -148,18 +148,20 @@ class UpdateClusterRequest(_message.Message):
     class UpdateClusterResources(_message.Message):
         __slots__ = ("airflow",)
         class Airflow(_message.Message):
-            __slots__ = ("max_worker_count", "min_worker_count", "worker_concurrency", "worker_disk_size", "worker_preset")
+            __slots__ = ("max_worker_count", "min_worker_count", "worker_concurrency", "worker_disk_size", "worker_preset", "environment_flavor")
             MAX_WORKER_COUNT_FIELD_NUMBER: _ClassVar[int]
             MIN_WORKER_COUNT_FIELD_NUMBER: _ClassVar[int]
             WORKER_CONCURRENCY_FIELD_NUMBER: _ClassVar[int]
             WORKER_DISK_SIZE_FIELD_NUMBER: _ClassVar[int]
             WORKER_PRESET_FIELD_NUMBER: _ClassVar[int]
+            ENVIRONMENT_FLAVOR_FIELD_NUMBER: _ClassVar[int]
             max_worker_count: _wrappers_pb2.Int64Value
             min_worker_count: _wrappers_pb2.Int64Value
             worker_concurrency: _wrappers_pb2.Int64Value
             worker_disk_size: _wrappers_pb2.Int64Value
             worker_preset: _wrappers_pb2.StringValue
-            def __init__(self, max_worker_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_worker_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_concurrency: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_preset: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
+            environment_flavor: _wrappers_pb2.StringValue
+            def __init__(self, max_worker_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., min_worker_count: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_concurrency: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_disk_size: _Optional[_Union[_wrappers_pb2.Int64Value, _Mapping]] = ..., worker_preset: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., environment_flavor: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
         AIRFLOW_FIELD_NUMBER: _ClassVar[int]
         airflow: UpdateClusterRequest.UpdateClusterResources.Airflow
         def __init__(self, airflow: _Optional[_Union[UpdateClusterRequest.UpdateClusterResources.Airflow, _Mapping]] = ...) -> None: ...
